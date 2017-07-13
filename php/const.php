@@ -3,7 +3,9 @@
     $GLOBALS['codename'] = "Slipstream";
     $version = "4.0.1";        //Version number
     $GLOBALS['version'] = "4.0.1";
-    $externalURL = "https://sandman-2017-kir13y.c9users.io";
+    $externalURL = "https://sandman-scouting-kir13y.c9users.io";
+    $GLOBALS['externalURL'] = "https://sandman-scouting-kir13y.c9users.io";
+    $GLOBALS['OAUTH']['URI'] = "/oauthAut.php";
     $title = "2017 Scouting";
     $red = "Red";
     $blue = "Blue";
