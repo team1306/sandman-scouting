@@ -1,0 +1,440 @@
+
+<!-- LINK https://goo.gl/rpSy0y -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<title>Globals Scouting</title>
+
+	<!-- Bootstrap Core CSS -->
+	<link href="../css/bootstrap.css" rel="stylesheet">
+
+	<!-- Custom CSS -->
+	<link href="../css/checkboxes.css" rel="stylesheet">
+	<link href="../css/swagboxes.css" rel="stylesheet">
+	<link href="../css/disableXScroll.css" rel="stylesheet">
+	<link href="../css/sheet.css" rel="stylesheet">
+	<link href="../css/global.css" rel="stylesheet">
+	<link href="../css/input.css" rel="stylesheet">
+	<link href="../css/star-rating.css" rel="stylesheet">
+	<link href="../css/navbar.css" rel="stylesheet">
+
+	<!-- Favicon -->
+	<link rel="icon" type="image/png" href="../img/favicon-128.png" sizes="128x128" />
+
+	<!-- Javascript -->
+	<script type="text/javascript" src="../js/cookie.js"></script>
+	<script type="text/javascript" src="../js/report2016globals.js"></script>
+	<script type="text/javascript" src="../js/background.js"></script>
+	<script type="text/javascript" src="../js/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="../js/star-rating.js"></script>
+	<script type="text/javascript" src="../js/bootstrap.js"></script>
+	
+<style>
+
+	input[type=number] {
+	    background-color: #000;
+	    color: #fff;
+	    padding-left:10px;
+	    width: 100%;
+	    height: 100%;
+	    text-align: center;
+	}
+	input[type=button], input[type=number]{
+	    border: 0;
+	}
+
+</style>
+</head>
+
+<body>
+
+	<!--Site Navigation Bar-->
+	<nav class="navbar navbar-default" style="margin-bottom:0px;">
+	  <div class="container-fluid">
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <a class="navbar-brand" href="index.html">Sandman</a>
+	    </div>
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	      <ul class="nav navbar-nav">
+	        <li><a href="../index.html">Home <span class="sr-only">(current)</span></a></li>
+	        <li class="dropdown active">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Scouting <span class="caret"></span></a>
+	          <ul class="dropdown-menu">
+	            <li><a href="2016global.html">Game Scouting</a></li>
+	            <li><a href="2016globalpit.html">Pit Scouting</a></li>
+	          </ul>
+	        </li>
+	        <li><a href="../php/report3.php">Results </a></li>
+	        <li><a href="../php/removePage.php">DB Managment</a></li>
+	      </ul>
+	      
+	    </div>
+	  </div>
+	</nav>
+
+	<!--Physical Data Form-->
+	<form id="2016autoform" action="../php/sendDBg.php" method="post"> 
+		<div class="row" style="padding: 0.6em">
+
+			<!--Top Info Section-->
+			<div class="col-md-4">
+				<h3 class="center"><strong>Information</strong></h3>
+				<div class="inputBoxes">
+					
+					<div class="row">
+						<div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
+							<p>Team Number:</p>
+						</div>
+						<div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
+							<input class="textBox" id="tTeamNum" type="number" maxlength="20" name="teamnum" required/>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
+							<p>Match Number:</p>
+						</div>
+						<div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
+							<input class="textBox" id="tMatchNumber" type="number" maxlength="10" name="matchnum" required/>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
+							<p>Alliance:</p>
+						</div>
+						<div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
+		  					  <section title=".slideTwo">
+							    <!-- .slideTwo -->
+							    <div class="slideTwo">  
+							      <input type="checkbox" onclick="backgroundBlue();" value=1 id="slideTwo" name="isRed" checked />
+							      <label for="slideTwo"></label>
+							    </div>
+							  </section>
+		  				</div>
+		  			</div>
+		  			
+				</div>
+			</div>
+			
+			<!--Auto Info Section-->
+			<div class="col-md-8">
+				<div class="row">
+					<div class="col-md-6">
+						<h3 class="center"><strong>Auto Capabilities</strong></h3>
+						<div class="border">
+							
+							<div class="col-md-2 col-sm-2 col-xs-2 col-lg-2">
+								<div class="roundedOne">
+									<input type="checkbox" value=1 id="roundedOne" class="checkbox" name="autoCapmobile" />
+									<label for="roundedOne"></label>
+								</div>
+							</div>
+							<div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
+								<h4 style="padding-top:15px;">Mobile</h4>
+							</div>
+							<div class="row">
+								<div class="col-md-2 col-sm-2 col-xs-2 col-lg-2">
+									<div class="roundedTwo">
+										<input type="checkbox" value=1 id="roundedTwo" name="autoCapreachDefence" />
+										<label for="roundedTwo" class="checkboxjs"></label>
+									</div>
+								</div>
+								<div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
+									<h4 style="padding-top:15px;">Breaches</h4>
+								</div>
+							</div>
+							
+							<div style="padding:0; padding-right:4px; padding-bottom:10px;" class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
+								<h4 class="center"><strong>H-Goals<strong></h4>
+								<div class="input-group input-group-lg">
+									  <span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" onclick="setautoHighGoals(-1)">-</span>
+									  <input id="autoHighGoalstb" type="number" class="form-control textBox" name="autoHighGoals">
+									  <span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" onclick="setautoHighGoals(1)">+</span>
+								</div>
+							</div>
+							<div style="padding:0; padding-left: 4px; padding-bottom:10px;" class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
+								<h4 class="center"><strong>Missed H-Goals<strong></h4>
+								<div class="input-group input-group-lg">
+									  <span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" onclick="setautoMissedHighGoals(-1)">-</span>
+									  <input id="autoMissedHighGoalstb" type="number" class="form-control textBox" name="autoMissedHighGoals">
+									  <span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" onclick="setautoMissedHighGoals(1)">+</span>
+								</div>
+							</div>
+							<br>
+							<br>
+							<br>
+							<h4 class="center" style="padding-top:20px"><strong>L-Goals</strong></h4>
+							<div class="input-group input-group-lg">
+							  <span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" onclick="setautoLowGoals(-1)">-</span>
+							  <input id="autoLowGoalstb" type="number" class="form-control textBox" name="autoLowGoals">
+							  <span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" onclick="setautoLowGoals(1)">+</span>
+							</div>
+						<hr>
+							<div class="col-md-2 col-sm-2 col-xs-2 col-lg-2">
+								<div class="roundedThree">
+									<input type="checkbox" value=1 id="roundedThree" class="checkbox" name="autoPort" />
+									<label for="roundedThree"></label>
+								</div>
+							</div>
+							<div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
+								<h4 style="padding-top:15px;">Portcullis</h4>
+							</div>
+						    <div class="row">
+								<div class="col-md-2 col-sm-2 col-xs-2 col-lg-2">
+									<div class="roundedFour">
+										<input type="checkbox" value=1 id="roundedFour" name="autoCheval" />
+										<label for="roundedFour" class="checkboxjs"></label>
+									</div>
+								</div>
+								<div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
+									<h4 style="padding-top:15px;">CDF</h4>
+								</div>
+							</div>
+							<div class="col-md-2 col-sm-2 col-xs-2 col-lg-2">
+								<div class="roundedFive">
+									<input type="checkbox" value=1 id="roundedFive" class="checkbox" name="autoMoat" />
+									<label for="roundedFive"></label>
+								</div>
+							</div>
+							<div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
+								<h4 style="padding-top:15px;">Moat</h4>
+							</div>
+							<div class="row">
+								<div class="col-md-2 col-sm-2 col-xs-2 col-lg-2">
+									<div class="roundedSix">
+										<input type="checkbox" value=1 id="roundedSix" name="autoRamparts" />
+										<label for="roundedSix" class="checkboxjs"></label>
+									</div>
+								</div>
+								<div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
+									<h4 style="padding-top:15px;">Ramparts</h4>
+								</div>
+							</div>
+							<div class="col-md-2 col-sm-2 col-xs-2 col-lg-2">
+								<div class="roundedSeven">
+									<input type="checkbox" value=1 id="roundedSeven" class="checkbox" name="autoSallyPort" />
+									<label for="roundedSeven"></label>
+								</div>
+							</div>
+							<div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
+								<h4 style="padding-top:15px;">Sally Port</h4>
+							</div>
+							
+							<div class="row">
+								<div class="col-md-2 col-sm-2 col-xs-2 col-lg-2">
+									<div class="roundedEight">
+										<input type="checkbox" value=1 id="roundedEight" name="autoDrawbridge" />
+										<label for="roundedEight" class="checkboxjs"></label>
+									</div>
+								</div>
+								<div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
+									<h4 style="padding-top:15px;">Drawbridge</h4>
+								</div>
+							</div>
+							<div class="col-md-2 col-sm-2 col-xs-2 col-lg-2">
+								<div class="roundedNine">
+									<input type="checkbox" value=1 id="roundedNine" class="checkbox" name="autoRockWall" />
+									<label for="roundedNine"></label>
+								</div>
+							</div>
+							<div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
+								<h4 style="padding-top:15px;">Rock Wall</h4>
+							</div>
+						    <div class="row">
+								<div class="col-md-2 col-sm-2 col-xs-2 col-lg-2">
+									<div class="roundedTen">
+										<input type="checkbox" value=1 id="roundedTen" name="autoRoughTerrain" />
+										<label for="roundedTen" class="checkboxjs"></label>
+									</div>
+								</div>
+								<div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
+									<h4 style="padding-top:15px;">R-Terrain</h4>
+								</div>
+							</div>
+							
+							<div class="col-md-2 col-sm-2 col-xs-2 col-lg-2">
+								<div class="roundedEleven">
+									<input type="checkbox" value=1 id="roundedEleven" name="autoLowBar" />
+									<label for="roundedEleven" class="checkboxjs"></label>
+								</div>
+							</div>
+							<div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
+								<h4 style="padding-top:15px;">Low Bar</h4>
+							</div>
+							<div class="row"></div>
+						</div>
+					</div>
+				</div>
+				</div>	
+			  </div>
+			</div>
+		</div>
+		</div>
+
+		<div id="tele" class="row" style="padding: 0.6em">
+			<div class="col-md-8">
+				<div class="row">
+					<div class="col-md-6">
+						<h3 class="center"><strong>Teleop Capabilities</strong></h3>
+						<div class="border">
+							<div style="padding:0; padding-right:2px; padding-bottom:20px;" class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
+								<h4 class="center"><strong>H-Goals<strong></h4>
+									<div class="input-group input-group-lg">
+									  <span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" onclick="setteleHighGoals(-1)">-</span>
+									  <input id="teleHighGoalstb" type="number" class="form-control textBox" name="teleHighGoals">
+									  <span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" onclick="setteleHighGoals(1)">+</span>
+									</div>
+							</div>
+							<div style="padding:0; padding-left:2px; padding-bottom:20px;" class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
+								<h4 class="center"><strong>Missed H-Goals<strong></h4>
+									<div class="input-group input-group-lg">
+									  <span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" onclick="setteleMissedHighGoals(-1)">-</span>
+									  <input id="teleMissedHighGoalstb" type="number" class="form-control textBox" name="teleMissedHighGoals">
+									  <span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" onclick="setteleMissedHighGoals(1)">+</span>
+									</div>
+							</div>
+							
+							<h4 class="center"><strong>L-Goals</strong></h4>
+									<div class="input-group input-group-lg">
+									  <span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" onclick="setteleLowGoals(-1)">-</span>
+									  <input id="teleLowGoalstb" type="number" class="form-control textBox" name="teleLowGoals">
+									  <span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" onclick="setteleLowGoals(1)">+</span>
+									</div>
+							<hr>
+							
+							<div style="padding:0; padding-right:2px; padding-bottom:10px;" class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
+								<h4 class="center"><strong>Portcullis Rating<strong> <br><span id="portcullisRating-caption"></span></h4>
+								<input class="portcullisRating" data-container-class='text-center' name="telePortcullis">
+							</div>
+							<div style="padding:0; padding-left:2px; padding-bottom:10px;" class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
+								<h4 class="center"><strong>CDF Rating<strong> <br><span id="chevalRating-caption"></span></h4>
+								<input class="chevalRating" data-container-class='text-center' name="teleCheval">
+							</div>
+							<div style="padding:0; padding-left:2px; padding-bottom:10px;" class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
+								<h4 class="center"><strong>Moat Rating<strong> <br><span id="moatRating-caption"></span></h4>
+								<input class="moatRating" data-container-class='text-center' name="teleMoat">
+							</div>
+							<div style="padding:0; padding-right:2px; padding-bottom:10px;" class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
+								<h4 class="center"><strong>Ramparts Rating<strong> <br><span id="rampartsRating-caption"></span></h4>
+								<input class="rampartsRating" data-container-class='text-center' name="teleRamparts">
+							</div>
+							<div style="padding:0; padding-right:2px; padding-bottom:10px;" class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
+								<h4 class="center"><strong>Sally Port Rating<strong> <br><span id="sallyPortRating-caption"></span></h4>
+								<input class="sallyPortRating" data-container-class='text-center' name="teleSallyPort">
+							</div>
+							<div style="padding:0; padding-left:2px; padding-bottom:10px;" class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
+								<h4 class="center"><strong>Drawbridge Rating<strong> <br><span id="drawbridgeRating-caption"></span></h4>
+								<input class="drawbridgeRating" data-container-class='text-center' name="teleDrawbridge">
+							</div>
+							<div style="padding:0; padding-right:2px; padding-bottom:10px;" class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
+								<h4 class="center"><strong>Rock Wall Rating<strong> <br><span id="rockWallRating-caption"></span></h4>
+								<input class="rockWallRating" data-container-class='text-center' name="teleRockWall">
+							</div>
+							
+							<div style="padding:0; padding-left:2px; padding-bottom:10px;" class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
+								<h4 class="center"><strong>Rough Terrain Rating<strong> <br><span id="roughTerrainRating-caption"></span></h4>
+								<input class="roughTerrainRating" data-container-class='text-center' name="teleRoughTerrain">
+							</div>
+						
+							<div style="padding:0; padding-left:2px; padding-bottom:10px;" class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
+								<h4 class="center"><strong>Low Bar Rating<strong> <br><span id="lowBarRating-caption"></span></h4>
+								<input class="lowBarRating" data-container-class='text-center' name="teleLowBar">
+							</div>
+							
+							<div style="padding:0; padding-left:2px; padding-bottom:10px;" class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
+								<h4 class="center"><strong>Climb Rating<strong> <br><span id="climbRating-caption"></span></h4>
+								<input class="climbRating" data-container-class='text-center' name="teleClimb">
+							</div>
+							
+							<hr>
+							
+							<div class="col-md-2 col-sm-2 col-xs-2 col-lg-2">
+								<div class="roundedTwelve">
+									<input type="checkbox" value=1 id="roundedTwelve" class="checkbox" name="teleBatter" />
+									<label for="roundedTwelve"></label>
+								</div>
+							</div>
+							<div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
+								<h4 style="padding-top:15px;">Batter</h4>
+							</div>
+							
+							<div class="row">
+								<div class="col-md-2 col-sm-2 col-xs-2 col-lg-2">
+									<div class="roundedThirteen">
+										<input type="checkbox" value=1 id="roundedThirteen" name="teleDisabled" />
+										<label for="roundedThirteen" class="checkboxjs"></label>
+									</div>
+								</div>
+								<div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
+									<h4 style="padding-top:15px;">Disabled</h4>
+								</div>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+				<br>
+				</div>
+			</div>
+		</div>
+		</div>
+		<div class="container">
+			<h3 class="center"><strong>Notes</strong></h3>
+			<textarea name="teleNotes" id="notesTele" rows="10" cols="60" style="width: 100%; height: 200px; z-index: auto; position: relative; line-height: normal; font-size: 13.3333px; transition: none; overflow: auto; background: transparent !important;" tabindex="1"></textarea>
+		</div>
+		<div style="padding:20px">
+			<input class="btn btn-danger btn-lg" style="display: block; width: 100%;" onclick="saveTeamC()" type="submit" value="Submit" />
+			<br>
+			<br>
+		</div>
+	</form>
+</body>
+
+<script>
+
+//document.getElementById("tMatchNumber").value = (getCookie("tMatchNumberC") + 1);
+//console.log("Match Num c:" + getCookie("tMatchNumberC"));
+
+function saveTeamC() {
+	var matchNum = document.getElementById("tMatchNumber").value;
+	createCookie("tMatchNumberC", matchNum);
+}
+
+document.getElementById("autoHighGoalstb").value = 0;
+document.getElementById("autoMissedHighGoalstb").value = 0;
+document.getElementById("autoLowGoalstb").value = 0;
+document.getElementById("teleHighGoalstb").value = 0;
+document.getElementById("teleMissedHighGoalstb").value = 0;
+document.getElementById("teleLowGoalstb").value = 0;
+setColor("red");
+</script>
+<script>
+    jQuery(document).ready(function () {
+        $('.defenseRating').rating({'showCaption':true, 'stars':'5', 'min':'0', 'max':'5', 'step':'1', 'size':'sm', 'captionElement': '#defenceRating-caption', 'starCaptions': {1:'Attempted and failed', 2:'Poor crossing/slow', 3:'ok crossing', 4:'Good crossing', 5:'Flawless crossing'}});
+        $('.portcullisRating').rating({'showCaption':true, 'stars':'4', 'min':'0', 'max':'4', 'step':'1', 'size':'xs', 'clearCaption':'Not Attempted', 'captionElement': '#portcullisRating-caption', 'starCaptions': {0:'Did not attempt', 1:'Attempted and failed', 2:'Poor crossing/slow', 3:'Good crossing', 4:'Flawless crossing'}});
+        $('.chevalRating').rating({'showCaption':true, 'stars':'4', 'min':'0', 'max':'4', 'step':'1', 'size':'xs', 'clearCaption':'Not Attempted',  'captionElement': '#chevalRating-caption', 'starCaptions': {0:'Did not attempt', 1:'Attempted and failed', 2:'Poor crossing/slow', 3:'Good crossing', 4:'Flawless crossing'}});
+        $('.moatRating').rating({'showCaption':true, 'stars':'4', 'min':'0', 'max':'4', 'step':'1', 'size':'xs', 'clearCaption':'Not Attempted',  'captionElement': '#moatRating-caption', 'starCaptions': {0:'Did not attempt', 1:'Attempted and failed', 2:'Poor crossing/slow', 3:'Good crossing', 4:'Flawless crossing'}});
+        $('.rampartsRating').rating({'showCaption':true, 'stars':'4', 'min':'0', 'max':'4', 'step':'1', 'size':'xs', 'clearCaption':'Not Attempted',  'captionElement': '#rampartsRating-caption', 'starCaptions': {0:'Did not attempt', 1:'Attempted and failed', 2:'Poor crossing/slow', 3:'Good crossing', 4:'Flawless crossing'}});
+        $('.sallyPortRating').rating({'showCaption':true, 'stars':'4', 'min':'0', 'max':'4', 'step':'1', 'size':'xs', 'clearCaption':'Not Attempted',  'captionElement': '#sallyPortRating-caption', 'starCaptions': {0:'Did not attempt', 1:'Attempted and failed', 2:'Poor crossing/slow', 3:'Good crossing', 4:'Flawless crossing'}});
+        $('.drawbridgeRating').rating({'showCaption':true, 'stars':'4', 'min':'0', 'max':'4', 'step':'1', 'size':'xs', 'clearCaption':'Not Attempted',  'captionElement': '#drawbridgeRating-caption', 'starCaptions': {0:'Did not attempt', 1:'Attempted and failed', 2:'Poor crossing/slow', 3:'Good crossing', 4:'Flawless crossing'}});
+        $('.rockWallRating').rating({'showCaption':true, 'stars':'4', 'min':'0', 'max':'4', 'step':'1', 'size':'xs', 'clearCaption':'Not Attempted',  'captionElement': '#rockWallRating-caption', 'starCaptions': {0:'Did not attempt', 1:'Attempted and failed', 2:'Poor crossing/slow', 3:'Good crossing', 4:'Flawless crossing'}});
+        $('.roughTerrainRating').rating({'showCaption':true, 'stars':'4', 'min':'0', 'max':'4', 'step':'1', 'size':'xs', 'clearCaption':'Not Attempted',  'captionElement': '#roughTerrainRating-caption', 'starCaptions': {0:'Did not attempt', 1:'Attempted and failed', 2:'Poor crossing/slow', 3:'Good crossing', 4:'Flawless crossing'}});
+        $('.lowBarRating').rating({'showCaption':true, 'stars':'4', 'min':'0', 'max':'4', 'step':'1', 'size':'xs', 'clearCaption':'Not Attempted',  'captionElement': '#lowBarRating-caption', 'starCaptions': {0:'Did not attempt', 1:'Attempted and failed', 2:'Poor crossing/slow', 3:'Good crossing', 4:'Flawless crossing'}});
+        $('.climbRating').rating({'showCaption':true, 'stars':'4', 'min':'0', 'max':'4', 'step':'1', 'size':'xs', 'clearCaption':'Not Attempted',  'captionElement': '#climbRating-caption', 'starCaptions': {0:'Did not attempt', 1:'Attempted and failed', 2:'Almost/no time', 3:'Good climb', 4:'Flawless climb'}});
+    });
+</script>
+</html>

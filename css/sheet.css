@@ -1,0 +1,103 @@
+body {
+			overflow-x: hidden;
+			width: 100%;
+		}
+		
+		.not-active {
+			pointer-events: none;
+			cursor: default;
+		}
+		
+		.inputBoxes {
+			padding: 10px;
+			border: 2px solid #a1a1a1;
+			border-radius: 10px;
+		}
+		
+		.border {
+			padding: 5px;
+			border: 2px solid #a1a1a1;
+			border-radius: 10px;
+		}
+		
+		.padding {
+			padding: 1.6em;
+		}
+		
+		.vertcenter {
+			padding-top: .1em;
+			padding-bottom: .1em;
+		}
+		
+		.btn-group-wrap {
+			text-align: center;
+		}
+		
+		.center {
+			text-align: center;
+		}
+		
+		/*.btn {*/
+		/*	position: relative;*/
+		/*	display: inline-block;*/
+			/*padding: 17px 22px;*/
+		/*	z-index: 1;*/
+		/*	border: 0;*/
+		/*	outline: 0;*/
+		/*	cursor: pointer;*/
+			/*color: #fff;
+			text-align: center;
+			line-height: normal;*/
+			/*letter-spacing: 0.05em;*/
+		/*}*/
+		
+		.btn.red {
+			background: #ff5747;
+		}
+		
+		.btn.red span,
+		.btn.red:after {
+			background: #cb4539;
+		}
+		
+		.btn.green {
+			background: #2bdc33;
+		}
+		
+		.btn.green span,
+		.btn.green:after {
+			background: #23b32a;
+		}
+		
+		.btn.blue {
+			background: #16bfff;
+		}
+		
+		.btn.blue span,
+		.btn.blue:after {
+			background: #129acd;
+		}
+		
+		@media (min-width: 48em) {
+			.btn {
+				/*padding: 18px 30px;*/
+			}
+			.btn:after {
+				height: 6px;
+			}
+		}
+		
+		.btn-center-submit {
+			position: absolute;
+		}
+		.largeText {
+			font-size: 50px;
+		}
+		.top-bottom-padding {
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+		hr {
+			padding: 5px;
+			border-top: 2px solid #a1a1a1;
+		}
