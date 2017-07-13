@@ -16,24 +16,11 @@ var blueTxtText = "white";          //Text color for text input fields (default:
 
 var switcher = 0;
 
-function backgroundRed() {
-    setColor("red");
-}
-
-function backgroundBlue() {
-    setColor("blue");
-}
-
-function backgroundSwitch() {
-    if(switcher == 0) {
-        setColor("blue");
-        switcher = 1;
-    } else {
-        setColor("red");
-        switcher = 0;
-    }
-}
-
+/**
+ * Set the page background color, button color, and text color to match one of the themes
+ * 
+ * @param {String} color Color to switch to (red or blue)
+ */
 function setColor(color) {
     var btns = document.getElementsByClassName('btn-danger');
     var txts = document.getElementsByClassName('textBox');
@@ -85,5 +72,32 @@ function setColor(color) {
         }
         document.body.style.backgroundColor = blueBackground;
         document.body.style.color = blueText; 
+    }
+}
+
+/**
+ * Set the theme to red
+ */
+function backgroundRed() {
+    setColor("red");
+}
+
+/**
+ * Set the theme to blue
+ */
+function backgroundBlue() {
+    setColor("blue");
+}
+
+/**
+ * Switch the theme (red->blue or blue->red)
+ */
+function backgroundSwitch() {
+    if(switcher == 0) {
+        setColor("blue");
+        switcher = 1;
+    } else {
+        setColor("red");
+        switcher = 0;
     }
 }
