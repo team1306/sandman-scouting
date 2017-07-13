@@ -24,23 +24,19 @@ var switcher = 0;
 function setColor(color) {
     var btns = document.getElementsByClassName('btn-danger');
     var txts = document.getElementsByClassName('textBox');
-    var addsubbtns = document.getElementsByClassName('addsubButton');
+    var addsubbtns = document.getElementsByClassName("addsubButton");
     if (color == "red") {
         switcher = 0;
-        var i = 0;
-        while (i < btns.length) {
+        for (var i = 0; i < btns.length; i++) {
             btns[i].style.backgroundColor = blueBtn;
             btns[i].style.color = blueBtnText;
-            i++;
         }
-        i = 0;
-        while (i < txts.length) {
+        for (var i = 0; i < txts.length; i++) {
             txts[i].style.backgroundColor = blueTxt;
             txts[i].style.color = blueTxtText;
             i++;
         }
-        i = 0;
-        while (i < addsubbtns.length) {
+        for (var i = 0; i < addsubbtns.length; i++) {
             addsubbtns[i].style.backgroundColor = blueBtn;
             addsubbtns[i].style.color = blueBtnText;
             addsubbtns[i].style.borderColor = blueBtn;
