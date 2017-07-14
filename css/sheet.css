@@ -1,8 +1,3 @@
-body {
-    overflow-x: hidden;
-    width: 100%;
-}
-
 .not-active {
     cursor: default;
     pointer-events: none;
@@ -37,42 +32,6 @@ body {
     text-align: center;
 }
 
-.btn.red {
-    background: #ff5747;
-}
-
-.btn.red span,
-.btn.red:after {
-    background: #cb4539;
-}
-
-.btn.green {
-    background: #2bdc33;
-}
-
-.btn.green span,
-.btn.green:after {
-    background: #23b32a;
-}
-
-.btn.blue {
-    background: #16bfff;
-}
-
-.btn.blue span,
-.btn.blue:after {
-    background: #129acd;
-}
-
-@media (min-width: 48em) {
-    .btn {
-        /*padding: 18px 30px;*/
-    }
-    .btn:after {
-        height: 6px;
-    }
-}
-
 .btn-center-submit {
     position: absolute;
 }
@@ -82,8 +41,8 @@ body {
 }
 
 .top-bottom-padding {
-    margin-top: 10px;
     margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 hr {
