@@ -22,10 +22,10 @@ var switcher = 0;
  * @param {String} color Color to switch to (red or blue)
  */
 function setColor(color) {
-    var btns = document.getElementsByClassName('btn-danger');
-    var txts = document.getElementsByClassName('textBox');
+    var btns = document.getElementsByClassName("btn-danger");
+    var txts = document.getElementsByClassName("textBox");
     var addsubbtns = document.getElementsByClassName("addsubButton");
-    if (color == "red") {
+    if (color === "red") {
         switcher = 0;
         for (var i = 0; i < btns.length; i++) {
             btns[i].style.backgroundColor = blueBtn;
@@ -45,22 +45,19 @@ function setColor(color) {
         document.body.style.backgroundColor = redBackground;
         document.body.style.color = blueText;
     }
-    else if (color == "blue") {
+    else if (color === "blue") {
         switcher = 1;
-        var i = 0;
-        while (i < btns.length) {
+        for (var i = 0; i < btns.length; i++) {
             btns[i].style.backgroundColor = blueBtn;
             btns[i].style.color = blueBtnText;
             i++;
         }
-        i = 0;
-        while (i < txts.length) {
+        for (i = 0; i < txts.length; i++) {
             txts[i].style.backgroundColor = blueTxt;
             txts[i].style.color = blueTxtText;
             i++;
         }
-        i = 0;
-        while (i < addsubbtns.length) {
+        for (i = 0; i < addsubbtns.length; i++) {
             addsubbtns[i].style.backgroundColor = blueBtn;
             addsubbtns[i].style.color = blueBtnText;
             addsubbtns[i].style.borderColor = blueBtn;
