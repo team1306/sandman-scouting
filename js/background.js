@@ -1,18 +1,18 @@
 //RED COLOR VARS
-const redBackground = "#990000";      //Page background color (default #ff4040, FRC: #eb1c23)
-const redText = "black";              //Color for the text on the page (default: black)
-const redBtn = "red";                 //Background color for the buttons (default: red)
-const redBtnText = "white";           //Color for the button text (default: white)
-const redTxt = "red";                 //Background color for text input fields (default: red)  
-const redTxtText = "white";           //Text color for text input fields (default: white)
+const redBackground     = "#990000";        //Page background color (default #ff4040, FRC: #eb1c23)
+const redText           = "white";          //Color for the text on the page (default: black)
+const redBtn            = "black";          //Background color for the buttons (default: red)
+const redBtnText        = "white";          //Color for the button text (default: white)
+const redTxt            = "black";          //Background color for text input fields (default: red)  
+const redTxtText        = "white";          //Text color for text input fields (default: white)
 
 //BLUE COLOR VARS
-const blueBackground = "#0068b3";     //Page background color (default: #0068b3)
-const blueText = "white";             //Color for the text on the page (default: white)
-const blueBtn = "black";              //Color for the buttons when background is blue (default: black)
-const blueBtnText = "white";          //Color for the button text when background is blue (default: white)
-const blueTxt = "black";              //Background color for text input fields (default: black)
-const blueTxtText = "white";          //Text color for text input fields (default: white)
+const blueBackground    = "#0068b3";        //Page background color (default: #0068b3)
+const blueText          = "white";          //Color for the text on the page (default: white)
+const blueBtn           = "black";          //Color for the buttons when background is blue (default: black)
+const blueBtnText       = "white";          //Color for the button text when background is blue (default: white)
+const blueTxt           = "black";          //Background color for text input fields (default: black)
+const blueTxtText       = "white";          //Text color for text input fields (default: white)
 
 var switcher = 0;
 
@@ -28,22 +28,22 @@ function setColor(color) {
     if (color === "red") {
         switcher = 0;
         for (var i = 0; i < btns.length; i++) {
-            btns[i].style.backgroundColor = blueBtn;
-            btns[i].style.color = blueBtnText;
+            btns[i].style.backgroundColor = redBtn;
+            btns[i].style.color = redBtnText;
         }
         for (i = 0; i < txts.length; i++) {
-            txts[i].style.backgroundColor = blueTxt;
-            txts[i].style.color = blueTxtText;
+            txts[i].style.backgroundColor = redTxt;
+            txts[i].style.color = redTxtText;
             i++;
         }
         for (i = 0; i < addsubbtns.length; i++) {
-            addsubbtns[i].style.backgroundColor = blueBtn;
-            addsubbtns[i].style.color = blueBtnText;
-            addsubbtns[i].style.borderColor = blueBtn;
+            addsubbtns[i].style.backgroundColor = redBtn;
+            addsubbtns[i].style.color = redBtnText;
+            addsubbtns[i].style.borderColor = redBtn;
             i++;
         }
         document.body.style.backgroundColor = redBackground;
-        document.body.style.color = blueText;
+        document.body.style.color = redText;
     }
     else if (color === "blue") {
         switcher = 1;
