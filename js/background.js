@@ -27,41 +27,36 @@ function setColor(color) {
     var addsubbtns = document.getElementsByClassName("addsubButton");
     if (color === "red") {
         switcher = 0;
-        for (var i = 0; i < btns.length; i++) {
-            btns[i].style.backgroundColor = redBtn;
-            btns[i].style.color = redBtnText;
+        for (button of btns) {
+            button.style.backgroundColor = redBtn;
+            button.style.color = redBtnText;
         }
-        for (i = 0; i < txts.length; i++) {
-            txts[i].style.backgroundColor = redTxt;
-            txts[i].style.color = redTxtText;
-            i++;
+        for (text of txts) {
+            text.style.backgroundColor = redTxt;
+            text.style.color = redTxtText;
         }
-        for (i = 0; i < addsubbtns.length; i++) {
-            addsubbtns[i].style.backgroundColor = redBtn;
-            addsubbtns[i].style.color = redBtnText;
-            addsubbtns[i].style.borderColor = redBtn;
-            i++;
+        for (addsubbutton of addsubbtns) {
+            addsubbutton.style.backgroundColor = redBtn;
+            addsubbutton.style.color = redBtnText;
+            addsubbutton.style.borderColor = redBtn;
         }
         document.body.style.backgroundColor = redBackground;
         document.body.style.color = redText;
     }
     else if (color === "blue") {
         switcher = 1;
-        for (var i = 0; i < btns.length; i++) {
-            btns[i].style.backgroundColor = blueBtn;
-            btns[i].style.color = blueBtnText;
-            i++;
+        for (button of btns) {
+            button.style.backgroundColor = blueBtn;
+            button.style.color = blueBtnText;
         }
-        for (i = 0; i < txts.length; i++) {
-            txts[i].style.backgroundColor = blueTxt;
-            txts[i].style.color = blueTxtText;
-            i++;
+        for (text of txts) {
+            text.style.backgroundColor = blueTxt;
+            text.style.color = blueTxtText;
         }
-        for (i = 0; i < addsubbtns.length; i++) {
-            addsubbtns[i].style.backgroundColor = blueBtn;
-            addsubbtns[i].style.color = blueBtnText;
-            addsubbtns[i].style.borderColor = blueBtn;
-            i++;
+        for (addsubbutton of addsubbtns) {
+            addsubbutton.style.backgroundColor = blueBtn;
+            addsubbutton.style.color = blueBtnText;
+            addsubbutton.style.borderColor = blueBtn;
         }
         document.body.style.backgroundColor = blueBackground;
         document.body.style.color = blueText; 
