@@ -27,15 +27,15 @@ function setColor(color) {
     var addsubbtns = document.getElementsByClassName("addsubButton");
     if (color === "red") {
         switcher = 0;
-        for (button of btns) {
+        for (var button of btns) {
             button.style.backgroundColor = redBtn;
             button.style.color = redBtnText;
         }
-        for (text of txts) {
+        for (var text of txts) {
             text.style.backgroundColor = redTxt;
             text.style.color = redTxtText;
         }
-        for (addsubbutton of addsubbtns) {
+        for (var addsubbutton of addsubbtns) {
             addsubbutton.style.backgroundColor = redBtn;
             addsubbutton.style.color = redBtnText;
             addsubbutton.style.borderColor = redBtn;
@@ -45,15 +45,15 @@ function setColor(color) {
     }
     else if (color === "blue") {
         switcher = 1;
-        for (button of btns) {
+        for (var button of btns) {
             button.style.backgroundColor = blueBtn;
             button.style.color = blueBtnText;
         }
-        for (text of txts) {
+        for (var text of txts) {
             text.style.backgroundColor = blueTxt;
             text.style.color = blueTxtText;
         }
-        for (addsubbutton of addsubbtns) {
+        for (var addsubbutton of addsubbtns) {
             addsubbutton.style.backgroundColor = blueBtn;
             addsubbutton.style.color = blueBtnText;
             addsubbutton.style.borderColor = blueBtn;
