@@ -22,29 +22,47 @@ var switcher = 0;
  * @param {String} color Color to switch to (red or blue)
  */
 function setColor(color) {
+    if (color === "red") {
+        backgroundRed();
+    }
+    else if (color === "blue") {
+        backgroundBlue();
+    }
+}
+
+/**
+ * Set the theme to red
+ */
+function backgroundRed() {
     var btns = document.getElementsByClassName("btn-danger");
     var txts = document.getElementsByClassName("textBox");
     var addsubbtns = document.getElementsByClassName("addsubButton");
-    if (color === "red") {
-        switcher = 0;
-        for (var button of btns) {
+    switcher = 0;
+        for (let button of btns) {
             button.style.backgroundColor = redBtn;
             button.style.color = redBtnText;
         }
-        for (var text of txts) {
+        for (let text of txts) {
             text.style.backgroundColor = redTxt;
             text.style.color = redTxtText;
         }
-        for (var addsubbutton of addsubbtns) {
+        for (let addsubbutton of addsubbtns) {
             addsubbutton.style.backgroundColor = redBtn;
             addsubbutton.style.color = redBtnText;
             addsubbutton.style.borderColor = redBtn;
         }
         document.body.style.backgroundColor = redBackground;
         document.body.style.color = redText;
-    }
-    else if (color === "blue") {
-        switcher = 1;
+}
+
+/**
+ * Set the theme to blue
+ */
+function backgroundBlue() {
+    var btns = document.getElementsByClassName("btn-danger");
+    var txts = document.getElementsByClassName("textBox");
+    var addsubbtns = document.getElementsByClassName("addsubButton");
+    switcher = 1;
         for (var button of btns) {
             button.style.backgroundColor = blueBtn;
             button.style.color = blueBtnText;
@@ -59,22 +77,7 @@ function setColor(color) {
             addsubbutton.style.borderColor = blueBtn;
         }
         document.body.style.backgroundColor = blueBackground;
-        document.body.style.color = blueText; 
-    }
-}
-
-/**
- * Set the theme to red
- */
-function backgroundRed() {
-    setColor("red");
-}
-
-/**
- * Set the theme to blue
- */
-function backgroundBlue() {
-    setColor("blue");
+        document.body.style.color = blueText;
 }
 
 /**
