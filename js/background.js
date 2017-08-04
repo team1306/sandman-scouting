@@ -17,20 +17,6 @@ const blueTxtText       = "white";          //Text color for text input fields (
 var switcher = 0;
 
 /**
- * Set the page background color, button color, and text color to match one of the themes
- * 
- * @param {String} color Color to switch to (red or blue)
- */
-function setColor(color) {
-    if (color === "red") {
-        backgroundRed();
-    }
-    else if (color === "blue") {
-        backgroundBlue();
-    }
-}
-
-/**
  * Set the theme to red
  */
 function backgroundRed() {
@@ -78,6 +64,20 @@ function backgroundBlue() {
         }
         document.body.style.backgroundColor = blueBackground;
         document.body.style.color = blueText;
+}
+
+/**
+ * Set the page background color, button color, and text color to match one of the themes
+ * 
+ * @param {String} color Color to switch to (red or blue)
+ */
+function setColor(color) {
+    if (color === "red") {
+        backgroundRed();
+    }
+    else if (color === "blue") {
+        backgroundBlue();
+    }
 }
 
 /**
