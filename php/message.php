@@ -2,7 +2,7 @@
     /**
      * Each message array should contain a 'name', 'desc', 'type'
     */
-    if (!function_exists(sendMessage)) {
+    if (!function_exists('sendMessage')) {
         function sendMessage($message, $path) {
             $_SESSION['message'] = $message;
             //echo var_dump($message);
@@ -12,7 +12,7 @@
     /**
      * This checks for a message and displays it in a nice box
      */
-    if (!function_exists(checkMessage)) {
+    if (!function_exists('checkMessage')) {
         function checkMessage() {
             if (isset($_SESSION['message'])) {
                 echo '<br>';

@@ -1,11 +1,11 @@
 <?php include "global.php"; ?>
 
 	<!-- Custom CSS -->
-	<link href="../css/checkboxes.css" rel="stylesheet">
-	<link href="../css/swagboxes.css" rel="stylesheet">
-	<link href="../css/sheet.css" rel="stylesheet">
-	<link href="../css/input.css" rel="stylesheet">
-	<link href="../css/star-rating.css" rel="stylesheet">
+	<link href="css/checkboxes.css" rel="stylesheet">
+	<link href="css/swagboxes.css" rel="stylesheet">
+	<link href="css/sheet.css" rel="stylesheet">
+	<link href="css/input.css" rel="stylesheet">
+	<link href="css/star-rating.css" rel="stylesheet">
 
 	<!-- Javascript -->
 	<!--<script type="text/javascript" src="js/report2016globalspit.js"></script>-->
