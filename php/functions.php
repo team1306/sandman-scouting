@@ -1,7 +1,7 @@
 <?php
 function getUsername($userID) {
     include "const.php";
-    $conn = new mysqli($DBservername, $DBuser, $DBpassword, $DBname);
+    $conn = new mysqli($GLOBALS['DB']['HOST'], $GLOBALS['DB']['USER'], $GLOBALS['DB']['PW'], $GLOBALS['DB']['DATABASE']);
     $getUsernameSQL = mysqli_query($conn, "SELECT `name` FROM `users` WHERE `id`=" . $userID);
     while ($row = mysqli_fetch_array($getUsernameSQL)) {
         return $row['name'];

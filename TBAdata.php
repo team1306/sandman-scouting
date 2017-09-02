@@ -19,12 +19,12 @@ class TBAdata {
         $headerOptions = array(
           'http'=>array(
             'method'=>"GET",
-            'header'=>$GLOBALS['TBA']['header'] . "\r\n"
+            'header'=>$GLOBALS['TBA']['HEADER'] . "\r\n"
           )
         );
         $headerData = stream_context_create($headerOptions);
         
-        $json = file_get_contents('https://www.thebluealliance.com/api/v2/event/' . $GLOBALS['TBA']['year'] . $GLOBALS['TBA']['eventCode'] . '/matches', false, $headerData);
+        $json = file_get_contents('https://www.thebluealliance.com/api/v2/event/' . $GLOBALS['TBA']['YEAR'] . $GLOBALS['TBA']['EVENT_CODE'] . '/matches', false, $headerData);
         
         $TBAdataArray = json_decode($json, true);
         
@@ -110,20 +110,20 @@ class TBAdata {
     }
     function cacheData() {
         $jsonData = json_encode($this->teams);
-        file_put_contents($GLOBALS['TBA']['cache']['teams'], $jsonData);
-        file_put_contents($GLOBALS['TBA']['cache']['teams']['php'], $jsonData);
+        file_put_contents($GLOBALS['TBA']['PATH']['CACHE']['TEAMS'], $jsonData);
+        file_put_contents($GLOBALS['TBA']['PATH']['CACHE']['TEAMS']['php'], $jsonData);
         
         $jsonDataMatch = json_encode($this->matches);
-        file_put_contents($GLOBALS['TBA']['cache']['matches'], $jsonDataMatch);
-        file_put_contents($GLOBALS['TBA']['cache']['matches']['php'], $jsonDataMatch);
+        file_put_contents($GLOBALS['TBA']['PATH']['CACHE']['MATCHES'], $jsonDataMatch);
+        file_put_contents($GLOBALS['TBA']['PATH']['CACHE']['MATCHES']['php'], $jsonDataMatch);
 
         
         $jsonUpdate = json_encode($this->updateTime);
-        file_put_contents($GLOBALS['TBA']['cache']['update'], $jsonUpdate);
-        file_put_contents($GLOBALS['TBA']['cache']['update']['php'], $jsonUpdate);
+        file_put_contents($GLOBALS['TBA']['PATH']['CACHE']['UPDATE'], $jsonUpdate);
+        file_put_contents($GLOBALS['TBA']['PATH']['CACHE']['UPDATE']['php'], $jsonUpdate);
 
         
-        // $oldDatesJSON = file_get_contents($GLOBALS['TBA']['cache']['update']['log']);
+        // $oldDatesJSON = file_get_contents($GLOBALS['TBA']['PATH']['CACHE']['UPDATE']['log']);
         // $oldDates = json_decode($oldDatesJSON);
     }
     function getTeam($comp_level, $set_number, $match_number, $alliance, $team) {
@@ -133,12 +133,12 @@ class TBAdata {
         else if ($alliance == 2) {
             $alliance = 'blue';
         }
-        $jsonString = file_get_contents($GLOBALS['TBA']['cache']['teams']);
+        $jsonString = file_get_contents($GLOBALS['TBA']['PATH']['CACHE']['TEAMS']);
         $data = json_decode($jsonString, true);
         return $data[$comp_level][$set_number][$match_number][$alliance][$team];
     }
     function getUpdateTime() {  //TODO check if it is actually caching the timestamp
-        $jsonString = file_get_contents($GLOBALS['TBA']['cache']['update']);
+        $jsonString = file_get_contents($GLOBALS['TBA']['PATH']['CACHE']['UPDATE']);
         $data = json_decode($jsonString, true);
         return str_replace('Date: ','',$data);
     }

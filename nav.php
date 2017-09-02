@@ -10,22 +10,22 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.php"><?php echo $GLOBALS['codename'];?></a>
+      <a class="navbar-brand" href="index.php"><?php echo $GLOBALS['APP_INFO']['CODENAME'];?></a>
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="<?php echo $GLOBALS['path']['index']; ?>">Home</a></li>
+        <li><a href="<?php echo $GLOBALS['PATH']['INDEX']; ?>">Home</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Scouting <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="<?php echo $GLOBALS['path']['matchSheet'];?>"><?php echo $GLOBALS['text']['matchSheet'];?></a></li>
-            <li><a href="<?php echo $GLOBALS['path']['pitSheet'];?>"><?php echo $GLOBALS['text']['pitSheet'];?></a></li>
-            <li><a href="<?php echo $GLOBALS['path']['allianceSheet'];?>"><?php echo $GLOBALS['text']['allianceSheet'];?></a></li>
+            <li><a href="<?php echo $GLOBALS['PATH']['MATCH_SHEET'];?>"><?php echo $GLOBALS['MODALS']['MATCH_SHEET'];?></a></li>
+            <li><a href="<?php echo $GLOBALS['PATH']['PIT_SHEET'];?>"><?php echo $GLOBALS['MODALS']['PIT_SHEET'];?></a></li>
+            <li><a href="<?php echo $GLOBALS['PATH']['ALLIANCE_SHEET'];?>"><?php echo $GLOBALS['MODALS']['ALLIANCE_SHEET'];?></a></li>
           </ul>
         </li>
-        <li><a href="<?php echo $GLOBALS['path']['reportSheet'];?>"><?php echo $GLOBALS['text']['reportSheet'];?></a></li>
-        <li><a href="<?php echo $GLOBALS['path']['databaseSheet'];?>"><?php echo $GLOBALS['text']['databaseSheet'];?></a></li>
-        <li><a href="<?php echo $GLOBALS['path']['admin'];?>"><?php echo $GLOBALS['text']['admin'];?></a></li>
+        <li><a href="<?php echo $GLOBALS['PATH']['REPORT_SHEET'];?>"><?php echo $GLOBALS['MODALS']['REPORT_SHEET'];?></a></li>
+        <li><a href="<?php echo $GLOBALS['PATH']['DATABASE_SHEET'];?>"><?php echo $GLOBALS['MODALS']['DATABASE_SHEET'];?></a></li>
+        <li><a href="<?php echo $GLOBALS['PATH']['ADMIN'];?>"><?php echo $GLOBALS['MODALS']['ADMIN'];?></a></li>
       </ul>
       <ul class="nav navbar-nav navbar-top-links navbar-right">
         <li>
@@ -38,7 +38,7 @@
                                 <img src="' . $_SESSION['userArray']['image_24'] . '"> ' . $_SESSION['userArray']['name'] . ' <span class="caret"></span>
                               </button>
                               <ul class="dropdown-menu">';
-                              if ($GLOBALS['enable']['achievements']) {
+                              if ($GLOBALS['ACHIEVEMENTS']['ENABLE']) {
                                 echo '<li ' . $disabled . '><a href="/achievement.php?userid=' . $_SESSION['userArray']['id'] . '"><i class="fa fa-star-o" aria-hidden="true"></i> Achievements</a></li>
                                 <li role="separator" class="divider"></li>';
                               }
@@ -51,7 +51,7 @@
             else {
                 echo '
                   <div style="padding: 5px">
-                      <a href="https://slack.com/oauth/authorize?scope=identity.basic,identity.email,identity.team,identity.avatar&client_id=3325716591.80369238817&redirect_uri=' . $GLOBALS['externalURL'] . $GLOBALS['OAUTH']['URI'] . '"><img alt="Sign in with Slack" height="40" width="172" src="https://platform.slack-edge.com/img/sign_in_with_slack.png" srcset="https://platform.slack-edge.com/img/sign_in_with_slack.png 1x, https://platform.slack-edge.com/img/sign_in_with_slack@2x.png 2x" /></a>
+                      <a href="https://slack.com/oauth/authorize?scope=identity.basic,identity.email,identity.team,identity.avatar&client_id=3325716591.80369238817&redirect_uri=' . $GLOBALS['APP_INFO']['EXTERNAL_URL'] . $GLOBALS['OAUTH']['URI'] . '"><img alt="Sign in with Slack" height="40" width="172" src="https://platform.slack-edge.com/img/sign_in_with_slack.png" srcset="https://platform.slack-edge.com/img/sign_in_with_slack.png 1x, https://platform.slack-edge.com/img/sign_in_with_slack@2x.png 2x" /></a>
                   </div>';
             }
         ?></li>
@@ -60,7 +60,7 @@
             echo '<li><a style="cursor:pointer" data-toggle="modal" data-target="#loginModal"><i class="fa fa-user" aria-hidden="true"></i></a></li>';
           }
           else {
-            echo '<li><a href="' . $GLOBALS['path']['settings'] . '"><i class="fa fa-cog" aria-hidden="true"></i></a></li>';
+            echo '<li><a href="' . $GLOBALS['PATH']['SETTINGS'] . '"><i class="fa fa-cog" aria-hidden="true"></i></a></li>';
           }
         ?>
       </ul>

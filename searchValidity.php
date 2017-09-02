@@ -6,12 +6,12 @@ include 'TBAdata.php';
 $matchNum = $_GET['matchnum'];
 $matchSet = $_GET['set'];
 
-$teamnum[0] = getTeam($GLOBALS['TBA']['matchType'], $matchSet, $matchNum, 1, 0);
-$teamnum[1] = getTeam($GLOBALS['TBA']['matchType'], $matchSet, $matchNum, 1, 1);
-$teamnum[2] = getTeam($GLOBALS['TBA']['matchType'], $matchSet, $matchNum, 1, 2);
-$teamnum[3] = getTeam($GLOBALS['TBA']['matchType'], $matchSet, $matchNum, 2, 0);
-$teamnum[4] = getTeam($GLOBALS['TBA']['matchType'], $matchSet, $matchNum, 2, 1);
-$teamnum[5] = getTeam($GLOBALS['TBA']['matchType'], $matchSet, $matchNum, 2, 2);
+$teamnum[0] = getTeam($GLOBALS['TBA']['MATCH_TYPE'], $matchSet, $matchNum, 1, 0);
+$teamnum[1] = getTeam($GLOBALS['TBA']['MATCH_TYPE'], $matchSet, $matchNum, 1, 1);
+$teamnum[2] = getTeam($GLOBALS['TBA']['MATCH_TYPE'], $matchSet, $matchNum, 1, 2);
+$teamnum[3] = getTeam($GLOBALS['TBA']['MATCH_TYPE'], $matchSet, $matchNum, 2, 0);
+$teamnum[4] = getTeam($GLOBALS['TBA']['MATCH_TYPE'], $matchSet, $matchNum, 2, 1);
+$teamnum[5] = getTeam($GLOBALS['TBA']['MATCH_TYPE'], $matchSet, $matchNum, 2, 2);
 
 $msqlcon = mysqli_connect("localhost","data","mxwZsnKw5FtD8uX8","sandman");
 if (mysqli_connect_errno()) {

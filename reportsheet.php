@@ -78,10 +78,10 @@ echo "<td>" . $row['id'] . "</td>";
 echo "<td>" . $row['matchNum'] . "</td>";
 echo "<td>" . $row['teamNum'] . "</td>";
 if ($row['isRed'] == 1) {
-	echo "<td>" . $red . "</td>";
+	echo "<td>" . $GLOBALS['MODALS']['RED'] . "</td>";
 }
 else {
-	echo "<td>" . $blue . "</td>";
+	echo "<td>" . $GLOBALS['MODALS']['BLUE'] . "</td>";
 }
 //echo "<td>" . $row['isRed'] . "</td>";
 echo "<td>" . $row['teleCap.notes'] . "</td>";

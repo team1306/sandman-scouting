@@ -51,7 +51,7 @@
     $message['name'] = "Success!";
     $message['desc'] = "Account created, you have been logged in";
     $message['type'] = "success";
-    sendMessage($message, $GLOBALS['path']['index']);
+    sendMessage($message, $GLOBALS['PATH']['INDEX']);
     checkUser(true);
   }
   ?>

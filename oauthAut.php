@@ -85,7 +85,7 @@ else {
 //     }
 // }
 // else {
-//     $achievementInsertUserSQL = "INSERT INTO " . $achievementTable . " (`id`, `userid`, `username`) VALUES (DEFAULT,'" . $_SESSION['userArray']['id'] . "','" . $_SESSION['userArray']['name'] . "')";
+//     $achievementInsertUserSQL = "INSERT INTO " . $GLOBALS['DB']['TABLE']['ACHIEVEMENT'] . " (`id`, `userid`, `username`) VALUES (DEFAULT,'" . $_SESSION['userArray']['id'] . "','" . $_SESSION['userArray']['name'] . "')";
 //     if ($dbDataConn->query($achievementInsertUserSQL) == TRUE) {
 //         if ($oauthDebug) {
 //             echo "Add user to achievement db success";

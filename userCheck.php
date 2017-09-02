@@ -23,15 +23,15 @@ if (!function_exists(checkUser)) {
     		    $message['name'] = "Error!";
     		    $message['desc'] = "Please login or create an account!";
     		    $message['type'] = 'danger';
-                sendMessage($message, $GLOBALS['path']['index']);
-        	    //echo '<script> window.location = "' . $GLOBALS['path']['index'] . '";</script>';
+                sendMessage($message, $GLOBALS['PATH']['INDEX']);
+        	    //echo '<script> window.location = "' . $GLOBALS['PATH']['INDEX'] . '";</script>';
             }
         	else if (($_SESSION['userArray']['scoutTeam'] == 0) || ($_SESSION['userArray']['scoutingAlliance'] == 0) || ($_SESSION['userArray']['scoutingNumber'] == 0) || ($_SESSION['teamArray']['num'] == 0) || !isset($_SESSION['userArray']['scoutTeam']) || !isset($_SESSION['userArray']['scoutingAlliance']) || !isset($_SESSION['userArray']['scoutingNumber']) || !isset($_SESSION['teamArray']['num'])) {
     			$message['name'] = "Error!";
     		    $message['desc'] = "Please set all settings!";
     		    $message['type'] = 'danger';
-                sendMessage($message, $GLOBALS['path']['settings']);
-        	    //echo '<script> window.location = "' . $GLOBALS['path']['settings'] . '";</script>';
+                sendMessage($message, $GLOBALS['PATH']['SETTINGS']);
+        	    //echo '<script> window.location = "' . $GLOBALS['PATH']['SETTINGS'] . '";</script>';
         	}
         }
     }

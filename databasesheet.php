@@ -44,7 +44,7 @@ input[type=button], input[type=number]{
 include 'php/dbDataConn.php';
 include 'php/getScoutInfo.php';
 
-$result = mysqli_query($dbDataConn, "SELECT * FROM " . $GLOBALS['DB']['table']['matchscouting'] . " ORDER BY id DESC");
+$result = mysqli_query($dbDataConn, "SELECT * FROM " . $GLOBALS['DB']['TABLE']['MATCH_SCOUTING'] . " ORDER BY id DESC");
 
 echo "<div class='container' style='width:90%'><table align='center' class='table table-striped'>
 <thead>

@@ -1,4 +1,4 @@
-<?php include "global.php"; 
+<?php include "global.php";
     include "php/dbDataConn.php"; ?>
 </head>
 
@@ -67,15 +67,15 @@ else {
 $teleNotes = $_POST['teleNotes'];
 
 if ($isRed != 1) {
-  $isRed = 0; 
+  $isRed = 0;
 }
 
 $cleanNotes = mysqli_real_escape_string($dbDataConn, $teleNotes);
 
-$insertSQL = "INSERT INTO " . $GLOBALS['DB']['table']['matchscouting'] . "(`id`, `scoutTeam`, `userID`, `userTeamNum`, `teamNum`, `matchNum`, `isRed`, 
-`autoCap.gear`, `autoCap.gearSuccess`, `autoCap.gearPeg`, `autoCap.passBaseline`, `autoCap.KPA`, `autoCap.highGoalAccuracy`, `autoCap.highGoalSpeed`, 
+$insertSQL = "INSERT INTO " . $GLOBALS['DB']['TABLE']['MATCH_SCOUTING'] . "(`id`, `scoutTeam`, `userID`, `userTeamNum`, `teamNum`, `matchNum`, `isRed`,
+`autoCap.gear`, `autoCap.gearSuccess`, `autoCap.gearPeg`, `autoCap.passBaseline`, `autoCap.KPA`, `autoCap.highGoalAccuracy`, `autoCap.highGoalSpeed`,
 
-`teleCap.gearSuccess`, `teleCap.gearFailed`, `teleCap.KPA`, `teleCap.highGoalAccuracy`, `teleCap.highGoalSpeed`, `teleCap.lowGoalAccuracy`, `teleCap.lowGoalSpeed`, `teleCap.ballCycles`, 
+`teleCap.gearSuccess`, `teleCap.gearFailed`, `teleCap.KPA`, `teleCap.highGoalAccuracy`, `teleCap.highGoalSpeed`, `teleCap.lowGoalAccuracy`, `teleCap.lowGoalSpeed`, `teleCap.ballCycles`,
 `teleCap.climb`, `autoCap.mobile`, `teleCap.groundGear`, `teleCap.notes`, `teleCap.disabled`) VALUES (
 
 DEFAULT,
@@ -116,8 +116,8 @@ if ($dbDataConn->query($insertSQL) === TRUE) {
         <a href='../$matchScoutingPath'><button type='button' class='btn btn-success btn-xl' style='width:100%; height:200px;'><h1 style='font-size: 500%;'>Click Here</h1></button></a>
     </div>
     ";
-    echo "<h1> New record created successfully. Last inserted ID is: <strong>" . $last_id . "</strong></h1>"; 
-} 
+    echo "<h1> New record created successfully. Last inserted ID is: <strong>" . $last_id . "</strong></h1>";
+}
 else {
     echo "Error: " . $insertSQL . "<br>" . $dbDataConn->error . "
     <div class='container'>
@@ -126,18 +126,18 @@ else {
     ";
 }
 
-if ($GLOBALS['SlackBot']['enable']) {
+if ($GLOBALS['SLACK_BOT']['ENABLE']) {
     require '/home/ubuntu/workspace/vendor/autoload.php';
-    $client = new Maknz\Slack\Client($GLOBALS['SlackBot']['slackhook']);
-    
+    $client = new Maknz\Slack\Client($GLOBALS['SLACK_BOT']['SLACK_HOOK']);
+
     $settings = [
-        'username' => $GLOBALS['SlackBot']['username'],
-        'channel' => $GLOBALS['SlackBot']['reportchannel'],
+        'username' => $GLOBALS['SLACK_BOT']['NAME'],
+        'channel' => $GLOBALS['SLACK_BOT']['REPORT_CHANNEL'],
         'link_names' => true
     ];
-    
-    $selectMatchSQL = mysqli_query($dbDataConn, "SELECT * FROM " . $GLOBALS['DB']['table']['matchscouting'] . " ORDER BY id DESC limit 1");
-    
+
+    $selectMatchSQL = mysqli_query($dbDataConn, "SELECT * FROM " . $GLOBALS['DB']['TABLE']['MATCH_SCOUTING'] . " ORDER BY id DESC limit 1");
+
     while ($row = mysqli_fetch_array($selectMatchSQL)) {
         if ($GLOBALS['SlackBot']['debug']['all']) {
             echo "LAST MATCH: " . $row['matchNum'] . "<br>";
@@ -146,12 +146,12 @@ if ($GLOBALS['SlackBot']['enable']) {
             if ($GLOBALS['SlackBot']['debug']['all']) {
                 echo "New Match!<br>";
             }
-            $selectLastMatchSQL = mysqli_query($dbDataConn, "SELECT * FROM " . $GLOBALS['DB']['table']['matchscouting'] . " WHERE `matchNum` = " . ($row['matchNum']-1));
+            $selectLastMatchSQL = mysqli_query($dbDataConn, "SELECT * FROM " . $GLOBALS['DB']['TABLE']['MATCH_SCOUTING'] . " WHERE `matchNum` = " . ($row['matchNum']-1));
             $i = 0;
             $totals['red'] = 0;
             $totals['blue'] = 0;
             $totals['total'] = 0;
-            
+
             $data = 0;
             while ($row1 = mysqli_fetch_array($selectLastMatchSQL)) {
                 if ($row1['isRed']) {
@@ -178,8 +178,8 @@ if ($GLOBALS['SlackBot']['enable']) {
 // $client = new Maknz\Slack\Client('https://hooks.slack.com/services/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');
 
 // $settings = [
-//     'username' => $botName,
-//     'channel' => $reportChannel,
+//     'username' => $GLOBALS['SLACK_BOT']['NAME'],
+//     'channel' => $GLOBALS['SLACK_BOT']['REPORT_CHANNEL'],
 //     'link_names' => true
 // ];
 
@@ -191,7 +191,7 @@ if ($GLOBALS['SlackBot']['enable']) {
 //     if ($matchnum > $row['matchNum']) {
 //         $prevMatch = $matchnum - 1;
 //         //echo "PREV MATCH: " . $prevMatch . "<br>";
-//         $selectLastMatchSQL = mysqli_query($conn, "SELECT * FROM `$matchScoutingTable` WHERE `matchNum` = " . $prevMatch);
+//         $selectLastMatchSQL = mysqli_query($conn, "SELECT * FROM $GLOBALS['DB']['TABLE']['MATCH_SCOUTING'] WHERE `matchNum` = " . $prevMatch);
 //         $numSubmitted = 0;
 //         $redTotal = 0;
 //         $blueTotal = 0;
@@ -204,13 +204,13 @@ if ($GLOBALS['SlackBot']['enable']) {
 //                 //echo "Found Red!";
 //             }
 //             $blueTotal = $numSubmitted-$redTotal;
-            
+
 //             if ($row['userid'] == "") {
 //                 if ($subUsernameString == "") {
-//                     $subUsernameString = $noUsernameName . " (" . $row['teamNum'] . ")";
-//                 } 
+//                     $subUsernameString = $GLOBALS['MODALS']['NO_LOGIN_NAME'] . " (" . $row['teamNum'] . ")";
+//                 }
 //                 else {
-//                     $subUsernameString = $subUsernameString . ", " . $noUsernameName . " (" . $row['teamNum'] . ")";
+//                     $subUsernameString = $subUsernameString . ", " . $GLOBALS['MODALS']['NO_LOGIN_NAME'] . " (" . $row['teamNum'] . ")";
 //                 }
 //             }
 //             else {
@@ -226,20 +226,20 @@ if ($GLOBALS['SlackBot']['enable']) {
 //             echo "Users: " . $subUsernameString;
 //         }
 //         $color = '#3AA3E3';
-//         if ($numSubmitted != $numTeamsPerMatch) {
+//         if ($numSubmitted != $GLOBALS['MODALS']['TEAMS_PER_MATCH']) {
 //             $color = "#ff0000";
 //         }
 //         else {
 //             $notifyUsers = "None";
 //         }
-//         if($numSubmitted != $numTeamsPerMatch) {
+//         if($numSubmitted != $GLOBALS['MODALS']['TEAMS_PER_MATCH']) {
 //             //echo "RED: " . $redTotal;
 //             //Post slackbot here
 //             $client = new Maknz\Slack\Client('https://hooks.slack.com/services/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', $settings);
-    
+
 //             $client->attach([
-//                 'title' => '(' . $redTotal . '/' . $numTeamsPerMatch/2 . ' Red) | (' . $blueTotal . '/' . $numTeamsPerMatch/2 . ' Blue)',
-//                 'title_link' => $externalURL,
+//                 'title' => '(' . $redTotal . '/' . $GLOBALS['MODALS']['TEAMS_PER_MATCH']/2 . ' Red) | (' . $blueTotal . '/' . $GLOBALS['MODALS']['TEAMS_PER_MATCH']/2 . ' Blue)',
+//                 'title_link' => $GLOBALS['APP_INFO']['EXTERNAL_URL'],
 //                 'fallback' => $description,
 //                 'text' => $description,
 //                 'color' => $color,
@@ -271,12 +271,12 @@ if ($GLOBALS['SlackBot']['enable']) {
 //     }
 // }
 
-// if (isset($userid) && $achievementEnable) {
-//     $achievementCheckSQL = mysqli_query($conn, "SELECT * FROM " . $matchScoutingTable . " WHERE userid='" . $userid . "'");
+// if (isset($userid) && $GLOBALS['ACHIEVEMENTS']['ENABLE']) {
+//     $achievementCheckSQL = mysqli_query($conn, "SELECT * FROM " . $GLOBALS['DB']['TABLE']['MATCH_SCOUTING'] . " WHERE userid='" . $userid . "'");
 //     $achievementNumRows = mysqli_num_rows($achievementCheckSQL);
-//     $achievementEarnedSQL = mysqli_query($conn, "SELECT * FROM " . $achievementTable . " WHERE `userid` = '" . $userid . "'");
+//     $achievementEarnedSQL = mysqli_query($conn, "SELECT * FROM " . $GLOBALS['DB']['TABLE']['ACHIEVEMENT'] . " WHERE `userid` = '" . $userid . "'");
 //     while($achievements = mysqli_fetch_array($achievementEarnedSQL)) {
-//         for ($i = 0; $i<$achievementStartCol*2; $i++) {
+//         for ($i = 0; $i<$GLOBALS['ACHIEVEMENTS']['START_COL']*2; $i++) {
 //             array_shift($achievements);
 //         }
 //         print_r(var_dump($achievements));
@@ -286,9 +286,9 @@ if ($GLOBALS['SlackBot']['enable']) {
 //     }
 // }
 
-/*$sqlAchievements = mysqli_query($conn, "SELECT * FROM " . $achievementTable . " WHERE id=" . $userid);
+/*$sqlAchievements = mysqli_query($conn, "SELECT * FROM " . $GLOBALS['DB']['TABLE']['ACHIEVEMENT'] . " WHERE id=" . $userid);
 while($row = mysqli_fetch_array($sqlAchievements)){
-    //echo 
+    //echo
 }*/
 
 

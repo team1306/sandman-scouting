@@ -29,13 +29,13 @@
       $message['name'] = "Succes!";
       $message['desc'] = "You are now logged in.";
       $message['type'] = "success";
-      sendMessage($message, $GLOBALS['path']['index']);
+      sendMessage($message, $GLOBALS['PATH']['INDEX']);
     }
     else if (!$GLOBALS['login']['debug']['loginSystem']) {
       $message['name'] = "Login incorrect!";
       $message['desc'] = "Please either make a new account or ask a DB manager for assistance.";
       $message['type'] = "danger";
-      sendMessage($message, $GLOBALS['path']['index']);
+      sendMessage($message, $GLOBALS['PATH']['INDEX']);
     }
   }
   ob_flush();

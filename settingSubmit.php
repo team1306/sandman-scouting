@@ -17,7 +17,7 @@ while($row = mysqli_fetch_array($users)) {
     }
 }
 if ($unameInUse) {
-    echo "<div class='container'><h2>This username is in use! Please use another username. <a href='" . $GLOBALS['path']['settings'] . "'>Back</h2></a></div>";
+    echo "<div class='container'><h2>This username is in use! Please use another username. <a href='" . $GLOBALS['PATH']['SETTINGS'] . "'>Back</h2></a></div>";
 }
 else if ($_POST['uname'] == null && !$_SESSION['userArray']['slackSignIn']) {
     echo "<div class='container'><h2>Your username can not be null!</h2><a href='/'><button type='button' class='btn btn-success btn-xl' style='width:100%; height:200px;'><h1 style='font-size: 500%;'>Home</h1></button></a></div>";
@@ -53,7 +53,7 @@ else {
             $message['name'] = "Success!";
             $message['desc'] = "Settings updated.";
             $message['type'] = "success";
-            sendMessage($message, $GLOBALS['path']['index']);
+            sendMessage($message, $GLOBALS['PATH']['INDEX']);
         }
     } 
     else {

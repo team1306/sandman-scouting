@@ -20,7 +20,7 @@ if (!ISSET($_SESSION['teamArray']['num'])) {
 	<meta name="description" content="">
 	<meta name="author" content="">
 
-	<title><?php echo $title;?></title>
+	<title><?php echo $GLOBALS['APP_INFO']['TITLE'];?></title>
 
 	<!-- Bootstrap Core CSS -->
 	<link href="css/bootstrap.css" rel="stylesheet">
