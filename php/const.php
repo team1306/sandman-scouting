@@ -1,6 +1,6 @@
 <?php
     $GLOBALS['APP_INFO']['CODENAME']      = "Slipstream";
-    $GLOBALS['APP_INFO']['VERSION']       = "4.0.1";
+    $GLOBALS['APP_INFO']['VERSION']       = "5.0.0";
     $GLOBALS['APP_INFO']['EXTERNAL_URL']  = "https://samr.mynetgear.com";
     $GLOBALS['OAUTH']['URI']              = "/oauthAut.php";
     $GLOBALS['APP_INFO']['TITLE']         = "2017 Scouting";
