@@ -24,7 +24,7 @@ if (!ISSET($_SESSION['teamArray']['num'])) {
 
 	<!-- Bootstrap Core CSS -->
 	<link href="css/bootstrap.css" rel="stylesheet">
-	
+
 	<!-- Favicon -->
 	<link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
 	<link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
@@ -51,6 +51,6 @@ if (!ISSET($_SESSION['teamArray']['num'])) {
 	<link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
 	<link href="css/navbar.css" rel="stylesheet">
 	<!--<link href="css/load.css" rel="stylesheet">-->
-	
-	<script type="text/javascript" src="../js/jquery-2.1.1.min.js"></script>
-	<script type="text/javascript" src="../js/bootstrap.js"></script>
+
+	<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>

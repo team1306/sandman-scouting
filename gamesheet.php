@@ -1,5 +1,5 @@
-<?php 
-	ob_start(); 
+<?php
+	ob_start();
 	include "global.php"; ?>
 
 	<!-- CSS -->
@@ -12,12 +12,12 @@
 	<link href="../css/image-picker.css" rel="stylesheet">
 
 	<!-- Javascript -->
-	<script type="text/javascript" src="../js/cookie.js"></script>
-	<script type="text/javascript" src="../js/report2017regionals.js"></script>
-	<script type="text/javascript" src="../js/background.js"></script>
-	<script type="text/javascript" src="../js/star-rating.js"></script>
-	<script type="text/javascript" src="../js/image-picker.js"></script>
-	
+	<script type="text/javascript" src="js/cookie.js"></script>
+	<script type="text/javascript" src="js/report2017regionals.js"></script>
+	<script type="text/javascript" src="js/background.js"></script>
+	<script type="text/javascript" src="js/star-rating.js"></script>
+	<script type="text/javascript" src="js/image-picker.js"></script>
+
 	<!-- Custom gamesheet CSS -->
 	<style>
 		input[type=number] {
@@ -73,7 +73,7 @@ function setValues() {
 	document.getElementById("teleKPAtb").value = 0;
 	document.getElementById("teleGearSuccesstb").value = 0;
 	document.getElementById("teleGearFailtb").value = 0;
-	
+
 	//Set matchnumber to the current match number and set the team to the data from TBA
 	var matchNum = <?php include "getMatchNum.php"; echo getNextMatch();?>;
 	var team = '<?php include "TBAdata.php"; echo getTeam('qm', 1, getNextMatch(), $_SESSION['userArray']['scoutingAlliance'], ($_SESSION['userArray']['scoutingNumber']-1)); ?>';
@@ -87,7 +87,7 @@ $(document).ready(function () {
 </script>
 
 <body onload="load();">
-	<?php 
+	<?php
 		include "nav.php";
 		include "userCheck.php";
 		checkUser(true);
@@ -173,9 +173,9 @@ $(document).ready(function () {
 							<!--	<h4 style="padding-top:15px;">Low Goals</h4>-->
 							<!--</div>-->
 						</div>
-						
+
 						<hr>
-						
+
 						<div class="row">
 							<div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
 								<h4 class="center"><strong>High Goal Accuracy<strong><br><span id="autoHighGoalAccuracy-caption"></span></h4>
@@ -300,7 +300,7 @@ $(document).ready(function () {
 			<input class="btn btn-danger btn-lg" style="display: block; width: 100%; border: 0px;" type="submit" value="Submit" />
 			<br>
 			<br>
-		</div>	
+		</div>
 		<div class="modal fade" id="autoGearModal">
 		    <div class="modal-dialog blackText">
 		      <!-- Modal content-->
