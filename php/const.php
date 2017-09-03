@@ -1,9 +1,12 @@
 <?php
+    // App info
+    $GLOBALS['APP_INFO']['TITLE']         = "2018 Scouting";
     $GLOBALS['APP_INFO']['CODENAME']      = "Slipstream";
     $GLOBALS['APP_INFO']['VERSION']       = "5.0.0";
-    $GLOBALS['APP_INFO']['EXTERNAL_URL']  = "https://samr.mynetgear.com";
-    $GLOBALS['OAUTH']['URI']              = "/oauthAut.php";
-    $GLOBALS['APP_INFO']['TITLE']         = "2017 Scouting";
+    $GLOBALS['APP_INFO']['EXTERNAL_URL']  = "YOUR_URL_HERE";
+
+    // Path from root to oauth login page.
+    $GLOBALS['OAUTH']['URI']              = "/sandman/oauthAut.php";
     $GLOBALS['MODALS']['RED']             = "Red";
     $GLOBALS['MODALS']['BLUE']            = "Blue";
     $GLOBALS['MODALS']['TEAMS_PER_MATCH'] = 6;
@@ -11,7 +14,7 @@
 
     $GLOBALS['scoutingTeams'] = array(1259, 1306, 2077, 5148, 5976, 6574);
 
-    //Paths and text
+    // Paths and modals
     $GLOBALS['PATH']['INDEX']             = "index";
     $GLOBALS['PATH']['SETTINGS']          = "settings";
     $GLOBALS['PATH']['ADMIN']             = "admin";
@@ -27,10 +30,11 @@
     $GLOBALS['PATH']['DATABASE_SHEET']    = "databasesheet";
     $GLOBALS['MODALS']['DATABASE_SHEET']  = "DB Management";
 
+    // Database connection info
     $GLOBALS['DB']['HOST'] = "localhost";
-    $GLOBALS['DB']['USER'] = "data";
-    $GLOBALS['DB']['PW']   = "mxwZsnKw5FtD8uX8";
-    $GLOBALS['DB']['DATA'] = "sandman";
+    $GLOBALS['DB']['USER'] = "YOUR_USER";
+    $GLOBALS['DB']['PW']   = "YOUR_PASS";
+    $GLOBALS['DB']['DATABASE'] = "sandman";
 
     $GLOBALS['DB']['TABLE']['MATCH_SCOUTING'] = "`matchdata`";
     $GLOBALS['DB']['TABLE']['ACHIEVEMENT']    = "`userachievements`";
@@ -47,14 +51,14 @@
     $GLOBALS['TBA']['PATH']['CACHE']['MATCHES'] = 'cacheMatch.json';
     $GLOBALS['TBA']['PATH']['CACHE']['UPDATE']  = 'cacheUpdate.json';
 
-    //SLACK BOT CONSTANTS
+    // Slack bot
     $GLOBALS['SLACK_BOT']['ENABLE']         = false;
-    $GLOBALS['SLACK_BOT']['SLACK_HOOK']     = 'https://hooks.slack.com/services/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';
+    $GLOBALS['SLACK_BOT']['SLACK_HOOK']     = 'YOUR_SLACK_HOOK';
     $GLOBALS['SLACK_BOT']['NAME']           = 'Mr. Sandman';
     $GLOBALS['SLACK_BOT']['REPORT_CHANNEL'] = '#slipstream_data';
     $GLOBALS['SLACK_BOT']['NOTIFY_USERS']   = '';
 
-    //ACHIEVEMENT CONSTANTS
+    // Achievements
     $GLOBALS['ACHIEVEMENTS']['ENABLE'] = false;
     $GLOBALS['ACHIEVEMENTS']['ENABLE'] = false;
     $GLOBALS['ACHIEVEMENTS']['START_COL'] = 4;

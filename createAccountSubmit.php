@@ -1,6 +1,6 @@
-<?php 
+<?php
   ob_start();
-  include 'global.php'; 
+  include 'global.php';
   include 'php/dbDataConn.php';
   include 'php/debug.php';
   include 'php/message.php';?>
@@ -13,7 +13,7 @@
   $scoutTeam = $_POST['scoutTeam'];
   $scoutingAlliance = $_POST['scoutingAlliance'];
   $scoutingNumber = $_POST['scoutingNumber'];
-  
+
   $users = mysqli_query($dbDataConn, "SELECT * FROM `users` WHERE `name` = '" . $name . "' LIMIT 1");
   while($row = mysqli_fetch_array($users)) {
     $unameInUse = true;
@@ -23,7 +23,7 @@
     echo "<div class='container'><h2>This username is in use!  Please use another username.  <a href='createAccount'>Back</a></h2></div>";
   }
   else {
-    $addUser = "INSERT INTO `users`(`id`, `name`, `team`, `pin`, `scoutingAlliance`, `scoutingNumber`) VALUES (DEFAULT,'$name','$team','$pin','$scoutingAlliance','$scoutingNumber')";
+    $addUser = "INSERT INTO `users` (`id`, `slackId`, `team`, `scoutTeam`, `name`, `pin`, `scoutingAlliance`, `scoutingNumber`) VALUES (DEFAULT, '', '$team', '$scoutTeam', '$name', '$pin', '$scoutingAlliance', '$scoutingNumber')";
     if ($dbDataConn->query($addUser) === TRUE) {
       echo "
         <div class='container'>
