@@ -3,10 +3,11 @@
     $GLOBALS['APP_INFO']['TITLE']         = "2018 Scouting";
     $GLOBALS['APP_INFO']['CODENAME']      = "Slipstream";
     $GLOBALS['APP_INFO']['VERSION']       = "5.0.0";
-    $GLOBALS['APP_INFO']['EXTERNAL_URL']  = "YOUR_URL_HERE";
+    $GLOBALS['APP_INFO']['EXTERNAL_URL']  = "https://samr.mynetgear.com";
 
     // Path from root to oauth login page.
     $GLOBALS['OAUTH']['URI']              = "/sandman/oauthAut.php";
+    $GLOBALS['APP_INFO']['TITLE']         = "2017 Scouting";
     $GLOBALS['MODALS']['RED']             = "Red";
     $GLOBALS['MODALS']['BLUE']            = "Blue";
     $GLOBALS['MODALS']['TEAMS_PER_MATCH'] = 6;
@@ -32,8 +33,8 @@
 
     // Database connection info
     $GLOBALS['DB']['HOST'] = "localhost";
-    $GLOBALS['DB']['USER'] = "YOUR_USER";
-    $GLOBALS['DB']['PW']   = "YOUR_PASS";
+    $GLOBALS['DB']['USER'] = "data";
+    $GLOBALS['DB']['PW']   = "9!sMLMadRPG31ByyjxxT";
     $GLOBALS['DB']['DATABASE'] = "sandman";
 
     $GLOBALS['DB']['TABLE']['MATCH_SCOUTING'] = "`matchdata`";

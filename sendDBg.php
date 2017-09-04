@@ -1,5 +1,7 @@
-<?php include "global.php";
-    include "php/dbDataConn.php"; ?>
+<?php
+  include "global.php";
+  include "php/dbDataConn.php";
+?>
 </head>
 
 <body>
@@ -14,8 +16,7 @@ $teamnum = $_POST['teamnum'];
 $matchnum = $_POST['matchnum'];
 if (isset($_POST['isRed'])) {
     $isRed = $_POST['isRed'];
-}
-else {
+} else {
     $isRed = false;
 }
 
@@ -117,8 +118,7 @@ if ($dbDataConn->query($insertSQL) === TRUE) {
     </div>
     ";
     echo "<h1> New record created successfully. Last inserted ID is: <strong>" . $last_id . "</strong></h1>";
-}
-else {
+} else {
     echo "Error: " . $insertSQL . "<br>" . $dbDataConn->error . "
     <div class='container'>
         <a href=../" . $currentsheetPath . " target='_blank'><h1>Click here to open scouting in a new tab.  Please leave this window open in the background so that a scouting head can fix the error.</h1></a>

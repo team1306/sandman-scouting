@@ -48,7 +48,7 @@ if (!ISSET($_SESSION['teamArray']['num'])) {
 	<link href="css/disableXScroll.css" rel="stylesheet">
 	<link href="css/global.css" rel="stylesheet">
 	<link href="css/sb-admin-2.css" rel="stylesheet">
-	<link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
+	<link href="css/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 	<link href="css/navbar.css" rel="stylesheet">
 	<!--<link href="css/load.css" rel="stylesheet">-->
 
