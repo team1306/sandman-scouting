@@ -2,22 +2,6 @@
 	ob_start();
 	include "global.php"; ?>
 
-	<!-- CSS -->
-	<link href="css/checkboxes.css" rel="stylesheet">
-	<link href="css/swagboxes.css" rel="stylesheet">
-	<link href="css/disableXScroll.css" rel="stylesheet">
-	<link href="css/sheet.css" rel="stylesheet">
-	<link href="css/input.css" rel="stylesheet">
-	<link href="css/star-rating.css" rel="stylesheet">
-	<link href="css/image-picker.css" rel="stylesheet">
-
-	<!-- Javascript -->
-	<script type="text/javascript" src="js/cookie.js"></script>
-	<script type="text/javascript" src="js/report2017regionals.js"></script>
-	<script type="text/javascript" src="js/background.js"></script>
-	<script type="text/javascript" src="js/star-rating.js"></script>
-	<script type="text/javascript" src="js/image-picker.js"></script>
-
 	<!-- Custom gamesheet CSS -->
 	<style>
 		input[type=number] {
