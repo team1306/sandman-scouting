@@ -1,3 +1,7 @@
+.checkbox-label {
+  padding-top: 15px;
+}
+
 .not-active {
     cursor: default;
     pointer-events: none;

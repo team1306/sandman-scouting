@@ -1,4 +1,4 @@
 # sandman-scouting
 Team 1306's web based scouting app.
 
-We are planning to completely rewrite the scouting app with a modern front end framework (react.js) and a more robust back end with node.js.
+This is currently in development and will be usable by the start of the 2018 season.
