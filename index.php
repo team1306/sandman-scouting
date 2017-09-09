@@ -51,9 +51,6 @@
 		        </div>
 				</div>
 		</div>
-
-		<!--New Alliance Code-->
-
 		<div class="row" style="padding-top:20px;">
 		    <div class="col-sm-12" style="padding-bottom:20px;">
 		        <div class="panel panel-red">
@@ -77,9 +74,6 @@
 		        </div>
 		    </div>
 		</div>
-
-		<!--End New Alliance Code-->
-
 		<div class="row">
 			<div class="col-sm-6" style="padding-bottom:20px;">
 		      <div class="panel panel-red">
@@ -125,13 +119,13 @@
 			</div>
 		</div>
 		<div class="well" style="padding-top:20px;">
-            <div style="overflow: hidden;">
+      <div style="overflow: hidden;">
 		    <?php
 		        include 'TBAdata.php';
 		        echo "<div class='pull-left'>" . $GLOBALS['APP_INFO']['VERSION'] . "<a href='egg.php'> - </a>" . $GLOBALS['APP_INFO']['CODENAME'] . "</div><div class='pull-right'>TBA Cache Last Updated: " . getUpdateTime() . "</div>";
 		    ?>
-		    </div>
-        </div>
+		   </div>
+    </div>
 	</div>
 </body>
 </html>

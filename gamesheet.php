@@ -5,39 +5,16 @@
 
 	<!-- Custom gamesheet CSS -->
 	<link href="css/checkboxes.css" rel="stylesheet">
-	<link href="css/swagboxes.css" rel="stylesheet">
+	<!-- <link href="css/swagboxes.css" rel="stylesheet"> -->
 	<link href="css/sheet.css" rel="stylesheet">
-	<link href="css/input.css" rel="stylesheet">
 	<link href="css/star-rating.css" rel="stylesheet">
 	<link href="css/image-picker.css" rel="stylesheet">
-	<style>
-		input[type=number] {
-		    background-color: #000;
-		    color: #fff;
-		    padding-left:10px;
-		    width: 100%;
-		    height: 100%;
-		    text-align: center;
-		}
-		input[type=button], input[type=number]{
-		    border: 0;
-		}
-		.blackText {
-			color: #000;
-		}
-		.data-img-class {
-			width="30%";
-		}
-		.image_picker_image {
-	    	max-width: 50px; !important
-		}
-	</style>
 
-		<!-- Custom gamesheet JS -->
-		<script type="text/javascript" src="js/report2017regionals.js"></script>
-		<script type="text/javascript" src="js/background.js"></script>
-		<script type="text/javascript" src="js/star-rating.js"></script>
-		<script type="text/javascript" src="js/image-picker.js"></script>
+	<!-- Custom gamesheet JS -->
+	<script type="text/javascript" src="js/report2017regionals.js"></script>
+	<script type="text/javascript" src="js/background.js"></script>
+	<script type="text/javascript" src="js/star-rating.js"></script>
+	<script type="text/javascript" src="js/image-picker.js"></script>
 
 </head>
 
@@ -98,7 +75,7 @@ $(document).ready(function () {
 					<div class="border">
 						<div class="row">
 							<div class="col-md-5 col-sm-5 col-xs-5 col-lg-5">
-								<p style="text-align:center">Team Number:</p>
+								<p class="center">Team Number:</p>
 							</div>
 							<div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
 								<input
@@ -113,7 +90,7 @@ $(document).ready(function () {
 						</div>
 						<div class="row">
 							<div class="col-md-5 col-sm-5 col-xs-5 col-lg-5">
-								<p style="text-align:center">Match Number:</p>
+								<p class="center">Match Number:</p>
 							</div>
 							<div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
 								<input
@@ -127,7 +104,7 @@ $(document).ready(function () {
 						</div>
 						<div class="row">
 							<div class="col-md-5 col-sm-5 col-xs-5 col-lg-5">
-								<p style="text-align:center">Alliance:</p>
+								<p class="center">Alliance:</p>
 							</div>
 							<div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
 			  					  <section title=".slideTwo">
@@ -304,9 +281,9 @@ $(document).ready(function () {
 						<hr>
 						<div class="row">
 							<div class="col-md-2 col-sm-2 col-xs-2 col-lg-2">
-								<div class="roundedTwelve">
-									<input type="checkbox" value=1 id="roundedTwelve" class="checkbox" name="teleClimb" />
-									<label for="roundedTwelve"></label>
+								<div class="roundedTwo">
+									<input type="checkbox" value=1 id="teleClimb" class="checkbox" name="teleClimb" />
+									<label for="teleClimb"></label>
 								</div>
 							</div>
 							<div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
@@ -314,9 +291,9 @@ $(document).ready(function () {
 								<h4 style="padding-top:15px;">Climb</h4>
 							</div>
 							<div class="col-md-2 col-sm-2 col-xs-2 col-lg-2">
-								<div class="roundedThirteen">
-									<input type="checkbox" value=1 id="roundedThirteen" name="teleDisabled" />
-									<label for="roundedThirteen" class="checkboxjs"></label>
+								<div class="roundedTwo">
+									<input type="checkbox" value=1 id="teleDisabled" name="teleDisabled" />
+									<label for="teleDisabled" class="checkboxjs"></label>
 								</div>
 							</div>
 							<div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
@@ -325,9 +302,9 @@ $(document).ready(function () {
 						</div>
 						<div class="row">
 							<div class="col-md-2 col-sm-2 col-xs-2 col-lg-2">
-								<div class="roundedThirteen">
-									<input type="checkbox" value=1 id="roundedFourteen" name="groundGear" />
-									<label for="roundedFourteen" class="checkboxjs"></label>
+								<div class="roundedTwo">
+									<input type="checkbox" value=1 id="groundGear" name="groundGear" />
+									<label for="groundGear" class="checkboxjs"></label>
 								</div>
 							</div>
 							<div class="col-md-10 col-sm-10 col-xs-10 col-lg-10">

@@ -1,9 +1,12 @@
 a:hover {
     text-decoration: none;
 }
-.top-margin-20 { 
-    margin-top:20px; 
+.top-margin-20 {
+    margin-top:20px;
 }
-.bottom-margin-20 { 
+.bottom-margin-20 {
     margin-bottom:20px;
+}
+.center {
+    text-align: center;
 }
