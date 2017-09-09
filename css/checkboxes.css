@@ -1,10 +1,4 @@
-
-/*
-//////////////////////////////////////////////////////////////////////////
-					CHECKBOXES
-//////////////////////////////////////////////////////////////////////////
-*/
-
+/* Slider */
 .slideTwo {
   width: 80px;
   height: 30px;
@@ -61,11 +55,9 @@
 }
 .slideTwo input[type=checkbox]:checked + label:after {
   background: #990000;
-  /*activeColor*/
 }
-/* end .slideTwo */
 
-
+/* Rounded checkboxes */
 .roundedTwo {
   width: 28px;
   height: 28px;

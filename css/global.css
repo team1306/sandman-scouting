@@ -10,3 +10,6 @@ a:hover {
 .center {
     text-align: center;
 }
+.noPadding {
+  padding: 0;
+}

@@ -5,7 +5,6 @@
 
 	<!-- Custom gamesheet CSS -->
 	<link href="css/checkboxes.css" rel="stylesheet">
-	<!-- <link href="css/swagboxes.css" rel="stylesheet"> -->
 	<link href="css/sheet.css" rel="stylesheet">
 	<link href="css/star-rating.css" rel="stylesheet">
 	<link href="css/image-picker.css" rel="stylesheet">
@@ -34,12 +33,114 @@ function load() {
 }
 //This function searches the body and finds all of the star ratings and shows the stars to make it look more pretty
 function setStars() {
-	$('.highGoalAccuracy').rating({'showCaption':true, 'stars':'4', 'min':'0', 'max':'4', 'step':'1', 'size':'xs', 'clearCaption':'Not Attempted', 'captionElement': '#highGoalAccuracy-caption', 'starCaptions': {0:'Did not attempt', 1:'25%', 2:'50%', 3:'75%', 4:'100%'}});
-  $('.highGoalSpeed').rating({'showCaption':true, 'stars':'4', 'min':'0', 'max':'4', 'step':'1', 'size':'xs', 'clearCaption':'Not Attempted',  'captionElement': '#highGoalSpeed-caption', 'starCaptions': {0:'Did not attempt', 1:'Very Slow', 2:'Slow', 3:'Fast', 4:'Very Fast'}});
-  $('.autoHighGoalAccuracy').rating({'showCaption':true, 'stars':'4', 'min':'0', 'max':'4', 'step':'1', 'size':'xs', 'clearCaption':'Not Attempted', 'captionElement': '#autoHighGoalAccuracy-caption', 'starCaptions': {0:'Did not attempt', 1:'25%', 2:'50%', 3:'75%', 4:'100%'}});
-  $('.autoHighGoalSpeed').rating({'showCaption':true, 'stars':'4', 'min':'0', 'max':'4', 'step':'1', 'size':'xs', 'clearCaption':'Not Attempted',  'captionElement': '#autoHighGoalSpeed-caption', 'starCaptions': {0:'Did not attempt', 1:'Very Slow', 2:'Slow', 3:'Fast', 4:'Very Fast'}});
-  $('.lowGoalAccuracy').rating({'showCaption':true, 'stars':'4', 'min':'0', 'max':'4', 'step':'1', 'size':'xs', 'clearCaption':'Not Attempted',  'captionElement': '#lowGoalAccuracy-caption', 'starCaptions': {0:'Did not attempt', 1:'25%', 2:'50%', 3:'75%', 4:'100%'}});
-  $('.lowGoalSpeed').rating({'showCaption':true, 'stars':'4', 'min':'0', 'max':'4', 'step':'1', 'size':'xs', 'clearCaption':'Not Attempted',  'captionElement': '#lowGoalSpeed-caption', 'starCaptions': {0:'Did not attempt', 1:'Very Slow', 2:'Slow', 3:'Fast', 4:'Very Fast'}});
+	$('.highGoalAccuracy').rating(
+		{
+			'showCaption':true,
+			'stars':'4',
+			'min':'0',
+			'max':'4',
+			'step':'1',
+			'size':'xs',
+			'clearCaption':'Not Attempted',
+			'captionElement': '#highGoalAccuracy-caption',
+			'starCaptions': {
+				0:'Did not attempt',
+				1:'25%',
+				2:'50%',
+				3:'75%',
+				4:'100%'
+			}
+		});
+  $('.highGoalSpeed').rating(
+		{
+			'showCaption':true,
+			'stars':'4',
+			'min':'0',
+			'max':'4',
+			'step':'1',
+			'size':'xs',
+			'clearCaption':'Not Attempted',
+			'captionElement': '#highGoalSpeed-caption',
+			'starCaptions': {
+				0:'Did not attempt',
+				1:'Very Slow',
+				2:'Slow',
+				3:'Fast',
+				4:'Very Fast'
+			}
+		});
+  $('.autoHighGoalAccuracy').rating(
+		{
+			'showCaption':true,
+			'stars':'4',
+			'min':'0',
+			'max':'4',
+			'step':'1',
+			'size':'xs',
+			'clearCaption':'Not Attempted',
+			'captionElement': '#autoHighGoalAccuracy-caption',
+			'starCaptions': {
+				0:'Did not attempt',
+				1:'25%',
+				2:'50%',
+				3:'75%',
+				4:'100%'
+			}
+		});
+  $('.autoHighGoalSpeed').rating(
+		{
+			'showCaption':true,
+			'stars':'4',
+			'min':'0',
+			'max':'4',
+			'step':'1',
+			'size':'xs',
+			'clearCaption':'Not Attempted',
+			'captionElement': '#autoHighGoalSpeed-caption',
+			'starCaptions': {
+				0:'Did not attempt',
+				1:'Very Slow',
+				2:'Slow',
+				3:'Fast',
+				4:'Very Fast'
+			}
+		});
+  $('.lowGoalAccuracy').rating(
+		{
+			'showCaption':true,
+			'stars':'4',
+			'min':'0',
+			'max':'4',
+			'step':'1',
+			'size':'xs',
+			'clearCaption':'Not Attempted',
+			'captionElement': '#lowGoalAccuracy-caption',
+			'starCaptions': {
+				0:'Did not attempt',
+				1:'25%',
+				2:'50%',
+				3:'75%',
+				4:'100%'
+			}
+		});
+  $('.lowGoalSpeed').rating(
+		{
+			'showCaption':true,
+			'stars':'4',
+			'min':'0',
+			'max':'4',
+			'step':'1',
+			'size':'xs',
+			'clearCaption':'Not Attempted',
+			'captionElement': '#lowGoalSpeed-caption',
+			'starCaptions': {
+				0:'Did not attempt',
+				1:'Very Slow',
+				2:'Slow',
+				3:'Fast',
+				4:'Very Fast'
+			}
+		});
 }
 //Set all textboxes to 0 or their correct values
 function setValues() {
@@ -64,12 +165,14 @@ $(document).ready(function () {
 <body onload="load();">
 	<?php
 		include "nav.php";
+
+		// Redirect user if not logged in
 		include "userCheck.php";
 		checkUser(true);
 	?>
 	<form action="sendDBg" method="post">
-		<div class="container" style="padding: 0px;">
-			<div class="row" style="padding-left: 0.6em; padding-right: 0.6em;">
+		<div class="container">
+			<div class="row">
 				<div class="col-md-4">
 					<h3 class="center"><strong>Information</strong></h3>
 					<div class="border">
@@ -142,7 +245,7 @@ $(document).ready(function () {
 								</div>
 							</div>
 							<div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
-								<h4 style="padding-top:15px;">
+								<h4 class="checkboxLabel">
 									Attempt Gear
 								</h4>
 							</div>
@@ -157,7 +260,7 @@ $(document).ready(function () {
 								</div>
 							</div>
 							<div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
-								<h4 style="padding-top:15px;">Baseline</h4>
+								<h4 class="checkboxLabel">Baseline</h4>
 							</div>
 						</div>
 
@@ -181,7 +284,10 @@ $(document).ready(function () {
 									<br>
 									<span id="autoHighGoalSpeed-caption"></span>
 								</h4>
-								<input class="autoHighGoalSpeed" data-container-class='text-center' name="autoHighGoalSpeed">
+								<input
+									class="autoHighGoalSpeed"
+									data-container-class='text-center'
+									name="autoHighGoalSpeed">
 							</div>
 						</div>
 						<div class="row">
@@ -212,7 +318,11 @@ $(document).ready(function () {
 								</h4>
 								<div class="input-group input-group-lg">
 								  <span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" onclick="setTeleGearSuccess(-1)">-</span>
-								  <input id="teleGearSuccesstb" type="number" class="form-control textBox" name="teleGearSuccess">
+								  <input
+										id="teleGearSuccesstb"
+										type="number"
+										class="form-control textBox"
+										name="teleGearSuccess">
 								  <span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" onclick="setTeleGearSuccess(1)">+</span>
 								</div>
 							</div>
@@ -222,7 +332,11 @@ $(document).ready(function () {
 								</h4>
 								<div class="input-group input-group-lg">
 								  <span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" onclick="setTeleGearFail(-1)">-</span>
-								  <input id="teleGearFailtb" type="number" class="form-control textBox" name="teleGearFail">
+								  <input
+										id="teleGearFailtb"
+										type="number"
+										class="form-control textBox"
+										name="teleGearFail">
 								  <span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" onclick="setTeleGearFail(1)">+</span>
 								</div>
 							</div>
@@ -235,7 +349,10 @@ $(document).ready(function () {
 									<br>
 									<span id="highGoalAccuracy-caption"></span>
 								</h4>
-								<input class="highGoalAccuracy" data-container-class='text-center' name="teleHighGoalAccuracy">
+								<input
+									class="highGoalAccuracy"
+									data-container-class='text-center'
+									name="teleHighGoalAccuracy">
 							</div>
 							<div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
 								<h4 class="center">
@@ -243,7 +360,10 @@ $(document).ready(function () {
 									<br>
 									<span id="highGoalSpeed-caption"></span>
 								</h4>
-								<input class="highGoalSpeed" data-container-class='text-center' name="teleHighGoalSpeed">
+								<input
+									class="highGoalSpeed"
+									data-container-class='text-center'
+									name="teleHighGoalSpeed">
 							</div>
 						</div>
 						<div class="row">
@@ -253,7 +373,10 @@ $(document).ready(function () {
 									<br>
 									<span id="lowGoalAccuracy-caption"></span>
 								</h4>
-								<input class="lowGoalAccuracy" data-container-class='text-center' name="teleLowGoalAccuracy">
+								<input
+									class="lowGoalAccuracy"
+									data-container-class='text-center'
+									name="teleLowGoalAccuracy">
 							</div>
 							<div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
 								<h4 class="center">
@@ -261,7 +384,10 @@ $(document).ready(function () {
 									<br>
 									<span id="lowGoalSpeed-caption"></span>
 								</h4>
-								<input class="lowGoalSpeed" data-container-class='text-center' name="teleLowGoalSpeed">
+								<input
+									class="lowGoalSpeed"
+									data-container-class='text-center'
+									name="teleLowGoalSpeed">
 							</div>
 						</div>
 						<div class="row">
@@ -272,7 +398,11 @@ $(document).ready(function () {
 								<div class="input-group input-group-lg">
 								  <span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" onclick="setTeleKPA(-5)">-5</span>
 								  <span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" onclick="setTeleKPA(-1)">-1</span>
-								  <input id="teleKPAtb" type="number" class="form-control textBox" name="teleKPA">
+								  <input
+										id="teleKPAtb"
+										type="number"
+										class="form-control textBox"
+										name="teleKPA">
 								  <span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" onclick="setTeleKPA(1)">+1</span>
 								  <span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" onclick="setTeleKPA(5)">+5</span>
 								</div>
@@ -282,60 +412,66 @@ $(document).ready(function () {
 						<div class="row">
 							<div class="col-md-2 col-sm-2 col-xs-2 col-lg-2">
 								<div class="roundedTwo">
-									<input type="checkbox" value=1 id="teleClimb" class="checkbox" name="teleClimb" />
+									<input
+										type="checkbox"
+										value=1
+										id="teleClimb"
+										class="checkbox"
+										name="teleClimb" />
 									<label for="teleClimb"></label>
 								</div>
 							</div>
 							<div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
-								<!-- TODO move this padding to seperate css, .checkbox-label -->
-								<h4 style="padding-top:15px;">Climb</h4>
+								<h4 class="checkboxLabel">Climb</h4>
 							</div>
 							<div class="col-md-2 col-sm-2 col-xs-2 col-lg-2">
 								<div class="roundedTwo">
-									<input type="checkbox" value=1 id="teleDisabled" name="teleDisabled" />
+									<input
+										type="checkbox"
+										value=1
+										id="teleDisabled"
+										name="teleDisabled" />
 									<label for="teleDisabled" class="checkboxjs"></label>
 								</div>
 							</div>
 							<div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
-								<h4 style="padding-top:15px;">Disabled</h4>
+								<h4 class="checkboxLabel">Disabled</h4>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-2 col-sm-2 col-xs-2 col-lg-2">
 								<div class="roundedTwo">
-									<input type="checkbox" value=1 id="groundGear" name="groundGear" />
+									<input
+										type="checkbox"
+										value=1
+										id="groundGear"
+										name="groundGear" />
 									<label for="groundGear" class="checkboxjs"></label>
 								</div>
 							</div>
 							<div class="col-md-10 col-sm-10 col-xs-10 col-lg-10">
-								<h4 style="padding-top:15px;">Ground Gear Intake</h4>
+								<h4 class="checkboxLabel">Ground Gear Intake</h4>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div class="row" style="padding-left: 0.6em; padding-right: 0.6em;">
+			<div class="row notesContainer">
 				<div class="col-xs-12">
 					<h3 class="center">
 						<strong>Notes</strong>
 					</h3>
-					<!--TODO move inline css to somewhere else-->
 					<textarea
 						name="teleNotes"
 						id="notesTele"
-						rows="10"
-						cols="60"
-						style="width: 100%; height: 200px; z-index: auto; position: relative; line-height: normal; font-size: 13.3333px; transition: none; overflow: auto; background: transparent !important;"
-						tabindex="1">
+						class="notesTextarea"
+						rows="10">
 				</textarea>
 				</div>
 			</div>
 		</div>
-		<div style="padding:20px">
-			<!--TODO move inline css to somewhere else-->
-			<input class="btn btn-danger btn-lg" style="display: block; width: 100%; border: 0px;" type="submit" value="Submit" />
-			<br>
-		</div>
+		<input class="btn btn-danger btn-lg submitButton" type="submit" value="Submit">
+		<br>
 
 		<!-- Gear Modal -->
 		<div class="modal fade" id="autoGearModal">
@@ -343,23 +479,33 @@ $(document).ready(function () {
 		      <!-- Modal content-->
 		      <div class="modal-content">
 		        <div class="modal-header">
-		          <button type="button" class="close" data-dismiss="modal">&times;</button>
+		          <button type="button" class="close" data-dismiss="modal">
+								&times;
+							</button>
 		          <h4 class="modal-title">Auto Gear Attempt</h4>
 		        </div>
 		        <div class="modal-body">
-					<select class="image-picker" name="gearPeg">
-					  <option value=""></option>
-					  <option data-img-src="img/arrow-left.png" value="l"></option>Left Peg</option>
-					  <option data-img-src="img/arrow-center.png" value="c">Center Peg</option>
-					  <option data-img-src="img/arrow-right.png" value="r">Right Peg</option>
-					</select>
+							<select class="image-picker" name="gearPeg">
+							  <option value=""></option>
+							  <option data-img-src="img/arrow-left.png" value="l">
+									Left Peg
+								</option>
+							  <option data-img-src="img/arrow-center.png" value="c">
+									Center Peg
+								</option>
+							  <option data-img-src="img/arrow-right.png" value="r">
+									Right Peg
+								</option>
+							</select>
 		        </div>
 		        <div class="modal-footer">
 		        	<select name="autoGearSuccess">
 		        		<option value=0>Fail</option>
 		        		<option value=1>Success</option>
 		        	</select>
-		        	<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+		        	<button type="button" class="btn btn-danger" data-dismiss="modal">
+								Close
+							</button>
 		        </div>
 		      </div>
 		    </div>
