@@ -4,7 +4,6 @@
   <?php
   session_destroy();
   session_start();
-  $team = $_POST['team'];
   $name = $_POST['name'];
   $pin = $_POST['pin'];
   $login = false;
@@ -26,17 +25,26 @@
       $_SESSION['userArray']['scoutingNumber'] = $row['scoutingNumber'];
       $_SESSION['userArray']['scoutTeam'] = $row['scoutTeam'];
 
+      $_SESSION['userArray']['slackSignIn'] = false;
+
       $message['name'] = "Succes!";
       $message['desc'] = "You are now logged in.";
       $message['type'] = "success";
       sendMessage($message, $GLOBALS['PATH']['INDEX']);
-    }
-    else if (!$GLOBALS['login']['debug']['loginSystem']) {
+    } else if (!$GLOBALS['login']['debug']['loginSystem']) {
+      // Incorrect password
       $message['name'] = "Login incorrect!";
       $message['desc'] = "Please either make a new account or ask a DB manager for assistance.";
       $message['type'] = "danger";
       sendMessage($message, $GLOBALS['PATH']['INDEX']);
     }
+  }
+  // Incorrect username (not found in db)
+  if (!$login && !$GLOBALS['login']['debug']['loginSystem']) {
+    $message['name'] = "Login incorrect!";
+    $message['desc'] = "Please either make a new account or ask a DB manager for assistance.";
+    $message['type'] = "danger";
+    sendMessage($message, $GLOBALS['PATH']['INDEX']);
   }
   ob_flush();
   ?>

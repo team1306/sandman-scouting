@@ -34,8 +34,11 @@
             if (isset($_SESSION['userArray']['name'])) {
                 echo '<div style="padding-right: 5px">
                             <div class="btn-group navbar-btn">
-                              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:black !important">
-                                <img src="' . $_SESSION['userArray']['image_24'] . '"> ' . $_SESSION['userArray']['name'] . ' <span class="caret"></span>
+                              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:black !important">';
+                if ($_SESSION['userArray']['slackSignIn']) {
+                  echo '        <img src="' . $_SESSION['userArray']['image_24'] . '"> ';
+                }
+                echo            $_SESSION['userArray']['name'] . ' <span class="caret"></span>
                               </button>
                               <ul class="dropdown-menu">';
                               if ($GLOBALS['ACHIEVEMENTS']['ENABLE']) {
@@ -78,7 +81,7 @@
           <h4 class="modal-title">Login</h4>
         </div>
         <div class="modal-body">
-          <form action="login.php" method="post">
+          <form action="login" method="post"> <!-- TODO path costant for login -->
             <input id="userT" class="form-control" type="text" placeholder="Username" name="name" required>
             <br>
             <input id="userT" class="form-control" type="password" placeholder="Password" name="pin" required>
@@ -87,7 +90,7 @@
           </form>
         </div>
         <div class="modal-footer">
-          <span class="psw"><a href="createAccount.php">Create Account</a></span>
+          <span class="psw"><a href="createAccount">Create Account</a></span> <!-- TODO use path constant for create account -->
         </div>
       </div>
     </div>

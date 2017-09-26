@@ -1,7 +1,7 @@
 <?php
 include "const.php";
 include "message.php";
-if (!function_exists(checkUser)) {
+if (!function_exists("checkUser")) {
     /**
      * This function checks if the user is signed in. The param $redir is true if user should be redirected.
      */

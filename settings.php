@@ -1,4 +1,4 @@
-<?php include 'global.php'; 
+<?php include 'global.php';
     include 'php/debug.php'; ?>
 </head>
 <body onload="load()">
@@ -15,7 +15,7 @@
 	<div class="container">
     	<div class="media">
           <div class="media-left">
-            <img src="<?php echo $_SESSION['userArray']['image_32']; ?>" class="media-object">
+          <img src="<?php if ($_SESSION['userArray']['slackSignIn']) { echo $_SESSION['userArray']['image_32']; } ?>" class="media-object">
           </div>
           <div class="media-body">
             <h2 class="media-heading"><?php echo $_SESSION['userArray']['name'];?></h2>

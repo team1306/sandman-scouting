@@ -6,14 +6,26 @@ include "php/const.php";
 include "php/dbDataConn.php";
 include "php/userCheck.php";
 
+$GLOBALS['login']['debug']['oauth'] = true;
+
 $codeIs = $_GET['code'];
 $json = file_get_contents('https://slack.com/api/oauth.access?code=' . $codeIs . '&client_id=3325716591.80369238817&client_secret=74c0ce43b13698ec87c5d6d8dea08ca5');
 
 $jsonIterator = new RecursiveIteratorIterator(new RecursiveArrayIterator(json_decode($json, TRUE)), RecursiveIteratorIterator::SELF_FIRST);     //Create json iterator to look through json payload from slack
 
+echo $json;
+
 $idCounter = 0;
 $arrayCounter = 0;
 foreach ($jsonIterator as $key => $val) {       //Add each variable to a session variable
+  echo "KEY: " . $key . " | VAL: " . $val;
+  if ($key == "ok") {
+    if ($value == "false") {
+      echo "Error: ";
+    }
+  } else if ($key == "error") {
+    echo $value;
+  }
     if(is_array($val)) {
         if ($arrayCounter == 0) {
             $_SESSION["userArray"] = $val;
@@ -36,6 +48,8 @@ foreach ($jsonIterator as $key => $val) {       //Add each variable to a session
             echo $val[1];
             echo "<br><br>";
         }
+    } else {
+      echo "ERROR: Invalid response recieved from Slack. Expected array.";
     }
 }
 
@@ -70,7 +84,7 @@ while ($row = mysqli_fetch_array($user2)) {      //Fetch results from query //Us
 }
 
 if (!$GLOBALS['login']['debug']['oauth']) {
-    echo "Welcome, " . $_SESSION['userArray']['name'] . ". Redirecting you to the homepage...  If you are not automatically redirected, <a href='/'>click here</a>.";
+    echo "Welcome, " . $_SESSION['userArray']['name'] . ". Redirecting you to the homepage...  If you are not automatically redirected, <a href='/sandman/index'>click here</a>.";
     checkUser(true);
 }
 else {
