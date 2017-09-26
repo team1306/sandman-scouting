@@ -167,7 +167,7 @@ $(document).ready(function () {
 		include "nav.php";
 
 		// Redirect user if not logged in
-		include "userCheck.php";
+		include "php/userCheck.php";
 		checkUser(true);
 	?>
 	<form action="sendDBg" method="post">

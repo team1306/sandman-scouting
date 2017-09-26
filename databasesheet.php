@@ -1,4 +1,7 @@
-<?php include "global.php"; ?>
+<?php
+  ob_start();
+  include "global.php";
+?>
 
 <style>
 input[type=number] {
@@ -36,63 +39,67 @@ input[type=button], input[type=number]{
 </head>
 <body>
 <?php include "nav.php";
-      include "error.php";?>
-<form action="remove.php" method="get">
-<div id="content">
-<br>
-<?php
-include 'php/dbDataConn.php';
-include 'php/getScoutInfo.php';
+      include "error.php";
 
-$result = mysqli_query($dbDataConn, "SELECT * FROM " . $GLOBALS['DB']['TABLE']['MATCH_SCOUTING'] . " ORDER BY id DESC");
+      include "php/userCheck.php";
+  		checkUser(true);?>
+  <form action="remove" method="get">
+    <div id="content">
+    <br>
+    <?php
+    include 'php/dbDataConn.php';
+    include 'php/getScoutInfo.php';
 
-echo "<div class='container' style='width:90%'><table align='center' class='table table-striped'>
-<thead>
-<tr>
-<th> </th>
-<th>ID</th>
-<th>Match #</th>
-<th>Team #</th>
-<th>Alliance</th>
-<th>Scout</th>
-<th>Comments</th>
-</tr>
-</thead><tbody>";
+    $result = mysqli_query($dbDataConn, "SELECT * FROM " . $GLOBALS['DB']['TABLE']['MATCH_SCOUTING'] . " ORDER BY id DESC");
 
-while($row = mysqli_fetch_array($result)) {
-    if ($row['isRed'] == 1) {
-    	//echo "<style> td {background-color:red;} </style>";
-    	$alliance = "red";
+    echo "<div class='container' style='width:90%'><table align='center' class='table table-striped'>
+    <thead>
+    <tr>
+    <th> </th>
+    <th>ID</th>
+    <th>Match</th>
+    <th>Team</th>
+    <th>Alliance</th>
+    <th>Scout</th>
+    <th>Comments</th>
+    </tr>
+    </thead><tbody>";
+
+    while($row = mysqli_fetch_array($result)) {
+        if ($row['isRed'] == 1) {
+        	//echo "<style> td {background-color:red;} </style>";
+        	$alliance = "red";
+        }
+        else {
+        	//echo "<style> td {background-color:blue; color:white;} </style>";
+            $alliance = "blue";
+        }
+        echo "<tr>";
+          echo "<td><input type='radio' name='id' value='" . $row['id'] . "'></td>";
+          echo "<td>" . $row['id'] . "</td>";
+          echo "<td>" . $row['matchNum'] . "</td>";
+          echo "<td>" . $row['teamNum'] . "</td>";
+          echo "<td class='" . $alliance . "'></td>";
+          echo "<td>" . getScoutName($row['userID']) . " (" . $row['userID'] . ")</td>";
+          echo "<td>" . $row['teleCap.notes'] . "</td>";
+        echo "</tr>";
     }
-    else {
-    	//echo "<style> td {background-color:blue; color:white;} </style>";
-        $alliance = "blue";
-    }
-    echo "<tr>";
-    echo "<td><input type='radio' name='remove' value='" . $row['id'] . "'></td>";
-    echo "<td>" . $row['id'] . "</td>";
-    echo "<td>" . $row['matchNum'] . "</td>";
-    echo "<td>" . $row['teamNum'] . "</td>";
-    echo "<td class='" . $alliance . "'></td>";
-    echo "<td>" . getScoutName($row['userID']) . " (" . $row['userID'] . ")</td>";
-    echo "<td>" . $row['teleCap.notes'] . "</td>";
-    echo "</tr>";
-}
-echo "</tbody></table></div>";
+    echo "</tbody></table></div>";
 
-$dbDataConn->close();
-?>
-</div>
-<div id="footer">
-    <div class="row">
-        <div class="col-sm-6">
-            <button type='submit' class='btn btn-danger btn-lg btn-block' style='margin-bottom:5px; margin-right:5px;' name='action' value=0>Remove</button>
-        </div>
-        <div class="col-sm-6">
-            <button type='submit' class='btn btn-danger btn-lg btn-block' style='margin-bottom:5px; margin-right:5px;' name='action' value=1>Edit</button>
+    $dbDataConn->close();
+    ?>
+    </div>
+    <div id="footer">
+        <div class="row">
+            <div class="col-sm-6">
+                <button type='submit' class='btn btn-danger btn-lg btn-block' style='margin-bottom:5px; margin-right:5px;' name='action' value=0>Remove</button>
+            </div>
+            <div class="col-sm-6">
+                <button type='submit' class='btn btn-danger btn-lg btn-block' style='margin-bottom:5px; margin-right:5px;' name='action' value=1>Edit</button>
+            </div>
         </div>
     </div>
-</div>
-</form>
+  </form>
 </body>
+<?php ob_flush(); ?>
 </html>

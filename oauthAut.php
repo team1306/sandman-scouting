@@ -4,7 +4,7 @@ session_start();
 include "php/debug.php";
 include "php/const.php";
 include "php/dbDataConn.php";
-include "userCheck.php";
+include "php/userCheck.php";
 
 $codeIs = $_GET['code'];
 $json = file_get_contents('https://slack.com/api/oauth.access?code=' . $codeIs . '&client_id=3325716591.80369238817&client_secret=74c0ce43b13698ec87c5d6d8dea08ca5');
@@ -26,7 +26,7 @@ foreach ($jsonIterator as $key => $val) {       //Add each variable to a session
             $_SESSION["teamArray"] = $val;
             if ($GLOBALS['login']['debug']['oauth']) {
                 echo "teamArray<br>";
-                echo var_dump($val); 
+                echo var_dump($val);
             }
         }
         $arrayCounter++;
@@ -74,7 +74,7 @@ if (!$GLOBALS['login']['debug']['oauth']) {
     checkUser(true);
 }
 else {
-    echo "<br><br><a href='/'>Home</a>  -  <a href='oauthLogout'>Logout</a><br><br>";
+    echo "<br><br><a href='/'>Home</a>  -  <a href='logout'>Logout</a><br><br>";
 }
 
 // $checkAchievementSQL = mysqli_query($dbDataConn, "SELECT * FROM `userachievements` WHERE `userid`= '" . $_SESSION['userArray']['id'] . "'");

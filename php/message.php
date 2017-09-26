@@ -5,7 +5,7 @@
     if (!function_exists('sendMessage')) {
         function sendMessage($message, $path) {
             $_SESSION['message'] = $message;
-            //echo var_dump($message);
+            // echo var_dump($message);
             header('Location: ' . $path);
         }
     }

@@ -7,7 +7,7 @@ include 'nav.php';
 include 'php/dbDataConn.php';
 include 'php/getScoutInfo.php';
 
-$id = $_GET["remove"];
+$id = $_GET["id"];
 $action = $_GET["action"];
 
 if ($action == 0) {  //Delete
@@ -19,7 +19,7 @@ if ($action == 0) {  //Delete
             <a href='$databasePath'><button type='button' class='btn btn-success btn-xl' style='width:100%; height:200px;'><h1 style='font-size: 500%;'>Click Here</h1></button></a>
         </div>
         ";
-        echo "<h1> ID: <strong>$id</strong> was removed successfully.</h1>"; 
+        echo "<h1> ID: <strong>$id</strong> was removed successfully.</h1>";
     } else {
         echo "Error: " . $sql . "<br>" . $dbDataConn->error . "
         <div class='container'>
@@ -54,7 +54,7 @@ else {  //Edit
         </div>
         <div class="form-group">
             <label class="control-label col-sm-2" for="matchNum">Match Number:</label>
-            <div class="col-sm-10">          
+            <div class="col-sm-10">
                 <input type="text" class="form-control" id="matchNum" value="' . $matchNum . '" name="matchNum">
             </div>
         </div>
@@ -71,11 +71,11 @@ $dbDataConn->close();
 <script>
     var switchButton = document.getElementById('switch');
     switchButton.onclick = switchText;
-    
+
     function switchText() {
         var teamNum = document.getElementById('teamNum').value;
         var matchNum = document.getElementById('matchNum').value;
-        
+
         document.getElementById('teamNum').value = matchNum;
         document.getElementById('matchNum').value = teamNum;
     }
