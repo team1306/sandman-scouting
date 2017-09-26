@@ -2,30 +2,17 @@
   include 'global.php';
   include 'php/dbDataConn.php';
 ?>
-<style>
-input[type=number] {
-    background-color: #000;
-    color: #fff;
-    padding-left:10px;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-}
-input[type=button], input[type=number] {
-    border: 0;
-}
-.red {
-  background-color: #990000;
-  color: white;
-}
-.blue {
-  background-color: #0068b3;
-  color: white;
-}
-</style>
+
+<link href="css/reportsheet.css" rel="stylesheet">
+
+<script>
+  function load() {
+    document.getElementById("search1").value = <?php echo $_SESSION['teamArray']['num']; ?>;
+  }
+</script>
 
 </head>
-<body>
+<body onload="load();">
   <?php include 'nav.php'; ?>
 	<br>
   <div id="reportBox" style="width:85%; margin-left:auto; margin-right:auto; display:block;">
@@ -76,8 +63,8 @@ input[type=button], input[type=number] {
     <thead>
       <tr>
         <th>ID</th>
-        <th>Match #</th>
-        <th>Team #</th>
+        <th>Match</th>
+        <th>Team</th>
         <th>Alliance</th>
         <th>Comments</th>
       </tr>
