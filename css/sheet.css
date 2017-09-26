@@ -22,10 +22,10 @@ input[type=button], input[type=number]{
   color: #000;
 }
 .data-img-class {
-  width="30%";
+  width: "30%";
 }
 .image_picker_image {
-    max-width: 50px; !important
+    max-width: 50px !important;
 }
 .buttonInputNormal {
     cursor: pointer;
@@ -66,5 +66,5 @@ input[type=button], input[type=number]{
   font-size: 13.3333px;
   transition: none;
   overflow: auto;
-  background: transparent !important;"
+  background: "transparent" !important;
 }
