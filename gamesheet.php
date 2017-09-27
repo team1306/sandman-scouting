@@ -464,7 +464,8 @@ $(document).ready(function () {
 					<textarea
 						name="teleNotes"
 						id="notesTele"
-						class="notesTextarea"
+						class="form-control"
+						style="display: block"
 						rows="10">
 				</textarea>
 				</div>
