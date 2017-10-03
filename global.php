@@ -1,6 +1,7 @@
  <?php
    if(!isset($_SESSION)) {
      session_start();
+     session_regenerate_id();
    }
 	include "php/const.php";
 	include "php/message.php";
