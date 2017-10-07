@@ -2,6 +2,7 @@
    if(!isset($_SESSION)) {
      session_start();
    }
+
 	include "php/const.php";
 	include "php/message.php";
 	include "php/functions.php";
