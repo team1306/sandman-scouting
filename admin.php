@@ -1,10 +1,13 @@
-<?php include 'global.php';?>
+<?php ob_start();
+			include 'global.php'; ?>
 </head>
 <body>
-	<?php include 'nav.php'; 
-	      include 'php/debug.php'; 
-          include 'TBAdata.php';
-          include 'error.php';?>
+	<?php include 'nav.php';
+	      include 'php/debug.php';
+				include 'php/userCheck.php';
+        include 'TBAdata.php';
+        include 'error.php';
+				checkUserAdmin(true); ?>
 	<br>
 	<div class="container">
     	<div class="media">
@@ -12,7 +15,7 @@
             <img src="<?php echo $_SESSION['userArray']['image_32']; ?>" class="media-object">
           </div>
           <div class="media-body">
-            <h2 class="media-heading"><?php echo $_SESSION['userArray']['name'];?></h2>
+            <h2 class="media-heading"><?php echo $_SESSION['userArray']['name']; ?></h2>
           </div>
         </div>
         <br>
@@ -63,4 +66,5 @@
         </div>
     </div>
 </body>
+<?php ob_flush(); ?>
 </html>

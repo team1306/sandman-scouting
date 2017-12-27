@@ -24,7 +24,11 @@
         </li>
         <li><a href="<?php echo $GLOBALS['PATH']['REPORT_SHEET']; ?>"><?php echo $GLOBALS['MODALS']['REPORT_SHEET']; ?></a></li>
         <li><a href="<?php echo $GLOBALS['PATH']['DATABASE_SHEET']; ?>"><?php echo $GLOBALS['MODALS']['DATABASE_SHEET']; ?></a></li>
-        <li><a href="<?php echo $GLOBALS['PATH']['ADMIN']; ?>"><?php echo $GLOBALS['MODALS']['ADMIN']; ?></a></li>
+        <?php
+          if (checkUserAdmin(false) == 0) {
+            echo "<li><a href={$GLOBALS['PATH']['ADMIN']}>{$GLOBALS['MODALS']['ADMIN']}</a></li>";
+          }
+         ?>
       </ul>
       <ul class="nav navbar-nav navbar-top-links navbar-right">
         <li>
@@ -114,5 +118,3 @@
   </div>
 
 <?php include 'php/message.php'; checkMessage(); ?>
-
-<!--<a href="https://slack.com/oauth/authorize?scope=identity.basic&client_id=your_client_id"><img src="https://api.slack.com/img/sign_in_with_slack.png" /></a>-->

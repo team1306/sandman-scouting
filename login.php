@@ -19,6 +19,7 @@
       $login = true;
       $_SESSION['userArray']['id'] = $row['id'];
       $_SESSION['userArray']['uid'] = $row['id'];
+      $_SESSION['userArray']['isAdmin'] = $row['isAdmin'];
       $_SESSION['userArray']['name'] = $row['name'];
       $_SESSION['teamArray']['num'] = $row['team'];
       $_SESSION['userArray']['scoutingAlliance'] = $row['scoutingAlliance'];

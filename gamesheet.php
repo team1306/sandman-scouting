@@ -1,6 +1,5 @@
-	<?php
-		ob_start();
-		include "global.php";
+	<?php ob_start();
+				include "global.php";
 	?>
 
 	<!-- Custom gamesheet CSS -->
@@ -22,11 +21,10 @@
 function load() {
 	//Check which alliance they are scouting
 	if (<?php echo $_SESSION['userArray']['scoutingAlliance']; ?> == 1) {
-	    setColor('red');
-	}
-	else {
-	    setColor('blue');
-	    document.getElementById('slideTwo').checked = false;
+    setColor('red');
+	} else {
+    setColor('blue');
+    document.getElementById('slideTwo').checked = false;
 	}
 	setStars();
 	setValues();
