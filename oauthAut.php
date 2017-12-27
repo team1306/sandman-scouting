@@ -9,22 +9,25 @@ include "php/userCheck.php";
 $GLOBALS['login']['debug']['oauth'] = true;
 
 $codeIs = $_GET['code'];
-$json = file_get_contents('https://slack.com/api/oauth.access?code=' . $codeIs . '&client_id=3325716591.80369238817&client_secret=74c0ce43b13698ec87c5d6d8dea08ca5');
+$json = file_get_contents("https://slack.com/api/oauth.access?code={$codeIs}&client_id={$GLOBALS['OAUTH']['CLIENT_ID']}&client_secret={$GLOBALS['OAUTH']['CLIENT_SECRET']}&redirect_uri={$GLOBALS['OAUTH']['EXTERNAL_URI']}");
 
 $jsonIterator = new RecursiveIteratorIterator(new RecursiveArrayIterator(json_decode($json, TRUE)), RecursiveIteratorIterator::SELF_FIRST);     //Create json iterator to look through json payload from slack
 
-echo $json;
+if ($GLOBALS['OAUTH']['DEBUG']) {
+  echo $json . "<br><br><br>";
+}
 
 $idCounter = 0;
 $arrayCounter = 0;
 foreach ($jsonIterator as $key => $val) {       //Add each variable to a session variable
-  echo "KEY: " . $key . " | VAL: " . $val;
+  echo "<br><br>KEY: " . $key . " | VAL: " . $val;
   if ($key == "ok") {
     if ($value == "false") {
       echo "Error: ";
     }
   } else if ($key == "error") {
     echo $value;
+    break 1;
   }
     if(is_array($val)) {
         if ($arrayCounter == 0) {
@@ -88,7 +91,7 @@ if (!$GLOBALS['login']['debug']['oauth']) {
     checkUser(true);
 }
 else {
-    echo "<br><br><a href='/'>Home</a>  -  <a href='logout'>Logout</a><br><br>";
+    echo "<br><br><a href='{$GLOBALS['PATH']['ROOT']}'>Home</a>  -  <a href='logout'>Logout</a><br><br>";
 }
 
 // $checkAchievementSQL = mysqli_query($dbDataConn, "SELECT * FROM `userachievements` WHERE `userid`= '" . $_SESSION['userArray']['id'] . "'");

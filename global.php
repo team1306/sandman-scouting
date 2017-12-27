@@ -6,13 +6,6 @@
 	include "php/const.php";
 	include "php/message.php";
 	include "php/functions.php";
-
-	if (!ISSET($_SESSION['userArray']['uid'])) {
-		$_SESSION['userArray']['uid'] = 0;
-	}
-	if (!ISSET($_SESSION['teamArray']['num'])) {
-		$_SESSION['teamArray']['num'] = 0;
-	}
 ?>
 
 <!DOCTYPE html>

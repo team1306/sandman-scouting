@@ -4,6 +4,7 @@
   session_start();
   include "php/message.php";
   include "php/const.php";
+  $_SESSION = [];
   $message['name'] = "Info:";
   $message['desc'] = "You have been logged out.";
   $message['type'] = 'info';

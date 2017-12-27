@@ -2,10 +2,8 @@
 </head>
 
 <body>
-	<?php
-	    include 'nav.php';
-	?>
-	<img src="img/logo.png" style="display: block; margin-left: auto; margin-right: auto; align:center; width:70%; padding-top: 5%; max-width:600px;">
+	<?php include 'nav.php'; ?>
+	<img src="img/logo.png" class="logo">
 	<div class="container">
 		<div class="row" style="padding-top:20px;">
 				<div class="col-sm-6" style="padding-bottom:20px;">
@@ -41,7 +39,7 @@
 		                    </div>
 		                </div>
 		            </div>
-		            <a href="<?php echo $GLOBALS['PATH']['PIT_SHEET'];?>"> 
+		            <a href="<?php echo $GLOBALS['PATH']['PIT_SHEET'];?>">
 		                <div class="panel-footer">
 		                    <span class="pull-left">Click Here</span>
 		                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>

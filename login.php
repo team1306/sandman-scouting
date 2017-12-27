@@ -13,7 +13,7 @@
   include 'php/userCheck.php';
   include 'php/message.php';
 
-  $users = mysqli_query($dbDataConn, "SELECT * FROM `users` WHERE `name` = '" . $name . "' LIMIT 1");
+  $users = mysqli_query($dbDataConn, "SELECT * FROM {$GLOBALS['DB']['TABLE']['USER']} WHERE `name` = '" . $name . "' LIMIT 1");
   while($row = mysqli_fetch_array($users)) {
     if (password_verify($pin, $row['pin'])) {
       $login = true;
