@@ -41,7 +41,7 @@
 		                    </div>
 		                </div>
 		            </div>
-		            <a href="<?php echo $GLOBALS['PATH']['PIT_SHEET'];?>"> <!--The link didn't work so I fixed it-->
+		            <a href="<?php echo $GLOBALS['PATH']['PIT_SHEET'];?>"> 
 		                <div class="panel-footer">
 		                    <span class="pull-left">Click Here</span>
 		                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
