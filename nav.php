@@ -35,40 +35,39 @@
         <?php
             $disabled = "";
             if (checkUser(false) == 0) {
-                echo '<div style="padding-right: 5px">
-                        <div class="btn-group navbar-btn">
-                          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:black !important">';
-                if ($_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['slackSignIn']) {
-                  echo '<img src="' . $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['image_24'] . '"> ';
-                }
-                echo $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['name'] . ' <span class="caret"></span>
-                              </button>
-                              <ul class="dropdown-menu">';
-                              if ($GLOBALS['ACHIEVEMENTS']['ENABLE']) {
-                                echo '<li ' . $disabled . '><a href="/achievement.php?userid=' . $_SESSION['userArray']['id'] . '"><i class="fa fa-star-o" aria-hidden="true"></i> Achievements</a></li>
-                                <li role="separator" class="divider"></li>';
-                              }
-                                echo '
-                                <li><a href="/sandman/logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
-                              </ul>
-                            </div>
-                        </div>';
-            }
-            else {
-                echo '
-                  <div style="padding: 5px">
-                    <a href="https://slack.com/oauth/authorize?scope=
-                      identity.basic,identity.email,identity.team,identity.avatar
-                      &client_id=' . $GLOBALS['OAUTH']['CLIENT_ID'] . '
-                      &redirect_uri=' . $GLOBALS['OAUTH']['EXTERNAL_URI'] . '">
-                      <img alt="Sign in with Slack"
-                            height="40"
-                            width="172"
-                            src="https://platform.slack-edge.com/img/sign_in_with_slack.png"
-                            srcset="https://platform.slack-edge.com/img/sign_in_with_slack.png 1x,
-                              https://platform.slack-edge.com/img/sign_in_with_slack@2x.png 2x" />
-                    </a>
-                  </div>';
+              echo '
+                <div style="padding: 5px">
+                  <a href="https://slack.com/oauth/authorize?scope=
+                    identity.basic,identity.email,identity.team,identity.avatar
+                    &client_id=' . $GLOBALS['OAUTH']['CLIENT_ID'] . '
+                    &redirect_uri=' . $GLOBALS['OAUTH']['EXTERNAL_URI'] . '">
+                    <img alt="Sign in with Slack"
+                          height="40"
+                          width="172"
+                          src="https://platform.slack-edge.com/img/sign_in_with_slack.png"
+                          srcset="https://platform.slack-edge.com/img/sign_in_with_slack.png 1x,
+                            https://platform.slack-edge.com/img/sign_in_with_slack@2x.png 2x" />
+                  </a>
+                </div>';
+            } else {
+              echo '<div style="padding-right: 5px">
+                      <div class="btn-group navbar-btn">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:black !important">';
+              if ($_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['slackSignIn']) {
+                echo '<img src="' . $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['image_24'] . '"> ';
+              }
+              echo $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['name'] . ' <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">';
+                            if ($GLOBALS['ACHIEVEMENTS']['ENABLE']) {
+                              echo '<li ' . $disabled . '><a href="/achievement.php?userid=' . $_SESSION['userArray']['id'] . '"><i class="fa fa-star-o" aria-hidden="true"></i> Achievements</a></li>
+                              <li role="separator" class="divider"></li>';
+                            }
+                              echo '
+                              <li><a href="/sandman/logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
+                            </ul>
+                          </div>
+                      </div>';
             }
         ?></li>
         <?php
