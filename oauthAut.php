@@ -33,12 +33,12 @@ foreach ($jsonIterator as $key => $val) {
   } else {
     // No error
     if ($key == "user" && is_array($val)) {
-      $_SESSION['userArray'] = $val;
+      $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray'] = $val;
       if ($GLOBALS['OAUTH']['DEBUG']) {
         echo "userArray: <br><br>" . var_dump($val) . "<br><br>";
       }
     } else if ($key == "team" && is_array($val)) {
-      $_SESSION['teamArray'] = $val;
+      $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['teamArray'] = $val;
       if ($GLOBALS['OAUTH']['DEBUG']) {
         echo "userArray: <br><br>" . var_dump($val) . "<br><br>";
       }
@@ -46,10 +46,10 @@ foreach ($jsonIterator as $key => $val) {
   }
 }
 
-$_SESSION['userArray']['slackSignIn'] = true;       //Slack is signed in
+$_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['slackSignIn'] = true;       //Slack is signed in
 
 // Query for selecting users with the same username to see if this user exists in db
-$user = mysqli_query($dbDataConn, "SELECT * FROM `users` WHERE `slackId` = '" . $_SESSION['userArray']['id'] . "'");
+$user = mysqli_query($dbDataConn, "SELECT * FROM `users` WHERE `slackId` = '" . $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['id'] . "'");
 while ($row = mysqli_fetch_array($user)) {      //Fetch results from query
   $userExists = true;
   if ($GLOBALS['OAUTH']['DEBUG']) {
@@ -57,7 +57,7 @@ while ($row = mysqli_fetch_array($user)) {      //Fetch results from query
   }
 }
 if (!$userExists) {
-  $addUserSQL = "INSERT INTO `users`(`id`, `slackId`, `team`, `name`) VALUES ('DEFAULT','" . $_SESSION['userArray']['id'] . "','" . $_SESSION['teamArray']['num'] . "','" . $_SESSION['userArray']['name'] . "')";
+  $addUserSQL = "INSERT INTO `users`(`id`, `slackId`, `team`, `name`) VALUES ('DEFAULT','" . $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['id'] . "','" . $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['teamArray']['num'] . "','" . $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['name'] . "')";
   if ($dbDataConn->query($addUserSQL) === true) {
     if ($GLOBALS['OAUTH']['DEBUG']) {
       echo "<br>User added to `users` db";
@@ -66,20 +66,24 @@ if (!$userExists) {
     echo $dbDataConn->error;
   }
 }
-$user2 = mysqli_query($dbDataConn, "SELECT * FROM `users` WHERE `slackId` = '" . $_SESSION['userArray']['id'] . "'");
+$user2 = mysqli_query($dbDataConn, "SELECT * FROM `users` WHERE `slackId` = '" . $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['id'] . "'");
 while ($row = mysqli_fetch_array($user2)) {      //Fetch results from query //User exists in db
-  $_SESSION['userArray']['uid'] = $row['id'];
-  $_SESSION['userArray']['isAdmin'] = $row['isAdmin'];
-  $_SESSION['userArray']['name'] = $row['name'];
-  $_SESSION['teamArray']['num'] = $row['team'];
-  $_SESSION['userArray']['scoutingAlliance'] = $row['scoutingAlliance'];
-  $_SESSION['userArray']['scoutingNumber'] = $row['scoutingNumber'];
-  $_SESSION['userArray']['scoutTeam'] = $row['scoutTeam'];
+  $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['uid'] = $row['id'];
+  $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['isAdmin'] = $row['isAdmin'];
+  $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['name'] = $row['name'];
+  $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['teamArray']['num'] = $row['team'];
+  $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['scoutingAlliance'] = $row['scoutingAlliance'];
+  $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['scoutingNumber'] = $row['scoutingNumber'];
+  $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['scoutTeam'] = $row['scoutTeam'];
 }
 
 if (!$GLOBALS['OAUTH']['DEBUG']) {
-  echo "Welcome, " . $_SESSION['userArray']['name'] . ". Redirecting you to the homepage...  If you are not automatically redirected, <a href='/sandman/index'>click here</a>.";
+  echo "Welcome, " . $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['name'] . ". Redirecting you to the homepage...  If you are not automatically redirected, <a href='/sandman/index'>click here</a>.";
   checkUser(true);
+  $message['name'] = "Success!";
+  $message['desc'] = "You are now logged in.";
+  $message['type'] = 'success';
+  sendMessage($message, $GLOBALS['PATH']['INDEX']);
 } else {
   echo "<br><br><a href='{$GLOBALS['PATH']['ROOT']}'>Home</a>  -  <a href='logout'>Logout</a><br><br>";
 }

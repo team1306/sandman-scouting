@@ -20,7 +20,7 @@
 //This function runs once the body has finished loading
 function load() {
 	//Check which alliance they are scouting
-	if (<?php echo $_SESSION['userArray']['scoutingAlliance']; ?> == 1) {
+	if (<?php echo $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['scoutingAlliance']; ?> == 1) {
     setColor('red');
 	} else {
     setColor('blue');
@@ -150,7 +150,7 @@ function setValues() {
 
 	//Set matchnumber to the current match number and set the team to the data from TBA
 	var matchNum = <?php include "getMatchNum.php"; echo getNextMatch();?>;
-	var team = '<?php include "TBAdata.php"; echo getTeam('qm', 1, getNextMatch(), $_SESSION['userArray']['scoutingAlliance'], ($_SESSION['userArray']['scoutingNumber']-1)); ?>';
+	var team = '<?php include "TBAdata.php"; echo getTeam('qm', 1, getNextMatch(), $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['scoutingAlliance'], ($_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['scoutingNumber']-1)); ?>';
 	document.getElementById("tTeamNum").value = team;
 	document.getElementById("tMatchNumber").value = matchNum;
 };
@@ -464,8 +464,7 @@ $(document).ready(function () {
 						id="notesTele"
 						class="form-control"
 						style="display: block"
-						rows="10">
-				</textarea>
+						rows="10"></textarea>
 				</div>
 			</div>
 		</div>

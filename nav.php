@@ -38,10 +38,10 @@
                 echo '<div style="padding-right: 5px">
                         <div class="btn-group navbar-btn">
                           <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:black !important">';
-                if ($_SESSION['userArray']['slackSignIn']) {
-                  echo '<img src="' . $_SESSION['userArray']['image_24'] . '"> ';
+                if ($_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['slackSignIn']) {
+                  echo '<img src="' . $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['image_24'] . '"> ';
                 }
-                echo $_SESSION['userArray']['name'] . ' <span class="caret"></span>
+                echo $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['name'] . ' <span class="caret"></span>
                               </button>
                               <ul class="dropdown-menu">';
                               if ($GLOBALS['ACHIEVEMENTS']['ENABLE']) {
@@ -72,7 +72,7 @@
             }
         ?></li>
         <?php
-          if (!isset($_SESSION['userArray']['name'])) {
+          if (!isset($_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['name'])) {
             echo '<li>
                     <a style="cursor:pointer" data-toggle="modal" data-target="#loginModal">
                       <i class="fa fa-user" aria-hidden="true"></i>

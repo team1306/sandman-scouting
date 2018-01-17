@@ -17,16 +17,16 @@
   while($row = mysqli_fetch_array($users)) {
     if (password_verify($pin, $row['pin'])) {
       $login = true;
-      $_SESSION['userArray']['id'] = $row['id'];
-      $_SESSION['userArray']['uid'] = $row['id'];
-      $_SESSION['userArray']['isAdmin'] = $row['isAdmin'];
-      $_SESSION['userArray']['name'] = $row['name'];
-      $_SESSION['teamArray']['num'] = $row['team'];
-      $_SESSION['userArray']['scoutingAlliance'] = $row['scoutingAlliance'];
-      $_SESSION['userArray']['scoutingNumber'] = $row['scoutingNumber'];
-      $_SESSION['userArray']['scoutTeam'] = $row['scoutTeam'];
+      $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['id'] = $row['id'];
+      $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['uid'] = $row['id'];
+      $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['isAdmin'] = $row['isAdmin'];
+      $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['name'] = $row['name'];
+      $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['teamArray']['num'] = $row['team'];
+      $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['scoutingAlliance'] = $row['scoutingAlliance'];
+      $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['scoutingNumber'] = $row['scoutingNumber'];
+      $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['scoutTeam'] = $row['scoutTeam'];
 
-      $_SESSION['userArray']['slackSignIn'] = false;
+      $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['slackSignIn'] = false;
 
       $message['name'] = "Succes!";
       $message['desc'] = "You are now logged in.";
