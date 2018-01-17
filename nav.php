@@ -9,7 +9,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.php"><?php echo $GLOBALS['APP_INFO']['CODENAME']; ?></a>
+      <a class="navbar-brand" href="<?php echo $GLOBALS['PATH']['INDEX']; ?>"><?php echo $GLOBALS['APP_INFO']['CODENAME']; ?></a>
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
@@ -25,6 +25,7 @@
         <li><a href="<?php echo $GLOBALS['PATH']['REPORT_SHEET']; ?>"><?php echo $GLOBALS['MODALS']['REPORT_SHEET']; ?></a></li>
         <li><a href="<?php echo $GLOBALS['PATH']['DATABASE_SHEET']; ?>"><?php echo $GLOBALS['MODALS']['DATABASE_SHEET']; ?></a></li>
         <?php
+          // Add the admin tab if this user is an admin
           if (checkUserAdmin(false) == 0) {
             echo "<li><a href={$GLOBALS['PATH']['ADMIN']}>{$GLOBALS['MODALS']['ADMIN']}</a></li>";
           }
@@ -41,12 +42,12 @@
                     identity.basic,identity.email,identity.team,identity.avatar
                     &client_id=' . $GLOBALS['OAUTH']['CLIENT_ID'] . '
                     &redirect_uri=' . $GLOBALS['OAUTH']['EXTERNAL_URI'] . '">
-                    <img alt="Sign in with Slack"
-                          height="40"
-                          width="172"
-                          src="https://platform.slack-edge.com/img/sign_in_with_slack.png"
-                          srcset="https://platform.slack-edge.com/img/sign_in_with_slack.png 1x,
-                            https://platform.slack-edge.com/img/sign_in_with_slack@2x.png 2x" />
+                      <img alt="Sign in with Slack"
+                            height="40"
+                            width="172"
+                            src="https://platform.slack-edge.com/img/sign_in_with_slack.png"
+                            srcset="https://platform.slack-edge.com/img/sign_in_with_slack.png 1x,
+                              https://platform.slack-edge.com/img/sign_in_with_slack@2x.png 2x" />
                   </a>
                 </div>';
             } else {
