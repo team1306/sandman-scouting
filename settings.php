@@ -107,11 +107,8 @@
     </div>
     <script>
         function load() {
-          var slackSignIn = "<?php echo $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['slackSignIn'] ?>";
-          if (!slackSignIn) {
             var userTeamJS = "<?php echo $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['teamArray']['num']; ?>";
             document.getElementById(userTeamJS).checked = true;
-          }
             var scoutTeamJS = "steam<?php echo $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['scoutTeam']; ?>";
             document.getElementById(scoutTeamJS).checked = true;
         }
