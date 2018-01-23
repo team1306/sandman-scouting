@@ -40,7 +40,6 @@ input[type=button], input[type=number]{
 <body>
 <?php include "nav.php";
       include "error.php";
-
       include "php/userCheck.php";
   		checkUser(true);?>
   <form action="remove" method="get">
@@ -67,12 +66,9 @@ input[type=button], input[type=number]{
 
     while($row = mysqli_fetch_array($result)) {
         if ($row['isRed'] == 1) {
-        	//echo "<style> td {background-color:red;} </style>";
         	$alliance = "red";
-        }
-        else {
-        	//echo "<style> td {background-color:blue; color:white;} </style>";
-            $alliance = "blue";
+        } else {
+          $alliance = "blue";
         }
         echo "<tr>";
           echo "<td><input type='radio' name='id' value='" . $row['id'] . "'></td>";
@@ -90,14 +86,14 @@ input[type=button], input[type=number]{
     ?>
     </div>
     <div id="footer">
-        <div class="row">
-            <div class="col-sm-6">
-                <button type='submit' class='btn btn-danger btn-lg btn-block' style='margin-bottom:5px; margin-right:5px;' name='action' value=0>Remove</button>
-            </div>
-            <div class="col-sm-6">
-                <button type='submit' class='btn btn-danger btn-lg btn-block' style='margin-bottom:5px; margin-right:5px;' name='action' value=1>Edit</button>
-            </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <button type='submit' class='btn btn-danger btn-lg btn-block' style='margin-bottom:5px; margin-right:5px;' name='action' value=0>Remove</button>
         </div>
+        <div class="col-sm-6">
+          <button type='submit' class='btn btn-danger btn-lg btn-block' style='margin-bottom:5px; margin-right:5px;' name='action' value=1>Edit</button>
+        </div>
+      </div>
     </div>
   </form>
 </body>
