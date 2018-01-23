@@ -3,4 +3,4 @@
 
 Team 1306's web based scouting app.
 
-We are planning to completely rewrite the scouting app with a modern front end framework (react.js) and a more robust back end with node.js.
+Please see the release 5.0.0 branch. Master is very out of date.
