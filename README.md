@@ -1,4 +1,4 @@
 # sandman-scouting
-Team 1306's web based scouting app.
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/d48c6eee405842e09a3c525aa82b3fe0)](https://www.codacy.com/app/BadgerBOTS/sandman-scouting?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=team1306/sandman-scouting&amp;utm_campaign=Badge_Grade)
 
-This is currently in development and will be usable by the start of the 2018 season.
+Team 1306's web based scouting app.
