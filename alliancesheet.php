@@ -1,16 +1,16 @@
 <?php include "global.php"; ?>
 
 	<!-- Custom CSS -->
-	<link href="../css/checkboxes.css" rel="stylesheet">
-	<link href="../css/swagboxes.css" rel="stylesheet">
-	<link href="../css/sheet.css" rel="stylesheet">
-	<link href="../css/input.css" rel="stylesheet">
-	<link href="../css/star-rating.css" rel="stylesheet">
+	<link href="css/checkboxes.css" rel="stylesheet">
+	<link href="css/swagboxes.css" rel="stylesheet">
+	<link href="css/sheet.css" rel="stylesheet">
+	<link href="css/input.css" rel="stylesheet">
+	<link href="css/star-rating.css" rel="stylesheet">
 
 	<!-- Javascript -->
-	<!--<script type="text/javascript" src="../js/report2016globalspit.js"></script>-->
-	<script type="text/javascript" src="../js/background.js"></script>
-	<script type="text/javascript" src="../js/star-rating.js"></script>
+	<!--<script type="text/javascript" src="js/report2016globalspit.js"></script>-->
+	<script type="text/javascript" src="js/background.js"></script>
+	<script type="text/javascript" src="js/star-rating.js"></script>
 <style>
 input[type=number] {
     background-color: #000;
@@ -50,7 +50,7 @@ input[type=button], input[type=number]{
   							</select>
 						</div>
 					</div>
-					<div class="row">	
+					<div class="row">
 						<!--<div class="" style="height:30px"></div> <!--Keep or universe will explode (and it will be your fault!!!)-->
 						<div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
 							<p>Match/Round:</p>
@@ -69,10 +69,10 @@ input[type=button], input[type=number]{
   							</select>
   						</div>
   					</div>
-			
+
 
 					<hr>
-					<div class="row">	
+					<div class="row">
 						<!--<div class="" style="height:30px"></div> <!--Keep or universe will explode (and it will be your fault!!!)-->
 						<div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
 							<p>Team 1:</p>
@@ -88,7 +88,7 @@ input[type=button], input[type=number]{
   							</select>
   						</div>
   					</div>
-  					<div class="row">	
+  					<div class="row">
 						<!--<div class="" style="height:30px"></div> <!--Keep or universe will explode (and it will be your fault!!!)-->
 						<div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
 							<p>Team 2:</p>
@@ -104,7 +104,7 @@ input[type=button], input[type=number]{
   							</select>
   						</div>
   					</div>
-  					<div class="row">	
+  					<div class="row">
 						<!--<div class="" style="height:30px"></div> <!--Keep or universe will explode (and it will be your fault!!!)-->
 						<div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
 							<p>Team 3:</p>
@@ -120,8 +120,8 @@ input[type=button], input[type=number]{
   							</select>
   						</div>
   					</div>
-  					
-  					
+
+
 				</div>
 			</div>
 		</div>

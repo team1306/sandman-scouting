@@ -1,13 +1,11 @@
-<?php
-session_start();
-include "php/const.php";
-include "php/message.php";
-if (!ISSET($_SESSION['userArray']['uid'])) {
-	$_SESSION['userArray']['uid'] = 0;
-}
-if (!ISSET($_SESSION['teamArray']['num'])) {
-	$_SESSION['teamArray']['num'] = 0;
-}
+ <?php
+   if(!isset($_SESSION)) {
+     session_start();
+   }
+
+	include "php/const.php";
+	include "php/message.php";
+	include "php/functions.php";
 ?>
 
 <!DOCTYPE html>
@@ -20,11 +18,14 @@ if (!ISSET($_SESSION['teamArray']['num'])) {
 	<meta name="description" content="">
 	<meta name="author" content="">
 
-	<title><?php echo $title;?></title>
+	<title><?php echo $GLOBALS['APP_INFO']['TITLE'];?></title>
 
 	<!-- Bootstrap Core CSS -->
 	<link href="css/bootstrap.css" rel="stylesheet">
-	
+
+	<!-- SB Admin CSS -->
+	<link href="css/sb-admin-2.css" rel="stylesheet">
+
 	<!-- Favicon -->
 	<link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
 	<link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
@@ -47,10 +48,9 @@ if (!ISSET($_SESSION['teamArray']['num'])) {
 	<!-- Custom CSS -->
 	<link href="css/disableXScroll.css" rel="stylesheet">
 	<link href="css/global.css" rel="stylesheet">
-	<link href="css/sb-admin-2.css" rel="stylesheet">
-	<link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
+	<link href="css/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 	<link href="css/navbar.css" rel="stylesheet">
-	<!--<link href="css/load.css" rel="stylesheet">-->
-	
-	<script type="text/javascript" src="../js/jquery-2.1.1.min.js"></script>
-	<script type="text/javascript" src="../js/bootstrap.js"></script>
+
+	<!-- Javascript -->
+	<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>

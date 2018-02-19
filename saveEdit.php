@@ -12,7 +12,7 @@ $updateSQL = "UPDATE `matchdata` SET `teamNum`='" . $_POST['teamNum'] . "', `mat
 if ($databasesheetDebug) {
     echo "<br>Update: '" . $updateSQL . "'";
 }
-$conn = new mysqli($DBservername, $DBuser, $DBpassword, $DBname);
+$conn = new mysqli($GLOBALS['DB']['HOST'], $GLOBALS['DB']['USER'], $GLOBALS['DB']['PW'], $GLOBALS['DB']['DATABASE']);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 

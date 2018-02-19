@@ -1,16 +1,16 @@
 <?php include "global.php"; ?>
 
 	<!-- Custom CSS -->
-	<link href="../css/checkboxes.css" rel="stylesheet">
-	<link href="../css/swagboxes.css" rel="stylesheet">
-	<link href="../css/sheet.css" rel="stylesheet">
-	<link href="../css/input.css" rel="stylesheet">
-	<link href="../css/star-rating.css" rel="stylesheet">
+	<link href="css/checkboxes.css" rel="stylesheet">
+	<link href="css/swagboxes.css" rel="stylesheet">
+	<link href="css/sheet.css" rel="stylesheet">
+	<link href="css/input.css" rel="stylesheet">
+	<link href="css/star-rating.css" rel="stylesheet">
 
 	<!-- Javascript -->
-	<!--<script type="text/javascript" src="../js/report2016globalspit.js"></script>-->
-	<script type="text/javascript" src="../js/background.js"></script>
-	<script type="text/javascript" src="../js/star-rating.js"></script>
+	<!--<script type="text/javascript" src="js/report2016globalspit.js"></script>-->
+	<script type="text/javascript" src="js/background.js"></script>
+	<script type="text/javascript" src="js/star-rating.js"></script>
 <style>
 input[type=number] {
     background-color: #000;
@@ -28,7 +28,7 @@ input[type=button], input[type=number]{
 </head>
 <body>
 	<?php include "nav.php";?>
-	
+
 	<form id="2016autoform" action="../php/sendDBpit.php" method="post">
 		<div class="row" style="padding: 0.6em">
 			<div class="col-md-4" style="display:block; margin-left:auto; margin-right:auto;">
@@ -42,7 +42,7 @@ input[type=button], input[type=number]{
 							<input class="textBox" id="tTeamNum" type="number" maxlength="20" name="teamnum" required/>
 						</div>
 					</div>
-					<div class="row">	
+					<div class="row">
 						<div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
 							<p>Category:</p>
 						</div>
@@ -57,16 +57,16 @@ input[type=button], input[type=number]{
 						<hr>
 						<h4 class="center"><strong>Driver Rating</strong><br><span id="driverRating-caption"></span></h4>
 						<input class="driverRating" data-container-class='text-center' name="driverRating">
-						
+
 						<h4 class="center"><strong>Gear Rating</strong><br><span id="gear-caption"></span></h4>
 						<input class="gear" data-container-class='text-center' name="gearRating">
-						
+
 						<h4 class="center"><strong>Shooter Rating</strong><br><span id="shooter-caption"></span></h4>
 						<input class="shooter" data-container-class='text-center' name="shooterRating">
-						
+
 						<h4 class="center"><strong>Speed Rating</strong><br><span id="speed-caption"></span></h4>
 						<input class="speed" data-container-class='text-center' name="speedRating">
-						
+
 						<h4 class="center"><strong>Defense Rating</strong><br><span id="defense-caption"></span></h4>
 						<input class="defense" data-container-class='text-center' name="defenseRating">
 				</div>

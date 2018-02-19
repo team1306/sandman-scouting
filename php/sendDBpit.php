@@ -15,17 +15,12 @@ $notes = $_POST['notes'];
 $cleanNotes = preg_replace('/"/','',$notes);
 $cleanNotes = str_replace("'", "", $cleanNotes);
 
-$servername = "localhost";
-$username = "data";
-$password = "mxwZsnKw5FtD8uX8";
-$dbname = "sandman";
-
 // Create connection
-$conn = new mysqli($DBservername, $DBuser, $DBpassword, $DBname);
+$conn = new mysqli($GLOBALS['DB']['HOST'], $GLOBALS['DB']['USER'], $GLOBALS['DB']['PW'], $GLOBALS['DB']['DATABASE']);
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
-} 
+}
 
 $sql = "INSERT INTO `pitdata`(`id`, `userID`, `userTeamNum`, `teamnum`, `category`, `driverRating`, `gearRating`, `shooterRating`, `speedRating`, `defenseRating`, `notes`)
 VALUES (

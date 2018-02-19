@@ -1,14 +1,20 @@
-.shape{    
-	border-style: solid; border-width: 0 70px 40px 0; float:right; height: 0px; width: 0px;
-	-ms-transform:rotate(360deg); /* IE 9 */
+.shape{
+	border-style: solid;
+	border-width: 0 70px 40px 0;
+	float:right;
+	height: 0;
+	-ms-transform: rotate(360deg); /* IE 9 */
+	-moz-transform: rotate(360deg); /* Firefox */
 	-o-transform: rotate(360deg);  /* Opera 10.5 */
-	-webkit-transform:rotate(360deg); /* Safari and Chrome */
-	transform:rotate(360deg);
+	-webkit-transform: rotate(360deg); /* Safari and Chrome */
+	transform: rotate(360deg);
+	width: 0;
 }
 .offer{
 	background:#fff; border:1px solid #ddd; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); margin: 15px 0; overflow:hidden;
 }
 .shape {
+	border-color: #ffffff #d9534f #ffffff #ffffff;
 	border-color: rgba(255,255,255,0) #d9534f rgba(255,255,255,0) rgba(255,255,255,0);
 }
 .offer-radius{
@@ -38,14 +44,20 @@
 .offer-warning .shape{
 	border-color: transparent #f0ad4e transparent transparent;
 }
-
 .shape-text{
-	color:#fff; font-size:12px; font-weight:bold; position:relative; right:-40px; top:2px; white-space: nowrap;
+	color:#fff;
+	font-size:12px;
+	font-weight:bold;
+	position:relative;
+	right:-40px;
+	top:2px;
 	-ms-transform:rotate(30deg); /* IE 9 */
-	-o-transform: rotate(360deg);  /* Opera 10.5 */
+	-moz-transform:rotate(30deg); /* Firefox */
+	-o-transform: rotate(30deg);  /* Opera 10.5 */
 	-webkit-transform:rotate(30deg); /* Safari and Chrome */
 	transform:rotate(30deg);
-}	
+	white-space: nowrap;
+}
 .offer-content{
 	padding:0 20px 10px;
 }
@@ -72,6 +84,5 @@
   }
   .col-lg-3 {
     width: 25%;
-  }
   }
 }

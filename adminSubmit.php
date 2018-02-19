@@ -5,13 +5,12 @@
 <?php
 include 'nav.php';
 include 'php/dbDataConn.php';
-include 'php/getScoutInfo.php';
 
 $id = $_GET["id"];
 $action = $_GET["action"];
 
 if ($action == 0) {  //Delete
-    $sql = "DELETE FROM `matchdata` WHERE id = $id";
+    $sql = "DELETE FROM " . $GLOBALS['DB']['TABLE']['USER'] . " WHERE id = $id";
     if ($dbDataConn->query($sql) === TRUE) {
         $last_id = mysqli_insert_id($dbDataConn);
         echo "
@@ -23,18 +22,15 @@ if ($action == 0) {  //Delete
     } else {
         echo "Error: " . $sql . "<br>" . $dbDataConn->error . "
         <div class='container'>
-            <a href='../removePage.php' target='_blank'><h1>An error occured!  Please contact Sam.</h1></a>
+            <a href='admin' target='_blank'><h1>An error occured!</h1></a>
         </div>
         ";
     }
 }
-else {  //Edit
-    $result = mysqli_query($dbDataConn, "SELECT * FROM `matchdata` WHERE id = $id LIMIT 1");
+else {  //Toggle admin
+    $result = mysqli_query($dbDataConn, "SELECT * FROM " . $GLOBALS['DB']['TABLE']['USER'] . " WHERE id = $id LIMIT 1");
     while ($row = mysqli_fetch_array($result)) {
-        $id = $row['id'];
-        $username = getScoutName($row['userID']);
-        $teamNum = $row['teamNum'];
-        $matchNum = $row['matchNum'];
+        $isAdmin = $row['isAdmin'];
     }
     echo '
     <div class="container">
