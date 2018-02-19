@@ -120,7 +120,7 @@
       <div style="overflow: hidden;">
 		    <?php
 		        include 'TBAdata.php';
-		        echo "<div class='pull-left'>" . $GLOBALS['APP_INFO']['VERSION'] . "<a href='egg.php'> - </a>" . $GLOBALS['APP_INFO']['CODENAME'] . "</div><div class='pull-right'>TBA Cache Last Updated: " . getUpdateTime() . "</div>";
+		        echo "<div class='pull-left'>{$GLOBALS['APP_INFO']['CODENAME']} {$GLOBALS['APP_INFO']['VERSION']}</div><div class='pull-right'>TBA Cache Last Updated: " . getUpdateTime() . "</div>";
 		    ?>
 		   </div>
     </div>
