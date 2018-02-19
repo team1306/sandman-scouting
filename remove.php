@@ -1,4 +1,5 @@
-<?php include "global.php"; ?>
+<?php include "global.php";
+      ob_start(); ?>
 </head>
 
 <body>
@@ -10,25 +11,26 @@ include 'php/getScoutInfo.php';
 $id = $_GET["id"];
 $action = $_GET["action"];
 
-if ($action == 0) {  //Delete
-    $sql = "DELETE FROM `matchdata` WHERE id = $id";
-    if ($dbDataConn->query($sql) === TRUE) {
-        $last_id = mysqli_insert_id($dbDataConn);
-        echo "
-        <div class='container'>
-            <a href='$databasePath'><button type='button' class='btn btn-success btn-xl' style='width:100%; height:200px;'><h1 style='font-size: 500%;'>Click Here</h1></button></a>
-        </div>
-        ";
-        echo "<h1> ID: <strong>$id</strong> was removed successfully.</h1>";
-    } else {
-        echo "Error: " . $sql . "<br>" . $dbDataConn->error . "
-        <div class='container'>
-            <a href='../removePage.php' target='_blank'><h1>An error occured!  Please contact Sam.</h1></a>
-        </div>
-        ";
-    }
+if ($action == 0) {
+  // Delete
+  $deleteStatement = $dbDataConn->prepare("DELETE FROM {$GLOBALS['DB']['TABLE']['MATCH_SCOUTING']} WHERE `id` = ?");
+  $deleteStatement->bind_param("i", $id);
+  if ($deleteStatement->execute()) {
+    // Delete success
+    $message['name'] = "Success!";
+    $message['desc'] = "Removed ID: {$id}.";
+    $message['type'] = 'success';
+    sendMessage($message, $GLOBALS['PATH']['DATABASE_SHEET']);
+  } else {
+    // Delete fail
+    $message['name'] = "Error!";
+    $message['desc'] = "Unable to execute the delete statement. Check the apache2 logs for more information.";
+    $message['type'] = 'danger';
+    sendMessage($message, $GLOBALS['PATH']['DATABASE_SHEET']);
+  }
 }
-else {  //Edit
+else {
+  // Edit
     $result = mysqli_query($dbDataConn, "SELECT * FROM `matchdata` WHERE id = $id LIMIT 1");
     while ($row = mysqli_fetch_array($result)) {
         $id = $row['id'];
@@ -67,6 +69,7 @@ else {  //Edit
     echo '</div>';
 }
 $dbDataConn->close();
+ob_flush();
 ?>
 <script>
     var switchButton = document.getElementById('switch');

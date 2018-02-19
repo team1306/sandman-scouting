@@ -1,8 +1,8 @@
 <?php
-include "global.php";
-include "php/const.php";
-include "php/debug.php";
-include "php/dbDataConn.php";
+  include "global.php";
+  include "php/const.php";
+  include "php/debug.php";
+  include "php/dbDataConn.php";
 ?>
 </head>
 
@@ -15,7 +15,7 @@ if ($databasesheetDebug) {
 $conn = new mysqli($GLOBALS['DB']['HOST'], $GLOBALS['DB']['USER'], $GLOBALS['DB']['PW'], $GLOBALS['DB']['DATABASE']);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
-} 
+}
 if ($conn->query($updateSQL) === TRUE) {
     if ($databasesheetDebug) {
         $last_id = mysqli_insert_id($conn);
