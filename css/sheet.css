@@ -45,10 +45,9 @@ input[type=button], input[type=number]{
     color: white;
 }
 .submitButton {
-  border: 0px;
-  display: block;
-  margin: 20px;
-  width: 100%;
+  border: 0;
+  margin-bottom: 20px;
+  margin-top: 20px;
 }
 .checkboxLabel {
   padding-top:15px;

@@ -9,7 +9,7 @@
 	<link href="css/image-picker.css" rel="stylesheet">
 
 	<!-- Custom gamesheet JS -->
-	<script type="text/javascript" src="js/report2017regionals.js"></script>
+	<script type="text/javascript" src="js/sheet2018.js"></script>
 	<script type="text/javascript" src="js/background.js"></script>
 	<script type="text/javascript" src="js/star-rating.js"></script>
 	<script type="text/javascript" src="js/image-picker.js"></script>
@@ -143,7 +143,8 @@ function setStars() {
 //Set all textboxes to 0 or their correct values
 function setValues() {
 	//Set these textboxes to 0
-	document.getElementById("autoKPAtb").value = 0;
+	document.getElementById("autoCubeSwitchtb").value = 0;
+	document.getElementById("autoCubeScaletb").value = 0;
 	document.getElementById("teleKPAtb").value = 0;
 	document.getElementById("teleGearSuccesstb").value = 0;
 	document.getElementById("teleGearFailtb").value = 0;
@@ -235,70 +236,39 @@ $(document).ready(function () {
 									<input
 										type="checkbox"
 										value=1
-										id="autoGear"
-										name="autoGear"
-										data-toggle="modal"
-										data-target="#autoGearModal">
-									<label for="autoGear" class="checkboxjs"></label>
-								</div>
-							</div>
-							<div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
-								<h4 class="checkboxLabel">
-									Attempt Gear
-								</h4>
-							</div>
-							<div class="col-md-2 col-sm-2 col-xs-2 col-lg-2">
-								<div class="roundedTwo">
-									<input
-										type="checkbox"
-										value=1
 										id="autoPassBaseline"
 										name="autoPassBaseline">
 									<label for="autoPassBaseline" class="checkboxjs"></label>
 								</div>
 							</div>
-							<div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
-								<h4 class="checkboxLabel">Baseline</h4>
+							<div class="col-md-10 col-sm-10 col-xs-10 col-lg-10">
+								<h4 class="checkboxLabel">Cross Auto Line</h4>
 							</div>
 						</div>
 
 						<hr>
 
 						<div class="row">
-							<div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
+							<div class="col-xs-12">
 								<h4 class="center">
-									<strong>High Goal Accuracy<strong>
-									<br>
-									<span id="autoHighGoalAccuracy-caption"></span>
+									<strong>Cubes in Switch<strong>
 								</h4>
-								<input
-									class="autoHighGoalAccuracy"
-									data-container-class='text-center'
-									name="autoHighGoalAccuracy">
-							</div>
-							<div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
-								<h4 class="center">
-									<strong>High Goal Speed<strong>
-									<br>
-									<span id="autoHighGoalSpeed-caption"></span>
-								</h4>
-								<input
-									class="autoHighGoalSpeed"
-									data-container-class='text-center'
-									name="autoHighGoalSpeed">
+								<div class="input-group input-group-lg">
+								  <span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" onclick="setAutoCubeSwitch(-1)">-1</span>
+								  <input id="autoCubeSwitchtb" type="number" class="form-control textBox" name="autoCubeSwitch">
+								  <span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" onclick="setAutoCubeSwitch(1)">+1</span>
+								</div>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-xs-12">
 								<h4 class="center">
-									<strong>KPA<strong>
+									<strong>Cubes in Scale<strong>
 								</h4>
 								<div class="input-group input-group-lg">
-								  <span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" onclick="setAutoKPA(-5)">-5</span>
-								  <span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" onclick="setAutoKPA(-1)">-1</span>
-								  <input id="autoKPAtb" type="number" class="form-control textBox" name="autoKPA">
-								  <span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" onclick="setAutoKPA(1)">+1</span>
-								  <span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" onclick="setAutoKPA(5)">+5</span>
+								  <span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" onclick="setAutoCubeScale(-1)">-1</span>
+								  <input id="autoCubeScaletb" type="number" class="form-control textBox" name="autoCubeScale">
+								  <span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" onclick="setAutoCubeScale(1)">+1</span>
 								</div>
 							</div>
 						</div>
@@ -448,7 +418,7 @@ $(document).ready(function () {
 								</div>
 							</div>
 							<div class="col-md-10 col-sm-10 col-xs-10 col-lg-10">
-								<h4 class="checkboxLabel">Ground Gear Intake</h4>
+								<h4 class="checkboxLabel">Ground Cube Pickup</h4>
 							</div>
 						</div>
 					</div>
@@ -467,8 +437,8 @@ $(document).ready(function () {
 						rows="10"></textarea>
 				</div>
 			</div>
+			<input class="btn btn-danger btn-lg btn-block submitButton" type="submit" value="Submit">
 		</div>
-		<input class="btn btn-danger btn-lg submitButton" type="submit" value="Submit">
 		<br>
 
 		<!-- Gear Modal -->
