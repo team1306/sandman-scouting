@@ -31,7 +31,7 @@ function load() {
 }
 //This function searches the body and finds all of the star ratings and shows the stars to make it look more pretty
 function setStars() {
-	$('.highGoalAccuracy').rating(
+	$('.intake').rating(
 		{
 			'showCaption':true,
 			'stars':'4',
@@ -39,14 +39,14 @@ function setStars() {
 			'max':'4',
 			'step':'1',
 			'size':'xs',
-			'clearCaption':'Not Attempted',
-			'captionElement': '#highGoalAccuracy-caption',
+			'clearCaption':'N/A',
+			'captionElement': '#intake-caption',
 			'starCaptions': {
-				0:'Did not attempt',
-				1:'25%',
-				2:'50%',
-				3:'75%',
-				4:'100%'
+				0:'N/A',
+				1:'V Bad',
+				2:'Bad',
+				3:'Ok',
+				4:'Good'
 			}
 		});
   $('.highGoalSpeed').rating(
@@ -140,22 +140,27 @@ function setStars() {
 			}
 		});
 }
-//Set all textboxes to 0 or their correct values
+// Set all textboxes to 0 or their correct values
 function setValues() {
-	//Set these textboxes to 0
-	document.getElementById("autoCubeSwitchtb").value = 0;
-	document.getElementById("autoCubeScaletb").value = 0;
-	document.getElementById("teleKPAtb").value = 0;
-	document.getElementById("teleGearSuccesstb").value = 0;
-	document.getElementById("teleGearFailtb").value = 0;
+	// Set these textboxes to 0
+	var textboxes = [
+		"autoCubeSwitchSuccesstb",
+		"autoCubeSwitchFailtb",
+		"autoCubeScaleSuccesstb",
+		"autoCubeScaleFailtb"
+	];
 
-	//Set matchnumber to the current match number and set the team to the data from TBA
+	textboxes.forEach(function (id) {
+		document.getElementById(id).value = 0;
+	});
+
+	// Set matchnumber to the current match number and set the team to the data from TBA
 	var matchNum = <?php include "getMatchNum.php"; echo getNextMatch();?>;
 	var team = '<?php include "TBAdata.php"; echo getTeam('qm', 1, getNextMatch(), $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['scoutingAlliance'], ($_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['scoutingNumber']-1)); ?>';
 	document.getElementById("tTeamNum").value = team;
 	document.getElementById("tMatchNumber").value = matchNum;
 };
-//Run JQuery when the document is done loading to set the imagepicker
+// Run JQuery when the document is done loading to set the imagepicker
 $(document).ready(function () {
 	$(".image-picker").imagepicker();
 });
@@ -249,26 +254,63 @@ $(document).ready(function () {
 						<hr>
 
 						<div class="row">
-							<div class="col-xs-12">
+							<div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
 								<h4 class="center">
-									<strong>Cubes in Switch<strong>
+									<strong>Success Switch<strong>
 								</h4>
 								<div class="input-group input-group-lg">
-								  <span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" onclick="setAutoCubeSwitch(-1)">-1</span>
-								  <input id="autoCubeSwitchtb" type="number" class="form-control textBox" name="autoCubeSwitch">
-								  <span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" onclick="setAutoCubeSwitch(1)">+1</span>
+								  <span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" onclick="setTextbox(-1, true, 'autoCubeSwitchSuccesstb')">-</span>
+								  <input
+										id="autoCubeSwitchSuccesstb"
+										type="number"
+										class="form-control textBox"
+										name="teleGearSuccess">
+								  <span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" onclick="setTextbox(1, true, 'autoCubeSwitchSuccesstb')">+</span>
+								</div>
+							</div>
+							<div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
+								<h4 class="center">
+									<strong>Fail Switch<strong>
+								</h4>
+								<div class="input-group input-group-lg">
+								  <span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" onclick="setTextbox(-1, true, 'autoCubeSwitchFailtb')">-</span>
+								  <input
+										id="autoCubeSwitchFailtb"
+										type="number"
+										class="form-control textBox"
+										name="teleGearFail">
+								  <span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" onclick="setTextbox(1, true, 'autoCubeSwitchFailtb')">+</span>
 								</div>
 							</div>
 						</div>
+
 						<div class="row">
-							<div class="col-xs-12">
+							<div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
 								<h4 class="center">
-									<strong>Cubes in Scale<strong>
+									<strong>Success Scale<strong>
 								</h4>
 								<div class="input-group input-group-lg">
-								  <span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" onclick="setAutoCubeScale(-1)">-1</span>
-								  <input id="autoCubeScaletb" type="number" class="form-control textBox" name="autoCubeScale">
-								  <span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" onclick="setAutoCubeScale(1)">+1</span>
+								  <span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" onclick="setTextbox(-1, true, 'autoCubeScaleSuccesstb')">-</span>
+								  <input
+										id="autoCubeScaleSuccesstb"
+										type="number"
+										class="form-control textBox"
+										name="teleGearSuccess">
+								  <span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" onclick="setTextbox(1, true, 'autoCubeScaleSuccesstb')">+</span>
+								</div>
+							</div>
+							<div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
+								<h4 class="center">
+									<strong>Fail Scale<strong>
+								</h4>
+								<div class="input-group input-group-lg">
+								  <span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" onclick="setTextbox(-1, true, 'autoCubeScaleFailtb')">-</span>
+								  <input
+										id="autoCubeScaleFailtb"
+										type="number"
+										class="form-control textBox"
+										name="teleGearFail">
+								  <span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" onclick="setTextbox(1, true, 'autoCubeScaleFailtb')">+</span>
 								</div>
 							</div>
 						</div>
@@ -313,14 +355,14 @@ $(document).ready(function () {
 						<div class="row">
 							<div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
 								<h4 class="center">
-									<strong>High Goal Accuracy<strong>
+									<strong>Intake<strong>
 									<br>
-									<span id="highGoalAccuracy-caption"></span>
+									<span id="intake-caption"></span>
 								</h4>
 								<input
-									class="highGoalAccuracy"
+									class="intake"
 									data-container-class='text-center'
-									name="teleHighGoalAccuracy">
+									name="intake">
 							</div>
 							<div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
 								<h4 class="center">

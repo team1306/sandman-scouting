@@ -1,40 +1,43 @@
 var topBoundAuto = 15;
 var bottomBoundAuto = 0;
 
+var topBoundTele = 25;
+
 var topBoundKPA = 100;
 var bottomBoundKPA = 0;
-//AUTO CAP
 
-function setAutoCubeSwitch(a) {
-	var value = document.getElementById("autoCubeSwitchtb").value;
-  console.log(value);
+var debug = false;
+
+// AUTO CAP
+
+function setTextbox(a, isAuto, element) {
+	var value = document.getElementById(element).value;
+	var topBound = 0;
+	var bottomBound = 0;
+	if (isAuto) {
+		topBound = topBoundAuto;
+	} else {
+		topBound = topBoundTele;
+	}
+	if (debug) {
+		console.log(element + ": " + a + " | val: " + value );
+	}
   if (a < 0) {
-    if (value > bottomBoundAuto) {
-  			document.getElementById("autoCubeSwitchtb").value = Number(value) + a;
+    if (value > bottomBound) {
+  			document.getElementById(element).value = Number(value) + a;
     }
   } else if (a > 0) {
-    if (value < topBoundAuto) {
-      document.getElementById("autoCubeSwitchtb").value = Number(value) + a;
+    if (value < topBound) {
+      document.getElementById(element).value = Number(value) + a;
     }
   } else {
-    console.log("setAutoCubeSwitch() failed. a=" + a);
+    console.log("setTextbox(" + a + ", " + element + ") failed.");
   }
 }
-function setAutoCubeScale(a) {
-	var value = document.getElementById("autoCubeScaletb").value;
-  console.log(value);
-  if (a < 0) {
-    if (value > bottomBoundAuto) {
-  			document.getElementById("autoCubeScaletb").value = Number(value) + a;
-    }
-  } else if (a > 0) {
-    if (value < topBoundAuto) {
-      document.getElementById("autoCubeScaletb").value = Number(value) + a;
-    }
-  } else {
-    console.log("setAutoCubeSwitch() failed. a=" + a);
-  }
-}
+
+
+
+
 
 function setTeleKPA(a) {
 	var value = document.getElementById("teleKPAtb").value;
