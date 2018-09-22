@@ -65,7 +65,7 @@
                               <li role="separator" class="divider"></li>';
                             }
                               echo '
-                              <li><a href="/sandman/logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
+                              <li><a href="/logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
                             </ul>
                           </div>
                       </div>';
