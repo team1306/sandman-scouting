@@ -1,5 +1,4 @@
 <?php
-
     // This script inits a connection to the DB
     // It should be included in other PHP files
 
@@ -10,5 +9,4 @@
     if ($dbDataConn->connect_error || $dbDataConn === false) {
         die("Database Connection failed: " . $dbDataConn->connect_error);
     }
-
 ?>
