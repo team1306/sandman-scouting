@@ -1,4 +1,6 @@
 <?php
+    // Debug flags
+    // TODO: make these global variables
     $oauthDebug = false;
     $loginDebug = false;
     $achievementsDebug = false;
