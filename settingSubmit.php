@@ -12,7 +12,7 @@ include "message.php";
 <?php
 $users = mysqli_query($dbDataConn, "SELECT * FROM `users` WHERE `name` = '" . $_POST["uname"] . "' LIMIT 1");
 while($row = mysqli_fetch_array($users)) {
-    if (!($_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['name'] == $_POST['uname'])) {
+    if (!($_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['name'] == $_POST['uname']) && !$_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['slackSignIn']) {
         $unameInUse = true;
     }
 }
