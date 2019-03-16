@@ -1,6 +1,10 @@
 <?php
-    // This script inits a connection to the DB
-    // It should be included in other PHP files
+    /**
+     * Inits a connection to the DB
+     * It shouldbe included in other PHP files
+     *
+     * @return  [type]  [return description]
+     */
 
     include 'const.php';
 

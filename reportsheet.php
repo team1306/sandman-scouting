@@ -101,6 +101,9 @@
 </div>
 </body>
 <script>
+
+  // TODO: Move this to const.php
+
   // Fill in matches here and uncomment the links under team inputs
 	var match11 = [3238, 1806, 2783, 461, 6219];
 	var match22 = [604, 2415, 3044, 6134, 177];
