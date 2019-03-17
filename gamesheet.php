@@ -1,23 +1,23 @@
-	<?php ob_start();
+<?php ob_start();
 				include "global.php";
 	?>
 
-	<!-- Custom gamesheet CSS -->
-	<link href="css/checkboxes.css" rel="stylesheet">
-	<link href="css/sheet.css" rel="stylesheet">
-	<link href="css/star-rating.css" rel="stylesheet">
-	<link href="css/image-picker.css" rel="stylesheet">
+<!-- Custom gamesheet CSS -->
+<link href="css/checkboxes.css" rel="stylesheet">
+<link href="css/sheet.css" rel="stylesheet">
+<link href="css/star-rating.css" rel="stylesheet">
+<link href="css/image-picker.css" rel="stylesheet">
 
-	<!-- Custom gamesheet JS -->
-	<script type="text/javascript" src="js/sheet2018.js"></script>
-	<script type="text/javascript" src="js/background.js"></script>
-	<script type="text/javascript" src="js/star-rating.js"></script>
-	<script type="text/javascript" src="js/image-picker.js"></script>
+<!-- Custom gamesheet JS -->
+<script type="text/javascript" src="js/sheet2018.js"></script>
+<script type="text/javascript" src="js/background.js"></script>
+<script type="text/javascript" src="js/star-rating.js"></script>
+<script type="text/javascript" src="js/image-picker.js"></script>
 
 </head>
 
 <script>
-//This function runs once the body has finished loading
+    //This function runs once the body has finished loading
 function load() {
 	//Check which alliance they are scouting
 	if (<?php echo $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['scoutingAlliance']; ?> == 1) {
@@ -167,235 +167,270 @@ $(document).ready(function () {
 </script>
 
 <body onload="load();">
-	<?php
+    <?php
 		include "nav.php";
 
 		// Redirect user if not logged in
 		include "php/userCheck.php";
 		checkUser(true);
 	?>
-        <form action="sendDBg" method="post">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-4">
-					<h3 class="center"><strong>Information</strong></h3>
-					<div class="border">
-						<div class="row">
-							<div class="col-md-5 col-sm-5 col-xs-5 col-lg-5">
-								<p class="center">Team Number:</p>
-							</div>
-							<div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
-								<input class="textBox" id="tTeamNum" type="number" maxlength="20" name="teamnum" value="0" required="" style="background-color: black; color: white;">
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-5 col-sm-5 col-xs-5 col-lg-5">
-								<p class="center">Match Number:</p>
-							</div>
-							<div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
-								<input class="textBox" id="tMatchNumber" type="number" maxlength="10" name="matchnum" required="" style="background-color: black; color: white;">
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-5 col-sm-5 col-xs-5 col-lg-5">
-								<p class="center">Alliance:</p>
-							</div>
-							<div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
-			  					  <section title=".slideTwo">
-								    <div class="slideTwo">
-								      <input type="checkbox" onclick="backgroundSwitch();" value="1" id="slideTwo" name="isRed" checked="">
-								      <label for="slideTwo"></label>
-								    </div>
-								  </section>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<h3 class="center">
+    <form action="sendDBg" method="post">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h3 class="center"><strong>Information</strong></h3>
+                    <div class="border">
+                        <div class="row">
+                            <div class="col-md-5 col-sm-5 col-xs-5 col-lg-5">
+                                <p class="center">Team Number:</p>
+                            </div>
+                            <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
+                                <input class="textBox" id="tTeamNum" type="number" maxlength="20" name="teamnum" value="0" required="" style="background-color: black; color: white;">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-5 col-sm-5 col-xs-5 col-lg-5">
+                                <p class="center">Match Number:</p>
+                            </div>
+                            <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
+                                <input class="textBox" id="tMatchNumber" type="number" maxlength="10" name="matchnum" required="" style="background-color: black; color: white;">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-5 col-sm-5 col-xs-5 col-lg-5">
+                                <p class="center">Alliance:</p>
+                            </div>
+                            <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7">
+                                <section title=".slideTwo">
+                                    <div class="slideTwo">
+                                        <input type="checkbox" onclick="backgroundSwitch();" value="1" id="slideTwo" name="isRed" checked="">
+                                        <label for="slideTwo"></label>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h3 class="center">
 
-					<strong>Sandstorm</strong></h3>
-					<div class="border">
-						<div class="row">
+                        <strong>Sandstorm</strong></h3>
+                    <div class="border">
+                        <div class="row">
 
-							<div class="row">
-							<div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
-								<h4 class="center">
-									<strong>Started on Level 2 HAB<strong>
-								</strong></strong></h4><strong><strong>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
+                                    <h4 class="center">
+                                        <strong>Started on Level 2 HAB<strong>
+                                            </strong></strong></h4><strong><strong>
 
-							<div class="col-md-2 col-sm-2 col-xs-2 col-lg-2">
-								<div class="roundedTwo">
-									<input type="checkbox" value="1" id="teleDisabled" name="teleDisabled">
-									<label for="teleDisabled" class="checkboxjs"></label>
-								</div>
-							</div></strong></strong></div><strong><strong>
-							<strong><strong>
-						</strong></strong></strong></strong></div><div class="col-md-10 col-sm-10 col-xs-10 col-lg-10">
-								<h4 class="checkboxLabel">Cross HAB Line</h4>
-							</div>
-						<div class="col-md-2 col-sm-2 col-xs-2 col-lg-2">
-								<div class="roundedTwo">
-									<input type="checkbox" value="1" id="autoPassBaseline" name="autoPassBaseline">
-									<label for="autoPassBaseline" class="checkboxjs"></label>
-								</div>
-							</div></div>
+                                            <div class="col-md-2 col-sm-2 col-xs-2 col-lg-2">
+                                                <div class="roundedTwo">
+                                                    <input type="checkbox" value="1" id="habStart" name="habStart">
+                                                    <label for="habStart" class="checkboxjs"></label>
+                                                </div>
+                                            </div>
+                                        </strong></strong>
+                                </div><strong><strong>
+                                        <strong><strong>
+                                            </strong></strong></strong></strong>
+                            </div>
+                            <div class="col-md-10 col-sm-10 col-xs-10 col-lg-10">
+                                <h4 class="checkboxLabel">Cross HAB Line</h4>
+                            </div>
+                            <div class="col-md-2 col-sm-2 col-xs-2 col-lg-2">
+                                <div class="roundedTwo">
+                                    <input type="checkbox" value="1" id="autoPassHabline" name="autoPassHabline">
+                                    <label for="autoPassHabline" class="checkboxjs"></label>
+                                </div>
+                            </div>
+                        </div>
 
-						<hr>
+                        <hr>
 
-						<div class="row">
-							<div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
-								<h4 class="center">
-									<strong>Hatches Placed<strong>
-								</strong></strong></h4><strong><strong>
-								<div class="input-group input-group-lg">
-								  <span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" onclick="setTextbox(-1, true, 'autoCubeSwitchSuccesstb')" style="background-color: black; color: white; border-color: black;">-</span>
-								  <input id="autoCubeSwitchSuccesstb" type="number" class="form-control textBox" name="teleGearSuccess" style="background-color: black; color: white;">
-								  <span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" onclick="setTextbox(1, true, 'autoCubeSwitchSuccesstb')" style="background-color: black; color: white; border-color: black;">+</span>
-								</div>
-							</strong></strong></div><strong><strong>
-							<div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
-								<h4 class="center">
-									<strong>Cargo Placed<strong>
-								</strong></strong></h4><strong><strong>
-								<div class="input-group input-group-lg">
-								  <span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" onclick="setTextbox(-1, true, 'autoCubeSwitchFailtb')" style="background-color: black; color: white; border-color: black;">-</span>
-								  <input id="autoCubeSwitchFailtb" type="number" class="form-control textBox" name="teleGearFail" style="background-color: black; color: white;">
-								  <span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" onclick="setTextbox(1, true, 'autoCubeSwitchFailtb')" style="background-color: black; color: white; border-color: black;">+</span>
-								</div>
-							</strong></strong></div><strong><strong>
-						</strong></strong></strong></strong></div><strong><strong><strong>
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
+                                <h4 class="center">
+                                    <strong>Hatches Placed<strong>
+                                        </strong></strong></h4><strong><strong>
+                                        <div class="input-group input-group-lg">
+                                            <span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" onclick="setTextbox(-1, true, 'hatchesPlacedAutotb')" style="background-color: black; color: white; border-color: black;">-</span>
+                                            <input id="hatchesPlacedAutotb" type="number" class="form-control textBox" name="hatchesPlacedAuto" style="background-color: black; color: white;">
+                                            <span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" onclick="setTextbox(1, true, 'hatchesPlacedAutotb')" style="background-color: black; color: white; border-color: black;">+</span>
+                                        </div>
+                                    </strong></strong>
+                            </div><strong><strong>
+                                    <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
+                                        <h4 class="center">
+                                            <strong>Cargo Placed<strong>
+                                                </strong></strong></h4><strong><strong>
+                                                <div class="input-group input-group-lg">
+                                                    <span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" onclick="setTextbox(-1, true, 'cargoPlacedAutotb')" style="background-color: black; color: white; border-color: black;">-</span>
+                                                    <input id="cargoPlacedAutotb" type="number" class="form-control textBox" name="cargoPlacedAuto" style="background-color: black; color: white;">
+                                                    <span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" onclick="setTextbox(1, true, 'cargoPlacedAutotb')" style="background-color: black; color: white; border-color: black;">+</span>
+                                                </div>
+                                            </strong></strong>
+                                    </div><strong><strong>
+                                        </strong></strong>
+                                </strong></strong>
+                        </div><strong><strong><strong>
 
-						<strong><strong><strong>
-					</strong></strong></strong></strong></strong></strong></div><strong><strong><strong>
-				</strong></strong></strong></div><strong><strong><strong>
-				<div class="col-md-4">
-					<h3 class="center">
-						<strong>Teleop</strong>
-					</h3>
-					<div class="border">
-						<div class="row">
-							<div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
-								<h4 class="center">
-									<strong>Hatches Placed<strong>
-								</strong></strong></h4><strong><strong>
-								<div class="input-group input-group-lg">
-								  <span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" onclick="setTeleGearSuccess(-1)" style="background-color: black; color: white; border-color: black;">-</span>
-								  <input id="teleGearSuccesstb" type="number" class="form-control textBox" name="teleGearSuccess" style="background-color: black; color: white;">
-								  <span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" onclick="setTeleGearSuccess(1)" style="background-color: black; color: white; border-color: black;">+</span>
-								</div>
-							</strong></strong></div><strong><strong>
-							<div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
-								<h4 class="center">
-									<strong>Cargo Placed<strong>
-								</strong></strong></h4><strong><strong>
-								<div class="input-group input-group-lg">
-								  <span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" onclick="setTeleGearFail(-1)" style="background-color: black; color: white; border-color: black;">-</span>
-								  <input id="teleGearFailtb" type="number" class="form-control textBox" name="teleGearFail" style="background-color: black; color: white;">
-								  <span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" onclick="setTeleGearFail(1)" style="background-color: black; color: white; border-color: black;">+</span>
-								</div>
-							</strong></strong></div><strong><strong>
-						</strong></strong></strong></strong></div><strong><strong><strong>
-						<hr>
-						<div class="row">
+                                    <strong><strong><strong>
+                                            </strong></strong></strong></strong></strong></strong>
+                    </div><strong><strong><strong>
+                            </strong></strong></strong>
+                </div><strong><strong><strong>
+                            <div class="col-md-4">
+                                <h3 class="center">
+                                    <strong>Teleop</strong>
+                                </h3>
+                                <div class="border">
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
+                                            <h4 class="center">
+                                                <strong>Hatches Placed<strong>
+                                                    </strong></strong></h4><strong><strong>
+                                                    <div class="input-group input-group-lg">
+                                                        <span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" onclick="hatchesPlaced(-1)" style="background-color: black; color: white; border-color: black;">-</span>
+                                                        <input id="hatchesPlacedtb" type="number" class="form-control textBox" name="hatchesPlaced" style="background-color: black; color: white;">
+                                                        <span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" onclick="hatchesPlaced(1)" style="background-color: black; color: white; border-color: black;">+</span>
+                                                    </div>
+                                                </strong></strong>
+                                        </div><strong><strong>
+                                                <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
+                                                    <h4 class="center">
+                                                        <strong>Cargo Placed<strong>
+                                                            </strong></strong></h4><strong><strong>
+                                                            <div class="input-group input-group-lg">
+                                                                <span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" onclick="cargoPlaced(-1)" style="background-color: black; color: white; border-color: black;">-</span>
+                                                                <input id="cargoPlacedtb" type="number" class="form-control textBox" name="cargoPlaced" style="background-color: black; color: white;">
+                                                                <span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" onclick="cargoPlaced(1)" style="background-color: black; color: white; border-color: black;">+</span>
+                                                            </div>
+                                                        </strong></strong>
+                                                </div><strong><strong>
+                                                    </strong></strong>
+                                            </strong></strong>
+                                    </div><strong><strong><strong>
+                                                <hr>
+                                                <div class="row">
 
-							<div class="row">
-							<div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
-								<h4 class="center">
-									<strong>Ground Pickup Hatch<strong>
-								</strong></strong></h4><strong><strong>
+                                                    <div class="row">
+                                                        <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
+                                                            <h4 class="center">
+                                                                <strong>Ground Pickup Hatch<strong>
+                                                                    </strong></strong></h4><strong><strong>
 
-							<div class="col-md-2 col-sm-2 col-xs-2 col-lg-2">
-								<div class="roundedTwo">
-									<input type="checkbox" value="1" id="teleDisabled" name="teleDisabled">
-									<label for="teleDisabled" class="checkboxjs"></label>
-								</div>
-							</div></strong></strong></div><strong><strong>
-							<strong><strong>
-						</strong></strong></strong></strong></div><div class="col-md-10 col-sm-10 col-xs-10 col-lg-10">
-								<h4 class="checkboxLabel">Ground Pickup Cargo</h4>
-							</div>
-						<div class="col-md-2 col-sm-2 col-xs-2 col-lg-2">
-								<div class="roundedTwo">
-									<input type="checkbox" value="1" id="autoPassBaseline" name="autoPassBaseline">
-									<label for="autoPassBaseline" class="checkboxjs"></label>
-								</div>
-							</div></div>
-<strong><strong><strong>
+                                                                    <div class="col-md-2 col-sm-2 col-xs-2 col-lg-2">
+                                                                        <div class="roundedTwo">
+                                                                            <input type="checkbox" value="1" id="groudPickupHatch" name="groudPickupHatch">
+                                                                            <label for="groudPickupHatch" class="checkboxjs"></label>
+                                                                        </div>
+                                                                    </div>
+                                                                </strong></strong>
+                                                        </div><strong><strong>
+                                                                <strong><strong>
+                                                                    </strong></strong></strong></strong>
+                                                    </div>
+                                                    <div class="col-md-10 col-sm-10 col-xs-10 col-lg-10">
+                                                        <h4 class="checkboxLabel">Ground Pickup Cargo</h4>
+                                                    </div>
+                                                    <div class="col-md-2 col-sm-2 col-xs-2 col-lg-2">
+                                                        <div class="roundedTwo">
+                                                            <input type="checkbox" value="1" id="groudPickupCargo" name="groudPickupCargo">
+                                                            <label for="groudPickupCargo" class="checkboxjs"></label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <strong><strong><strong>
 
-<strong><strong><strong>
-						<div>
-							<strong><strong>
-						</strong></strong></div><strong><strong>
-						<hr>
-						<div class="row">
-							<h4 class="checkboxLabel">HAB Level Climb</h4><div class="col-md-2 col-sm-2 col-xs-2 col-lg-2">
+                                                            <strong><strong><strong>
+                                                                        <div>
+                                                                            <strong><strong>
+                                                                                </strong></strong></div><strong><strong>
 
-							</div>
-
-							<div class="col-md-2 col-sm-2 col-xs-2 col-lg-2">
-								<div class="input-group input-group-lg">
-								  <span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" onclick="setTeleGearFail(-1)" style="background-color: black; color: white; border-color: black;">-</span>
-								  <input id="teleGearFailtb" type="number" class="form-control textBox" name="teleGearFail" style="background-color: black; color: white;">
-								  <span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" onclick="setTeleGearFail(1)" style="background-color: black; color: white; border-color: black;">+</span>
-								</div>
-
-							</div>
-							<div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
-								<h4 class="checkboxLabel">Disabled</h4>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-2 col-sm-2 col-xs-2 col-lg-2">
-								<div class="roundedTwo">
-									<input type="checkbox" value="1" id="groundGear" name="groundGear">
-									<label for="groundGear" class="checkboxjs"></label>
-								</div>
-							</div>
-							<div class="col-md-10 col-sm-10 col-xs-10 col-lg-10">
-
-							</div>
-						</div>
-					</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></div><strong><strong><strong>
-				</strong></strong></strong></div><strong><strong><strong>
-			</strong></strong></strong></strong></strong></strong></div><strong><strong><strong>
-			<div class="row notesContainer">
-				<div class="col-xs-12">
-					<h3 class="center">
-						<strong>Notes</strong>
-					</h3>
-					<textarea name="teleNotes" id="notesTele" class="form-control" style="display: block" rows="10"></textarea>
-				</div>
-			</div>
-			<input class="btn btn-danger btn-lg btn-block submitButton" type="submit" value="Submit" style="background-color: black; color: white;">
-		</strong></strong></strong></div><strong><strong>
-		<br>
-
-		<!-- Gear Modal -->
-		<div class="modal fade" id="autoGearModal">
-		    <div class="modal-dialog blackText">
-		      <!-- Modal content-->
-		      <div class="modal-content">
-		        <div class="modal-header">
-		          <button type="button" class="close" data-dismiss="modal">
-								×
-							</button>
-
-		        </div>
-
-		        <div>
-
-		        	<button type="button" class="btn btn-danger" data-dismiss="modal" style="background-color: black; color: white;">
-								Close
-							</button>
-		        </div>
-		      </div>
-		    </div>
-		  </div>
+                                                                            </strong></strong>
+                                                                    </strong></strong></strong></strong></strong></strong>
+                                            </strong></strong></strong>
+                                </div><strong><strong><strong>
+                                        </strong></strong></strong>
+                            </div><strong><strong><strong>
+                                    </strong></strong></strong>
+                            <div class="col-md-4">
+                                <h3 class="center">
+                                    <strong>End Game</strong>
+                                </h3>
+                                <div class="border">
+                                    <div class="row">
+                                        <h4 class="checkboxLabel">HAB Level Climb</h4>
 
 
-</strong></strong>
-	</form>
+                                        <div class="col-md-2 col-sm-2 col-xs-2 col-lg-2">
+                                            <div class="input-group input-group-lg">
+                                                <span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" onclick="habLevelClimb(-1)" style="background-color: black; color: white; border-color: black;">-</span>
+                                                <input id="habLevelClimbtb" type="number" class="form-control textBox" name="habLevelClimb" style="background-color: black; color: white;">
+                                                <span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" onclick="habLevelClimb(1)" style="background-color: black; color: white; border-color: black;">+</span>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
+                                            <h4 class="checkboxLabel">Disabled</h4>
+                                        </div>
+                                    </div>
+                                    <strong><strong>
+
+                                            <div class="col-md-2 col-sm-2 col-xs-2 col-lg-2">
+                                                <div class="roundedTwo">
+                                                    <input type="checkbox" value="1" id="teleDisabled" name="teleDisabled">
+                                                    <label for="teleDisabled" class="checkboxjs"></label>
+                                                </div>
+                                            </div>
+                                        </strong></strong>
+                                </div>
+                            </div>
+            </div>
+
+
+            </strong></strong></strong>
+        </div><strong><strong><strong>
+                    <div class="row notesContainer">
+                        <div class="col-xs-12">
+                            <h3 class="center">
+                                <strong>Notes</strong>
+                            </h3>
+                            <textarea name="teleNotes" id="notesTele" class="form-control" style="display: block" rows="10"></textarea>
+                        </div>
+                    </div>
+                    <input class="btn btn-danger btn-lg btn-block submitButton" type="submit" value="Submit" style="background-color: black; color: white;">
+                </strong></strong></strong>
+        </div><strong><strong>
+                <br>
+
+                <!-- Gear Modal -->
+                <div class="modal fade" id="autoGearModal">
+                    <div class="modal-dialog blackText">
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">
+                                    ×
+                                </button>
+
+                            </div>
+
+                            <div>
+
+                                <button type="button" class="btn btn-danger" data-dismiss="modal" style="background-color: black; color: white;">
+                                    Close
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </strong></strong>
+    </form>
 </body>
 <?php ob_flush(); ?>
+
 </html>
