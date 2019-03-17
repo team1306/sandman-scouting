@@ -286,9 +286,9 @@ $(document).ready(function () {
                                                     <strong>Hatches Placed<strong>
                                                         </strong></strong></h4><strong><strong>
                                                         <div class="input-group input-group-lg">
-                                                            <span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" onclick="hatchesPlaced(-1)" style="background-color: black; color: white; border-color: black;">-</span>
+                                                            <span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" style="background-color: black; color: white; border-color: black;" onclick="setTextbox(-1, true, 'hatchesPlacedtb')">-</span>
                                                             <input id="hatchesPlacedtb" type="number" class="form-control textBox" name="hatchesPlaced" style="background-color: black; color: white;">
-                                                            <span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" onclick="hatchesPlaced(1)" style="background-color: black; color: white; border-color: black;">+</span>
+                                                            <span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" style="background-color: black; color: white; border-color: black;" onclick="setTextbox(1, true, 'hatchesPlacedtb')">+</span>
                                                         </div>
                                                     </strong></strong>
                                             </div><strong><strong>
@@ -297,9 +297,9 @@ $(document).ready(function () {
                                                             <strong>Cargo Placed<strong>
                                                                 </strong></strong></h4><strong><strong>
                                                                 <div class="input-group input-group-lg">
-                                                                    <span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" onclick="cargoPlaced(-1)" style="background-color: black; color: white; border-color: black;">-</span>
+                                                                    <span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" style="background-color: black; color: white; border-color: black;" onclick="setTextbox(-1, true, 'cargoPlacedtb')">-</span>
                                                                     <input id="cargoPlacedtb" type="number" class="form-control textBox" name="cargoPlaced" style="background-color: black; color: white;">
-                                                                    <span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" onclick="cargoPlaced(1)" style="background-color: black; color: white; border-color: black;">+</span>
+                                                                    <span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" style="background-color: black; color: white; border-color: black;" onclick="setTextbox(1, true, 'cargoPlacedtb')">+</span>
                                                                 </div>
                                                             </strong></strong>
                                                     </div><strong><strong>
@@ -358,8 +358,8 @@ $(document).ready(function () {
                                 <div class="col-md-4">
                                     <h3 class="center">
                                         <strong>End Game</strong>
-                                    </h3>
                                     <div class="border">
+        <div class="row">
                                         <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
                                     <h4 class="checkboxLabel">Disabled</h4>
                                 <div class="col-md-2 col-sm-2 col-xs-2 col-lg-2">
@@ -367,26 +367,24 @@ $(document).ready(function () {
                                         <input type="checkbox" value="1" id="teleDisabled" name="teleDisabled">
                                         <label class="checkboxjs" for="teleDisabled"></label>
                                     </div>
-                                </div></div><div class="row">
-                                            <h4 class="checkboxLabel">HAB Level Climb</h4>
-
-
-                                            <div class="col-md-2 col-sm-2 col-xs-2 col-lg-2">
-                                                <div class="input-group input-group-lg">
-                                                    <span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" onclick="habLevelClimb(-1)" style="background-color: black; color: white; border-color: black;">-</span>
-                                                    <input id="habLevelClimbtb" type="number" class="form-control textBox" name="habLevelClimb" style="background-color: black; color: white;">
-                                                    <span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" onclick="habLevelClimb(1)" style="background-color: black; color: white; border-color: black;">+</span>
-                                                </div>
-
-                                            </div>
-
-                                        </div>
+                                </div></div><div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
+                                                        <h4 class="center">
+                                                            <strong>HAB Level Climbed<strong>
+                                                                </strong></strong></h4><strong><strong>
+                                                                <div class="input-group input-group-lg">
+                                                                    <span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" style="background-color: black; color: white; border-color: black;" onclick="setTextbox(-1, true, 'habLeveltb')">-</span>
+                                                                    <input type="number" class="form-control textBox" style="background-color: black; color: white;" name="habLevel" id="habLeveltb">
+                                                                    <span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" style="background-color: black; color: white; border-color: black;" onclick="setTextbox(1, true, 'habLeveltb')">+</span>
+                                                                </div>
+                                                            </strong></strong>
+                                                    </div>
 
                                         <strong><strong>
 
 
                                             </strong></strong>
-                                    </div>
+        </div></div></h3>
+
                                 </div>
                 </strong></strong></strong></div>
 
