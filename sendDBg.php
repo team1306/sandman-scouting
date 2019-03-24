@@ -39,7 +39,7 @@ $autoCargo = $_POST['cargoPlacedAuto'];
 //      Tele
 $teleHatches = $_POST['hatchesPlaced'];
 $teleCargo = $_POST['cargoPlaced'];
-$teleHabClimb = $_POST['habLevel']
+$teleHabClimb = $_POST['habLevel'];
 
 if (isset($_POST['groundPickupHatch'])) {
     $teleGroundHatch = $_POST['groundPickupHatch'];
