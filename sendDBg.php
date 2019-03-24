@@ -1,4 +1,4 @@
-<?php
+'<?php
   include "global.php";
   include "php/dbDataConn.php";
 ?>
@@ -87,15 +87,15 @@ DEFAULT,
 
 '$autoHabline',
 '$habStartLevel',
-'$autoHatches`,
-'$autoCargo`,
+'$autoHatches',
+'$autoCargo',
 
-'$teleHatches`,
-'$teleCargo`,
-'$teleGroundHatch`,
-'$teleGroundCargo`,
-'$teleUpperRocket`,
-'$teleHabClimb`,
+'$teleHatches',
+'$teleCargo',
+'$teleGroundHatch',
+'$teleGroundCargo',
+'$teleUpperRocket',
+'$teleHabClimb',
 
 '$autoCapMobile',
 '$cleanNotes',
