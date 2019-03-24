@@ -100,7 +100,6 @@ DEFAULT,
 '$autoCapMobile',
 '$cleanNotes',
 '$teleCapDisabled')";
-)
 
 // $insertSQL = "INSERT INTO " . $GLOBALS['DB']['TABLE']['MATCH_SCOUTING'] . "(`id`, `scoutTeam`, `userID`, `userTeamNum`, `teamNum`, `matchNum`, `isRed`,
 // `autoCap.gear`, `autoCap.gearSuccess`, `autoCap.gearPeg`, `autoCap.passBaseline`, `autoCap.KPA`, `autoCap.highGoalAccuracy`, `autoCap.highGoalSpeed`,
