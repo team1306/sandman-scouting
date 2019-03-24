@@ -314,15 +314,15 @@ $(document).ready(function () {
                                     <h4 class="checkboxLabel">Ground Pickup Hatch</h4>
                                 <div class="col-md-2 col-sm-2 col-xs-2 col-lg-2">
                                     <div class="roundedTwo">
-                                        <input type="checkbox" value="1" id="groudPickupHatch" name="groudPickupHatch">
-                                        <label class="checkboxjs" for="groudPickupHatch"></label>
+                                        <input type="checkbox" value="1" id="groundPickupHatch" name="groundPickupHatch">
+                                        <label class="checkboxjs" for="groundPickupHatch"></label>
                                     </div>
                                 </div></div><div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
                                         <h4 class="checkboxLabel">Ground Pickup Cargo</h4>
                                     </div><div class="col-md-2 col-sm-2 col-xs-2 col-lg-2">
                                                     <div class="roundedTwo">
-                                                        <input type="checkbox" value="1" id="groudPickupCargo" name="groudPickupCargo">
-                                                        <label class="checkboxjs" for="groudPickupCargo"></label>
+                                                        <input type="checkbox" value="1" id="groundPickupCargo" name="groundPickupCargo">
+                                                        <label class="checkboxjs" for="groundPickupCargo"></label>
                                                     </div>
                                                 </div><strong><strong>
                                             <strong><strong>

@@ -21,49 +21,49 @@ if (isset($_POST['isRed'])) {
 }
 
 //      Auto
-if (isset($_POST['autoPassBaseline'])) {
-    $autoCapPassBaseline = $_POST['autoPassBaseline'];
+if (isset($_POST['autoPassHabline'])) {
+    $autoHabline = $_POST['autoPassHabline'];
 }
 else {
-    $autoCapPassBaseline = 0;
+    $autoHabline = 0;
 }
-if (isset($_POST['autoGear'])) {
-    $autoAttemptGear = $_POST['autoGear'];
+if (isset($_POST['habStart'])) {
+    $habStartLevel = $_POST['habStart'];
 }
 else {
-    $autoAttemptGear = 0;
+    $habStartLevel = 0;
 }
-$autoCapGearPeg = $_POST['gearPeg'];
-$autoCapGearSuccess = $_POST['autoGearSuccess'];
-$autoCapKPA = $_POST['autoKPA'];
-$autoCapHighGoalAccuracy = $_POST['autoHighGoalAccuracy'];
-$autoCapHighGoalSpeed = $_POST['autoHighGoalSpeed'];
+$autoHatches = $_POST['hatchesPlacedAuto'];
+$autoCargo = $_POST['cargoPlacedAuto'];
 
 //      Tele
-$teleGearSuccess = $_POST['teleGearSuccess'];
-$teleGearFail = $_POST['teleGearFail'];
-$teleCapHighGoalAccuracy = $_POST['teleHighGoalAccuracy'];
-$teleCapHighGoalSpeed = $_POST['teleHighGoalSpeed'];
-$teleCapLowGoalAccuracy = $_POST['teleLowGoalAccuracy'];
-$teleCapLowGoalSpeed = $_POST['teleLowGoalSpeed'];
-$teleCapKPA = $_POST['teleKPA'];
-if (isset($_POST['teleClimb'])) {
-    $teleCapClimb = $_POST['teleClimb'];
+$teleHatches = $_POST['hatchesPlaced'];
+$teleCargo = $_POST['cargoPlaced'];
+$teleHabClimb = $_POST['habLevel']
+
+if (isset($_POST['groundPickupHatch'])) {
+    $teleGroundHatch = $_POST['groundPickupHatch'];
 }
 else {
-    $teleCapClimb = 0;
+    $teleGroundHatch = 0;
+}
+if (isset($_POST['groundPickupCargo'])) {
+    $teleGroundCargo = $_POST['groundPickupCargo'];
+}
+else {
+    $teleGroundCargo = 0;
+}
+if (isset($_POST['upperRocket'])) {
+    $teleUpperRocket = $_POST['upperRocket'];
+}
+else {
+    $teleUpperRocket = 0;
 }
 if (isset($_POST['teleDisabled'])) {
     $teleCapDisabled = $_POST['teleDisabled'];
 }
 else {
     $teleCapDisabled = 0;
-}
-if (isset($_POST['groundGear'])) {
-    $teleCapGroundGear = $_POST['groundGear'];
-}
-else {
-    $teleCapGroundGear = 0;
 }
 $teleNotes = $_POST['teleNotes'];
 
@@ -74,10 +74,8 @@ if ($isRed != 1) {
 $cleanNotes = mysqli_real_escape_string($dbDataConn, $teleNotes);
 
 $insertSQL = "INSERT INTO " . $GLOBALS['DB']['TABLE']['MATCH_SCOUTING'] . "(`id`, `scoutTeam`, `userID`, `userTeamNum`, `teamNum`, `matchNum`, `isRed`,
-`autoCap.gear`, `autoCap.gearSuccess`, `autoCap.gearPeg`, `autoCap.passBaseline`, `autoCap.KPA`, `autoCap.highGoalAccuracy`, `autoCap.highGoalSpeed`,
-
-`teleCap.gearSuccess`, `teleCap.gearFailed`, `teleCap.KPA`, `teleCap.highGoalAccuracy`, `teleCap.highGoalSpeed`, `teleCap.lowGoalAccuracy`, `teleCap.lowGoalSpeed`, `teleCap.ballCycles`,
-`teleCap.climb`, `autoCap.mobile`, `teleCap.groundGear`, `teleCap.notes`, `teleCap.disabled`) VALUES (
+`autoPassHabline`, `habStart`, `hatchesPlacedAuto`, `cargoPlacedAuto`, `hatchesPlaced`, `cargoPlaced`, `groundPickupHatch`, `groundPickupCargo`,
+`upperRocket`, `teleDisabled`, `habLevel`, `teleCap.notes`, `autoCap.mobile`) VALUES (
 
 DEFAULT,
 '$scoutTeam',
@@ -87,28 +85,59 @@ DEFAULT,
 '$matchnum',
 '$isRed',
 
-'$autoAttemptGear',
-'$autoCapGearSuccess',
-'$autoCapGearPeg',
-'$autoCapPassBaseline',
-'$autoCapKPA',
-'$autoCapHighGoalAccuracy',
-'$autoCapHighGoalSpeed',
+'$autoHabline',
+'$habStartLevel',
+'$autoHatches`,
+'$autoCargo`,
 
-'$teleGearSuccess',
-'$teleGearFail',
-'$teleCapKPA',
-'$teleCapHighGoalAccuracy',
-'$teleCapHighGoalSpeed',
-'$teleCapLowGoalAccuracy',
-'$teleCapLowGoalSpeed',
-'$teleCapBallCycles',
+'$teleHatches`,
+'$teleCargo`,
+'$teleGroundHatch`,
+'$teleGroundCargo`,
+'$teleUpperRocket`,
+'$teleHabClimb`,
 
-'$teleCapClimb',
 '$autoCapMobile',
-'$teleCapGroundGear',
 '$cleanNotes',
 '$teleCapDisabled')";
+)
+
+// $insertSQL = "INSERT INTO " . $GLOBALS['DB']['TABLE']['MATCH_SCOUTING'] . "(`id`, `scoutTeam`, `userID`, `userTeamNum`, `teamNum`, `matchNum`, `isRed`,
+// `autoCap.gear`, `autoCap.gearSuccess`, `autoCap.gearPeg`, `autoCap.passBaseline`, `autoCap.KPA`, `autoCap.highGoalAccuracy`, `autoCap.highGoalSpeed`,
+//
+// `teleCap.gearSuccess`, `teleCap.gearFailed`, `teleCap.KPA`, `teleCap.highGoalAccuracy`, `teleCap.highGoalSpeed`, `teleCap.lowGoalAccuracy`, `teleCap.lowGoalSpeed`, `teleCap.ballCycles`,
+// `teleCap.climb`, `autoCap.mobile`, `teleCap.groundGear`, `teleCap.notes`, `teleCap.disabled`) VALUES (
+//
+// DEFAULT,
+// '$scoutTeam',
+// '$userid',
+// '$userTeamNum',
+// '$teamnum',
+// '$matchnum',
+// '$isRed',
+//
+// '$autoAttemptGear',
+// '$autoCapGearSuccess',
+// '$autoCapGearPeg',
+// '$autoCapPassBaseline',
+// '$autoCapKPA',
+// '$autoCapHighGoalAccuracy',
+// '$autoCapHighGoalSpeed',
+//
+// '$teleGearSuccess',
+// '$teleGearFail',
+// '$teleCapKPA',
+// '$teleCapHighGoalAccuracy',
+// '$teleCapHighGoalSpeed',
+// '$teleCapLowGoalAccuracy',
+// '$teleCapLowGoalSpeed',
+// '$teleCapBallCycles',
+//
+// '$teleCapClimb',
+// '$autoCapMobile',
+// '$teleCapGroundGear',
+// '$cleanNotes',
+// '$teleCapDisabled')";
 
 if ($dbDataConn->query($insertSQL) === TRUE) {
     $last_id = mysqli_insert_id($dbDataConn);
