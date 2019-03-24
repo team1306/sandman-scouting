@@ -85,7 +85,7 @@ DEFAULT,
 '$matchnum',
 '$isRed',
 
-'$autoHabline',
+'$autoPassHabline',
 '$habStartLevel',
 '$autoHatches',
 '$autoCargo',
