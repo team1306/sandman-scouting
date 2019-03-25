@@ -183,8 +183,8 @@
             echo "<td>" . $row['cargoPlacedAuto'] . "</td>";
 
             //TELEOP
-            echo "<td>" . $row['cargoPlaced'] . "</td>";
             echo "<td>" . $row['hatchesPlaced'] . "</td>";
+            echo "<td>" . $row['cargoPlaced'] . "</td>";
 
             if ($row['groundPickupHatch']) {
                 echo "<td> <i class='fa fa-check' aria-hidden='true'></i> </td>";
