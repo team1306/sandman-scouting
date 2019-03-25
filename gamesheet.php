@@ -21,133 +21,44 @@
 function load() {
 	//Check which alliance they are scouting
 	if (<?php echo $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['scoutingAlliance']; ?> == 1) {
-    setColor('red');
+        setColor('red');
 	} else {
-    setColor('blue');
-    document.getElementById('slideTwo').checked = false;
+        setColor('blue');
+        document.getElementById('slideTwo').checked = false;
 	}
-	setStars();
+	// setStars();
 	setValues();
 }
 //This function searches the body and finds all of the star ratings and shows the stars to make it look more pretty
-function setStars() {
-	$('.intake').rating(
-		{
-			'showCaption':true,
-			'stars':'4',
-			'min':'0',
-			'max':'4',
-			'step':'1',
-			'size':'xs',
-			'clearCaption':'N/A',
-			'captionElement': '#intake-caption',
-			'starCaptions': {
-				0:'N/A',
-				1:'V Bad',
-				2:'Bad',
-				3:'Ok',
-				4:'Good'
-			}
-		});
-  $('.highGoalSpeed').rating(
-		{
-			'showCaption':true,
-			'stars':'4',
-			'min':'0',
-			'max':'4',
-			'step':'1',
-			'size':'xs',
-			'clearCaption':'Not Attempted',
-			'captionElement': '#highGoalSpeed-caption',
-			'starCaptions': {
-				0:'Did not attempt',
-				1:'Very Slow',
-				2:'Slow',
-				3:'Fast',
-				4:'Very Fast'
-			}
-		});
-  $('.autoHighGoalAccuracy').rating(
-		{
-			'showCaption':true,
-			'stars':'4',
-			'min':'0',
-			'max':'4',
-			'step':'1',
-			'size':'xs',
-			'clearCaption':'Not Attempted',
-			'captionElement': '#autoHighGoalAccuracy-caption',
-			'starCaptions': {
-				0:'Did not attempt',
-				1:'25%',
-				2:'50%',
-				3:'75%',
-				4:'100%'
-			}
-		});
-  $('.autoHighGoalSpeed').rating(
-		{
-			'showCaption':true,
-			'stars':'4',
-			'min':'0',
-			'max':'4',
-			'step':'1',
-			'size':'xs',
-			'clearCaption':'Not Attempted',
-			'captionElement': '#autoHighGoalSpeed-caption',
-			'starCaptions': {
-				0:'Did not attempt',
-				1:'Very Slow',
-				2:'Slow',
-				3:'Fast',
-				4:'Very Fast'
-			}
-		});
-  $('.lowGoalAccuracy').rating(
-		{
-			'showCaption':true,
-			'stars':'4',
-			'min':'0',
-			'max':'4',
-			'step':'1',
-			'size':'xs',
-			'clearCaption':'Not Attempted',
-			'captionElement': '#lowGoalAccuracy-caption',
-			'starCaptions': {
-				0:'Did not attempt',
-				1:'25%',
-				2:'50%',
-				3:'75%',
-				4:'100%'
-			}
-		});
-  $('.lowGoalSpeed').rating(
-		{
-			'showCaption':true,
-			'stars':'4',
-			'min':'0',
-			'max':'4',
-			'step':'1',
-			'size':'xs',
-			'clearCaption':'Not Attempted',
-			'captionElement': '#lowGoalSpeed-caption',
-			'starCaptions': {
-				0:'Did not attempt',
-				1:'Very Slow',
-				2:'Slow',
-				3:'Fast',
-				4:'Very Fast'
-			}
-		});
-}
+// function setStars() {
+// 	$('.intake').rating(
+// 		{
+// 			'showCaption':true,
+// 			'stars':'4',
+// 			'min':'0',
+// 			'max':'4',
+// 			'step':'1',
+// 			'size':'xs',
+// 			'clearCaption':'N/A',
+// 			'captionElement': '#intake-caption',
+// 			'starCaptions': {
+// 				0:'N/A',
+// 				1:'V Bad',
+// 				2:'Bad',
+// 				3:'Ok',
+// 				4:'Good'
+// 			}
+// 		});
+// }
 // Set all textboxes to 0 or their correct values
 function setValues() {
 	// Set these textboxes to 0
 	var textboxes = [
-		"autoCubeSwitchSuccesstb",
-		"autoCubeSwitchFailtb",
-		"autoCubeScaleSuccesstb",
-		"autoCubeScaleFailtb"
+		"hatchesPlacedAutotb",
+		"cargoPlacedAutotb",
+		"hatchesPlacedtb",
+		"cargoPlacedtb",
+        "habLeveltb"
 	];
 
 	textboxes.forEach(function (id) {
@@ -156,6 +67,9 @@ function setValues() {
 
 	// Set matchnumber to the current match number and set the team to the data from TBA
 	var matchNum = <?php include "getMatchNum.php"; echo getNextMatch();?>;
+    if (matchNum == 0) {
+        matchNum = 1;
+    }
 	var team = '<?php include "TBAdata.php"; echo getTeam('qm', 1, getNextMatch(), $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['scoutingAlliance'], ($_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['scoutingNumber']-1)); ?>';
 	document.getElementById("tTeamNum").value = team;
 	document.getElementById("tMatchNumber").value = matchNum;
@@ -213,11 +127,9 @@ $(document).ready(function () {
                     </div>
                     <div class="col-md-4">
                         <h3 class="center">
-
                             <strong>Sandstorm</strong></h3>
                         <div class="border">
                             <div class="row">
-
                                 <div>
                                     <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
                                     <h4 class="checkboxLabel">Cross HAB Line</h4>
