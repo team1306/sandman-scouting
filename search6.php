@@ -222,6 +222,7 @@
             $groundPickupCargoTotal+=$row['groundPickupCargo'];
             $upperRocketTotal+=$row['upperRocket'];
             $habLevelTotal+=$row['habLevel'];
+            $habDisabledTotal+=$row['teleDisabled'];
         }
 
             //Calculate totals
@@ -231,6 +232,9 @@
             $cargoPlacedCalculated = round($cargoPlacedTotal/$matchTotal, 2);
             $hatchesPlacedCalculated = round($hatchesPlacedTotal/$matchTotal, 2);
             $habLevelCalculated = round($habLevelTotal/$matchTotal, 2);
+
+            $groundPickupHatchCalculated = $groundPickupHatchTotal/$matchTotal;
+            $groundPickupCargoCalculated = $groundPickupCargoTotal/$matchTotal;
 
             // $autoKPACalculated = round($autoKPATotal/$matchTotal,2);
             // $autoHighGoalAccuracyCalculated = round($autoHighGoalAccuracyTotal/$matchTotal,2);
@@ -251,12 +255,13 @@
             echo "<td><strong>$hatchesPlacedAutoCalculated</strong></td>";
             echo "<td><strong>$cargoPlacedAutoCalculated%</strong></td>";
 
-            echo "<td><strong>$cargoPlacedCalculated%</strong></td>";
+            echo "<td><strong>$cargoPlacedCalculated</strong></td>";
             echo "<td><strong>$hatchesPlacedCalculated</strong></td>";
-            echo "<td><strong>$groundPickupHatchTotal%</strong></td>";
-            echo "<td><strong>$groundPickupCargoTotal%</strong></td>";
-            echo "<td><strong>$upperRocketTotal%</strong></td>";
+            echo "<td><strong>$groundPickupHatchCalculated%</strong></td>";
+            echo "<td><strong>$groundPickupCargoCalculated%</strong></td>";
+            echo "<td><strong>$upperRocketTotal</strong></td>";
             echo "<td><strong>$habLevelCalculated</strong></td>";
+            echo "<td><strong>$habDisabledTotal/$matchTotal</strong></td>";
             echo "<td> </td>";
             echo "</tr></tfoot>";
 
