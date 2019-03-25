@@ -30,6 +30,13 @@ class TBAdata {
 
         $TBAdataArray = json_decode($json, true);
 
+        $this->updateTime = $http_response_header[1];
+
+        if ($GLOBALS['TBA']['debug']['all']) {
+            echo "Update time from header: " . $http_response_header[1] . "<br>";
+            echo "Update time saved: " . $this->updateTime . "<br><br>";
+        }
+
         foreach ($TBAdataArray as $key => $value) {
             if ($GLOBALS['TBA']['debug']['match']) {
                 echo "{$key} => {$value} <br>";
@@ -43,7 +50,6 @@ class TBAdata {
             $this->teams[$value['comp_level']][$value['set_number']][$value['match_number']]['red'] = str_replace('frc','',$value['alliances']['red']['team_keys']);
             $this->teams[$value['comp_level']][$value['set_number']][$value['match_number']]['blue'] = str_replace('frc','',$value['alliances']['blue']['team_keys']);
         }
-        $this->updateTime = $http_response_header[1];
         $this->cacheData();
 
         if ($GLOBALS['TBA']['debug']['all']) {
