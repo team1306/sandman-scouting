@@ -1,2 +1,5 @@
 php/const.php
 .ftpconfig
+cache.json
+cacheUpdate.json
+cacheMatch.json
