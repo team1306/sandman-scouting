@@ -12,11 +12,9 @@ if (!function_exists("checkUser")) {
     if (!$redir) {
       if (!isset($_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray'])) {
         return 0;
-      } else if (($_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['scoutTeam'] == 0)
-      || ($_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['scoutingAlliance'] == 0)
+      } else if (($_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['scoutingAlliance'] == 0)
       || ($_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['scoutingNumber'] == 0)
       || ($_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['teamArray']['num'] == 0)
-      || !isset($_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['scoutTeam'])
       || !isset($_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['scoutingAlliance'])
       || !isset($_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['scoutingNumber'])
       || !isset($_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['teamArray']['num'])) {
@@ -30,11 +28,9 @@ if (!function_exists("checkUser")) {
 		    $message['desc'] = "Please login or create an account!";
 		    $message['type'] = 'danger';
         sendMessage($message, $GLOBALS['PATH']['INDEX']);
-      } else if (($_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['scoutTeam'] == 0)
-      || ($_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['scoutingAlliance'] == 0)
+      } else if (($_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['scoutingAlliance'] == 0)
       || ($_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['scoutingNumber'] == 0)
       || ($_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['teamArray']['num'] == 0)
-      || !isset($_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['scoutTeam'])
       || !isset($_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['scoutingAlliance'])
       || !isset($_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['scoutingNumber'])
       || !isset($_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['teamArray']['num'])) {
