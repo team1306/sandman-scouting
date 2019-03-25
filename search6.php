@@ -233,8 +233,8 @@
             $hatchesPlacedCalculated = round($hatchesPlacedTotal/$matchTotal, 2);
             $habLevelCalculated = round($habLevelTotal/$matchTotal, 2);
 
-            $groundPickupHatchCalculated = $groundPickupHatchTotal/$matchTotal;
-            $groundPickupCargoCalculated = $groundPickupCargoTotal/$matchTotal;
+            $groundPickupHatchCalculated = $groundPickupHatchTotal/$matchTotal*100;
+            $groundPickupCargoCalculated = $groundPickupCargoTotal/$matchTotal*100;
 
             // $autoKPACalculated = round($autoKPATotal/$matchTotal,2);
             // $autoHighGoalAccuracyCalculated = round($autoHighGoalAccuracyTotal/$matchTotal,2);
