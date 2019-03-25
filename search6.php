@@ -229,8 +229,8 @@
             $hatchesPlacedAutoCalculated = round($hatchesPlacedAutoTotal/$matchTotal, 2);
             $cargoPlacedAutoCalculated = round($cargoPlacedAutoTotal/$matchTotal, 2);
 
-            $cargoPlacedCalculated = round($cargoPlacedTotal/$matchTotal, 2);
             $hatchesPlacedCalculated = round($hatchesPlacedTotal/$matchTotal, 2);
+            $cargoPlacedCalculated = round($cargoPlacedTotal/$matchTotal, 2);
             $habLevelCalculated = round($habLevelTotal/$matchTotal, 2);
 
             $groundPickupHatchCalculated = $groundPickupHatchTotal/$matchTotal*100;
@@ -255,8 +255,8 @@
             echo "<td><strong>$hatchesPlacedAutoCalculated</strong></td>";
             echo "<td><strong>$cargoPlacedAutoCalculated</strong></td>";
 
-            echo "<td><strong>$cargoPlacedCalculated</strong></td>";
             echo "<td><strong>$hatchesPlacedCalculated</strong></td>";
+            echo "<td><strong>$cargoPlacedCalculated</strong></td>";
             echo "<td><strong>$groundPickupHatchCalculated%</strong></td>";
             echo "<td><strong>$groundPickupCargoCalculated%</strong></td>";
             echo "<td><strong>$upperRocketTotal</strong></td>";
