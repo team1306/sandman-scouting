@@ -22,11 +22,11 @@
           echo '<label class="radio-inline"><input type="radio" name="myTeam" id="1" value="1">Other <input type="number" name="myTeamOther"></div>';
           ?>
         </div>
-        <div class="form-group">
+        <!-- <div class="form-group">
           <label>Scouting Team: </label>
             <label class="radio-inline"><input type="radio" name="scoutTeam" value="1">1</label>
             <label class="radio-inline"><input type="radio" name="scoutTeam" value="2">2</label>
-        </div>
+        </div> -->
         <div class="form-group">
           <label>Scouting: </label>
             <select name="scoutingAlliance">
