@@ -26,7 +26,7 @@ class TBAdata {
         );
         $headerData = stream_context_create($headerOptions);
 
-        $json = file_get_contents('https://www.thebluealliance.com/api/v2/event/' . $GLOBALS['TBA']['YEAR'] . $GLOBALS['TBA']['EVENT_CODE'] . '/matches', false, $headerData);
+        $json = file_get_contents('https://www.thebluealliance.com/api/v3/event/' . $GLOBALS['TBA']['YEAR'] . $GLOBALS['TBA']['EVENT_CODE'] . '/matches/simple', false, $headerData);
 
         $TBAdataArray = json_decode($json, true);
 
