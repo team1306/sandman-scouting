@@ -143,18 +143,17 @@
         <tr>
         <th>ID</th>
         <th>Match</th>
-        <th>Auto Baseline</th>
-        <th>Auto Gear</th>
-        <th>Auto KPA</th>
-        <th>Auto High Goal Acc</th>
-        <th>Auto High Goal Speed</th>
-        <th>Tele Gears</th>
-        <th>Tele KPA</th>
-        <th>High Goal Acc</th>
-        <th>High Goal Speed</th>
-        <th>Low Goal Acc</th>
-        <th>Low Goal Speed</th>
-        <th>Climb</th>
+        <th>Hab Line</th>
+        <th>Starting Hab Level</th>Goal
+        <th>Auto Hatches</th>
+        <th>Auto Cargo</th>
+        <th>Tele Hatches</th>
+        <th>Tele Cargo</th>
+        <th>Ground Hatch</th>
+        <th>Ground Cargo</th>
+        <th>Upper Rocket</th>
+        <th>Climb Level</th>
+        <th>Disabled</th>
         <th>Comments</th>
         </tr>
         </thead>
@@ -167,35 +166,47 @@
             echo "<tr>";
             echo "<td>" . $row['id'] . "</td>";
             echo "<td>" . $row['matchNum'] . "</td>";
-            if ($row['autoCap.passBaseline']) {
-                echo "<td> <i class='fa fa-check' aria-hidden='true'></i> </td>";
-            }
-            else {
-                echo "<td> <i class='fa fa-times' aria-hidden='true'></i> </td>";
-            }
-            if ($row['autoCap.gearSuccess']) {
-                echo "<td> <i class='fa fa-check' aria-hidden='true'></i> </td>";
-            }
-            else {
-                echo "<td> <i class='fa fa-times' aria-hidden='true'></i> </td>";
-            }
-            echo "<td>" . $row['autoCap.KPA'] . "</td>";
-            echo "<td>" . ($row['autoCap.highGoalAccuracy']/4)*100 . "%</td>";
-            echo "<td>" . ($row['autoCap.highGoalSpeed']/4)*100 . "%</td>";
 
-
-            echo "<td>" . $row['teleCap.gearSuccess'] . "</td>";
-            echo "<td>" . $row['teleCap.KPA'] . "</td>";
-            echo "<td>" . ($row['teleCap.highGoalAccuracy']/4)*100 . "%</td>";
-            echo "<td>" . ($row['teleCap.highGoalSpeed']/4)*100 . "%</td>";
-            echo "<td>" . ($row['teleCap.lowGoalAccuracy']/4)*100 . "%</td>";
-            echo "<td>" . ($row['teleCap.lowGoalSpeed']/4)*100 . "%</td>";
-            if ($row['teleCap.climb']) {
+            //AUTONOMOUS
+            if ($row['autoPassHabline']) {
                 echo "<td> <i class='fa fa-check' aria-hidden='true'></i> </td>";
             }
             else {
                 echo "<td> <i class='fa fa-times' aria-hidden='true'></i> </td>";
             }
+            if ($row['habStart']) {
+                echo "<td> <i class='fa fa-check' aria-hidden='true'></i> </td>";
+            }
+            else {
+                echo "<td> <i class='fa fa-times' aria-hidden='true'></i> </td>";
+            }
+            echo "<td>" . $row['hatchesPlacedAuto'] . "</td>";
+            echo "<td>" . $row['cargoPlacedAuto'] . "</td>";
+
+            //TELEOP
+            echo "<td>" . $row['cargoPlaced'] . "</td>";
+            echo "<td>" . $row['hatchesPlaced'] . "</td>";
+
+            if ($row['groundPickupHatch']) {
+                echo "<td> <i class='fa fa-check' aria-hidden='true'></i> </td>";
+            }
+            else {
+                echo "<td> <i class='fa fa-times' aria-hidden='true'></i> </td>";
+            }
+            if ($row['groundPickupCargo']) {
+                echo "<td> <i class='fa fa-check' aria-hidden='true'></i> </td>";
+            }
+            else {
+                echo "<td> <i class='fa fa-times' aria-hidden='true'></i> </td>";
+            }
+            if ($row['upperRocket']) {
+                echo "<td> <i class='fa fa-check' aria-hidden='true'></i> </td>";
+            }
+            else {
+                echo "<td> <i class='fa fa-times' aria-hidden='true'></i> </td>";
+            }
+            echo "<td>" . $row['habLevel'] . "</td>";
+            echo "<td>" . $row['teleDisabled'] . "</td>";
             echo "<td>" . $row['teleCap.notes'] . "</td>";
             echo "</tr>";
 
