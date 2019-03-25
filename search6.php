@@ -144,7 +144,7 @@
         <th>ID</th>
         <th>Match</th>
         <th>Hab Line</th>
-        <th>Starting Hab Level</th>Goal
+        <th>Start at lvl 2</th>
         <th>Auto Hatches</th>
         <th>Auto Cargo</th>
         <th>Tele Hatches</th>
@@ -160,7 +160,6 @@
         <tbody>";
 
         $matchTotal = 0;
-        $autoKPAMax = 0;
         while($row = mysqli_fetch_array($SQLresult)) {
             $matchTotal+=1;
             echo "<tr>";
@@ -175,7 +174,7 @@
                 echo "<td> <i class='fa fa-times' aria-hidden='true'></i> </td>";
             }
             if ($row['habStart']) {
-                echo "<td> <i class='fa fa-check' aria-hidden='true'></i> </td>";
+            echo "<td> <i class='fa fa-check' aria-hidden='true'></i> </td>";
             }
             else {
                 echo "<td> <i class='fa fa-times' aria-hidden='true'></i> </td>";
@@ -211,62 +210,53 @@
             echo "</tr>";
 
             //Auto Totals
-            $autoKPATotal+=$row['autoCap.KPA'];
-            if ($row['autoCap.KPA'] > $autoKPAMax) {
-                $autoKPAMax = $row['autoCap.KPA'];
-            }
-            $autoGearSuccess+=$row['autoCap.gearSuccess'];
-            $autoGearAttempts+=$row['autoCap.gear'];
-            $autoBaselineTotal+=$row['autoCap.passBaseline'];
-            $autoGearTotal+=$row['autoCap.gearSuccess'];
-            $autoHighGoalAccuracyTotal+=($row['autoCap.highGoalAccuracy']/4)*100;
-            $autoHighGoalSpeedTotal+=($row['autoCap.highGoalSpeed']/4)*100;
+            $autoPassHablineTotal+=$row['autoPassHabline'];
+            $habStartTotal+=$row['habStart'];
+            $hatchesPlacedAutoTotal+=$row['hatchesPlacedAuto'];
+            $cargoPlacedAutoTotal+=$row['cargoPlacedAuto'];
 
             //Tele totals
-            $teleKPATotal+=$row['teleCap.KPA'];
-            if ($row['teleCap.KPA'] > $teleKPAMax) {
-                $teleKPAMax = $row['teleCap.KPA'];
-            }
-            if ($row['teleCap.gearSuccess'] > $teleGearMax) {
-                $teleGearMax = $row['teleCap.gearSuccess'];
-            }
-            $teleGearTotalSuccess+=$row['teleCap.gearSuccess'];
-            $teleGearTotalFail+=$row['teleCap.gearFailed'];
-            $teleHighGoalAccuracyTotal+=($row['teleCap.highGoalAccuracy']/4)*100;
-            $teleHighGoalSpeedTotal+=($row['teleCap.highGoalSpeed']/4)*100;
-            $teleLowGoalAccuracyTotal+=($row['teleCap.lowGoalAccuracy']/4)*100;
-            $teleLowGoalSpeedTotal+=($row['teleCap.lowGoalSpeed']/4)*100;
-            $teleClimbTotal+=$row['teleCap.climb'];
+            $cargoPlacedTotal+=$row['cargoPlaced'];
+            $hatchesPlacedTotal+=$row['hatchesPlaced'];
+            $groundPickupHatchTotal+=$row['groundPickupHatch'];
+            $groundPickupCargoTotal+=$row['groundPickupCargo'];
+            $upperRocketTotal+=$row['upperRocket'];
+            $habLevelTotal+=$row['habLevel'];
         }
 
             //Calculate totals
-            $autoKPACalculated = round($autoKPATotal/$matchTotal,2);
-            $autoHighGoalAccuracyCalculated = round($autoHighGoalAccuracyTotal/$matchTotal,2);
-            $autoHighGoalSpeedCalculated = round($autoHighGoalSpeedTotal/$matchTotal,2);
+            $hatchesPlacedAutoCalculated = round($hatchesPlacedAutoTotal/$matchTotal, 2);
+            $cargoPlacedAutoCalculated = round($cargoPlacedAutoTotal/$matchTotal, 2);
 
-            $teleKPACalculated = round($teleKPATotal/$matchTotal,2);
-            $teleHighGoalAccuracyCalculated = round($teleHighGoalAccuracyTotal/$matchTotal,2);
-            $teleHighGoalSpeedCalculated = round($teleHighGoalSpeedTotal/$matchTotal,2);
-            $teleLowGoalAccuracyCalculated = round($teleLowGoalAccuracyTotal/$matchTotal,2);
-            $teleLowGoalSpeedCalculated = round($teleLowGoalSpeedTotal/$matchTotal,2);
-            $teleGearCalculated = round($teleGearTotalSuccess/$matchTotal,2);
-            $teleClimbCalculated = round($teleClimbTotal/$matchTotal,2);
+            $cargoPlacedCalculated = round($cargoPlacedTotal/$matchTotal, 2);
+            $hatchesPlacedCalculated = round($hatchesPlacedTotal/$matchTotal, 2);
+            $habLevelCalculated = round($habLevelTotal/$matchTotal, 2);
+
+            // $autoKPACalculated = round($autoKPATotal/$matchTotal,2);
+            // $autoHighGoalAccuracyCalculated = round($autoHighGoalAccuracyTotal/$matchTotal,2);
+            // $autoHighGoalSpeedCalculated = round($autoHighGoalSpeedTotal/$matchTotal,2);
+            //
+            // $teleKPACalculated = round($teleKPATotal/$matchTotal,2);
+            // $teleHighGoalAccuracyCalculated = round($teleHighGoalAccuracyTotal/$matchTotal,2);
+            // $teleHighGoalSpeedCalculated = round($teleHighGoalSpeedTotal/$matchTotal,2);
+            // $teleLowGoalAccuracyCalculated = round($teleLowGoalAccuracyTotal/$matchTotal,2);
+            // $teleLowGoalSpeedCalculated = round($teleLowGoalSpeedTotal/$matchTotal,2);
+            // $teleGearCalculated = round($teleGearTotalSuccess/$matchTotal,2);
+            // $teleClimbCalculated = round($teleClimbTotal/$matchTotal,2);
 
             echo "</tbody><tfoot><tr><td><strong>Totals:</strong></td>";
             echo "<td> </td>";
-            echo "<td><strong>$autoBaselineTotal/$matchTotal</strong></td>";
-            echo "<td><strong>$autoGearTotal/$matchTotal</strong></td>";
-            echo "<td><strong>$autoKPACalculated</strong></td>";
-            echo "<td><strong>$autoHighGoalAccuracyCalculated%</strong></td>";
-            echo "<td><strong>$autoHighGoalSpeedCalculated%</strong></td>";
+            echo "<td><strong>$autoPassHablineTotal/$matchTotal</strong></td>";
+            echo "<td><strong>$habStartTotal/$matchTotal</strong></td>";
+            echo "<td><strong>$hatchesPlacedAutoCalculated</strong></td>";
+            echo "<td><strong>$cargoPlacedAutoCalculated%</strong></td>";
 
-            echo "<td><strong>$teleGearCalculated</strong></td>";
-            echo "<td><strong>$teleKPACalculated</strong></td>";
-            echo "<td><strong>$teleHighGoalAccuracyCalculated%</strong></td>";
-            echo "<td><strong>$teleHighGoalSpeedCalculated%</strong></td>";
-            echo "<td><strong>$teleLowGoalAccuracyCalculated%</strong></td>";
-            echo "<td><strong>$teleLowGoalSpeedCalculated%</strong></td>";
-            echo "<td><strong>$teleClimbTotal/$matchTotal</strong></td>";
+            echo "<td><strong>$cargoPlacedCalculated%</strong></td>";
+            echo "<td><strong>$hatchesPlacedCalculated</strong></td>";
+            echo "<td><strong>$groundPickupHatchTotal%</strong></td>";
+            echo "<td><strong>$groundPickupCargoTotal%</strong></td>";
+            echo "<td><strong>$upperRocketTotal%</strong></td>";
+            echo "<td><strong>$habLevelCalculated</strong></td>";
             echo "<td> </td>";
             echo "</tr></tfoot>";
 
@@ -307,29 +297,18 @@
 
 
         //Reset all values
-        $autoBaselineTotal = 0;
-        $autoGearTotal = 0;
-        $autoLowGoalTotal = 0;
-        $autoHighGoalAccuracyTotal = 0;
-        $autoHighGoalSpeedTotal = 0;
+        $autoPassHablineTotal = 0;
+        $habStartTotal = 0;
+        $hatchesPlacedAutoTotal = 0;
+        $cargoPlacedAutoTotal = 0;
 
-        $teleGearTotal = 0;
-        $teleBallTotal = 0;
-        $teleHighGoalAccuracyTotal = 0;
-        $teleHighGoalSpeedTotal = 0;
-        $teleLowGoalAccuracyTotal = 0;
-        $teleLowGoalSpeedTotal = 0;
-        $teleClimbTotal = 0;
-
-        $autoHighGoalAccuracyCalculated = 0;
-        $autoHighGoalSpeedCalculated = 0;
-
-        $teleHighGoalAccuracyCalculated = 0;
-        $teleHighGoalSpeedCalculated = 0;
-        $teleLowGoalAccuracyCalculated = 0;
-        $teleLowGoalSpeedCalculated = 0;
-        $teleGearCalculated = 0;
-        $teleBallTotal = 0;
+        //Tele totals
+        $cargoPlacedTotal = 0;
+        $hatchesPlacedTotal = 0;
+        $groundPickupHatchTotal = 0;
+        $groundPickupCargoTotal = 0;
+        $upperRocketTotal = 0;
+        $habLevelTotal = 0;
     }
     ?>
   </body>
