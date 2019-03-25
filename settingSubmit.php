@@ -27,7 +27,7 @@ else {
         $updateSQL = "UPDATE `users` SET `team`='" . $_POST["myTeam"] . "', `scoutTeam`='" . $_POST["scoutTeam"] . "',`name`='" . $_POST["uname"] . "',`scoutingAlliance`='" . $_POST['scoutingAlliance'] . "',`scoutingNumber`='" . $_POST['scoutingNumber'] . "' WHERE `id`= '" . $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['id'] . "'";
     }
     else {
-       $updateSQL = "UPDATE `users` SET `scoutTeam`='" . $_POST["scoutTeam"] . "',`scoutingAlliance`='" . $_POST['scoutingAlliance'] . "',`scoutingNumber`='" . $_POST['scoutingNumber'] . "' WHERE `slackId`= '" . $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['id'] . "'";
+       $updateSQL = "UPDATE `users` SET `team`='" . $_POST["myTeam"] . "'`scoutTeam`='" . $_POST["scoutTeam"] . "',`scoutingAlliance`='" . $_POST['scoutingAlliance'] . "',`scoutingNumber`='" . $_POST['scoutingNumber'] . "' WHERE `slackId`= '" . $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['id'] . "'";
     }
     if ($GLOBALS['settings']['debug']) {
         echo "<br>Update: '" . $updateSQL . "'";

@@ -109,8 +109,8 @@
         function load() {
             var userTeamJS = "<?php echo $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['teamArray']['num']; ?>";
             document.getElementById(userTeamJS).checked = true;
-            var scoutTeamJS = "steam<?php echo $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['scoutTeam']; ?>";
-            document.getElementById(scoutTeamJS).checked = true;
+            // var scoutTeamJS = "steam<?php //echo $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['scoutTeam']; ?>";
+            // document.getElementById(scoutTeamJS).checked = true;
         }
     </script>
 </body>
