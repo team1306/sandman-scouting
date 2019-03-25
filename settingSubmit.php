@@ -4,30 +4,37 @@ include "global.php";
 include "php/const.php";
 include "php/debug.php";
 include "php/dbDataConn.php";
-include "message.php";
+include "php/message.php";
 ?>
 </head>
 
 <body>
 <?php
-$users = mysqli_query($dbDataConn, "SELECT * FROM `users` WHERE `name` = '" . $_POST["uname"] . "' LIMIT 1");
-while($row = mysqli_fetch_array($users)) {
-    if (!($_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['name'] == $_POST['uname']) && !$_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['slackSignIn']) {
-        $unameInUse = true;
+if (!$_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['slackSignIn']) {
+    $users = mysqli_query($dbDataConn, "SELECT * FROM `users` WHERE `name` = '" . $_POST["uname"] . "' LIMIT 1");
+    while($row = mysqli_fetch_array($users)) {
+        if (!($_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['name'] == $_POST['uname']) && !$_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['slackSignIn']) {
+            $unameInUse = true;
+        }
     }
 }
+
+// Check if we can continue to save settings
 if ($unameInUse) {
+    // Username is already in use
     echo "<div class='container'><h2>This username is in use! Please use another username. <a href='" . $GLOBALS['PATH']['SETTINGS'] . "'>Back</h2></a></div>";
 }
 else if ($_POST['uname'] == null && !$_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['slackSignIn']) {
+    // Username is null and they are not signed in with slack
     echo "<div class='container'><h2>Your username can not be null!</h2><a href='/'><button type='button' class='btn btn-success btn-xl' style='width:100%; height:200px;'><h1 style='font-size: 500%;'>Home</h1></button></a></div>";
 }
 else {
+    // Everything is valid
     if (!$_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['slackSignIn']) {
         $updateSQL = "UPDATE `users` SET `team`='" . $_POST["myTeam"] . "', `scoutTeam`='" . $_POST["scoutTeam"] . "',`name`='" . $_POST["uname"] . "',`scoutingAlliance`='" . $_POST['scoutingAlliance'] . "',`scoutingNumber`='" . $_POST['scoutingNumber'] . "' WHERE `id`= '" . $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['id'] . "'";
     }
     else {
-       $updateSQL = "UPDATE `users` SET `team`='" . $_POST["myTeam"] . "'`scoutTeam`='" . $_POST["scoutTeam"] . "',`scoutingAlliance`='" . $_POST['scoutingAlliance'] . "',`scoutingNumber`='" . $_POST['scoutingNumber'] . "' WHERE `slackId`= '" . $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['id'] . "'";
+       $updateSQL = "UPDATE `users` SET `team`='" . $_POST["myTeam"] . "', `scoutTeam`='" . $_POST["scoutTeam"] . "',`scoutingAlliance`='" . $_POST['scoutingAlliance'] . "',`scoutingNumber`='" . $_POST['scoutingNumber'] . "' WHERE `slackId`= '" . $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['id'] . "'";
     }
     if ($GLOBALS['settings']['debug']) {
         echo "<br>Update: '" . $updateSQL . "'";
@@ -57,7 +64,7 @@ else {
         }
     }
     else {
-        echo "Error: " . $insertSQL . "<br>" . $conn->error . "
+        echo "Error: " . $updateSQL . "<br>" . $conn->error . "
         <div class='container'>
             <a href='/' target='_blank'><h1>An error occured.</h1></a>
         </div>
