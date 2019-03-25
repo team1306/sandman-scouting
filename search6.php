@@ -253,7 +253,7 @@
             echo "<td><strong>$autoPassHablineTotal/$matchTotal</strong></td>";
             echo "<td><strong>$habStartTotal/$matchTotal</strong></td>";
             echo "<td><strong>$hatchesPlacedAutoCalculated</strong></td>";
-            echo "<td><strong>$cargoPlacedAutoCalculated%</strong></td>";
+            echo "<td><strong>$cargoPlacedAutoCalculated</strong></td>";
 
             echo "<td><strong>$cargoPlacedCalculated</strong></td>";
             echo "<td><strong>$hatchesPlacedCalculated</strong></td>";
