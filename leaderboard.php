@@ -31,6 +31,7 @@
 				checkUserAdmin(true); ?>
         <br>
         <div class="container">
+<h1 style="text-align:center;">Scouting Leaderboard</h1>
             <?php
         include 'php/dbDataConn.php';
         include 'php/getScoutInfo.php';
