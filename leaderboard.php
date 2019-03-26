@@ -51,7 +51,7 @@
             $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['uid']=$row['id'];
                 echo $row['name'];
                 echo $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['name'];
-            if((echo $row['name']) == (echo $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['name'])){
+            if(echo $row['name'] == echo $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['name']){
                 echo '<tr class="bg-danger">';
                   echo "<td>" . $row['team'] . "</td>";
                   echo "<td>" . $row['name'] . "</td>";
