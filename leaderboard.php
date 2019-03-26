@@ -35,7 +35,7 @@
 
 
         echo "
-            <div class='container' style='width:90%'><table align='center' class='table table-striped'>
+            <div class='container' style='width:90%'><table align='center' class='table'>
             <thead>
                 <tr>
                     <th>Team</th>
