@@ -57,7 +57,7 @@
                 echo $row['name'] == $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['name'];
 ?>
             <script>
-                	if (<?php echo ($row['name'] == $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['name']); ?> == 1) {
+                	if (<?php echo $row['name'] == $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['name']; ?> == 1) {
                         <?php
                         echo '<tr class="bg-danger">';
                           echo "<td>" . $row['team'] . "</td>";
