@@ -49,9 +49,9 @@
         $result = mysqli_query($dbDataConn, "SELECT * FROM " . $GLOBALS['DB']['TABLE']['USER'] . " ORDER BY matchesScouted DESC");
         while($row = mysqli_fetch_array($result)) {
             $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['uid']=$row['id'];
-                echo $row['name'];
-                echo $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['name'];
-            if(echo $row['name'] == echo $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['name']){
+                $tableName = echo $row['name'];
+                $slackName = echo $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['name'];
+            if($tableName == $slackName){
                 echo '<tr class="bg-danger">';
                   echo "<td>" . $row['team'] . "</td>";
                   echo "<td>" . $row['name'] . "</td>";
