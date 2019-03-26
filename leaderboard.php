@@ -52,7 +52,7 @@
                 echo $row['name'];
                 echo $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['name'];
             if($row['name'] == $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['name']){
-                echo "<tr class="bg-danger">";
+                echo '<tr class="bg-danger">';
                   echo "<td>" . $row['team'] . "</td>";
                   echo "<td>" . $row['name'] . "</td>";
                   echo "<td>" . $row['slackId'] . "</td>";
