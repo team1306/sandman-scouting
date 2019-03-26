@@ -1,5 +1,8 @@
-<?php include 'global.php';
-    include 'php/debug.php'; ?>
+<?php
+    include 'global.php';
+    include 'php/debug.php';
+    $userid = $_SESSION['userArray']['uid'];
+?>
 </head>
 <body onload="load()">
 	<?php include 'nav.php'; ?>
@@ -23,7 +26,7 @@
         </div>
         <br>
         <p>
-            Your Used ID is: <?php echo $_SESSION['userArray']['uid'];?>
+            Your Used ID is: <?php echo $userid; ?>
         </p>
       <form action="settingSubmit" method="post">
         <?php
