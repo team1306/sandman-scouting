@@ -48,7 +48,7 @@
                 <tbody>";
 
         $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['uid']=$row['id'];
-        while($row = mysqli_fetch_array($result)) {
+        while($row = mysqli_fetch_array($result) {
             if($row['name'] == $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['name']){
                 echo "<b><tr>";
                   echo "<td>" . $row['team'] . "</td>";
