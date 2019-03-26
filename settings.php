@@ -26,7 +26,7 @@
         </div>
         <br>
         <p>
-            Your Used ID is: <?php echo $GLOBALS['DB']['TABLE']['USER']['slackId'];?>
+            Your Used ID is: <?php echo $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['id']?>
         </p>
       <form action="settingSubmit" method="post">
         <?php
