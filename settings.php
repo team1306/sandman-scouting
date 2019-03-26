@@ -22,6 +22,9 @@
           </div>
         </div>
         <br>
+        <p>
+            Your Used ID is: <?php echo $_SESSION['userArray']['uid'];?>
+        </p>
       <form action="settingSubmit" method="post">
         <?php
           if (!$_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['slackSignIn']) {
