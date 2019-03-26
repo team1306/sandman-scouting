@@ -50,12 +50,12 @@
         while($row = mysqli_fetch_array($result)) {
             // if you uncomment line 51 it breaks
             // $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['uid']=$row['id'];
-                echo "\r\nname";
-                echo $row['name'];
-                echo "\r\nslack name";
-                echo $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['name'];
-                echo "\r\nif statement";
-                echo $row['name'] == $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['name'];
+                // echo "\r\nname";
+                // echo $row['name'];
+                // echo "\r\nslack name";
+                // echo $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['name'];
+                // echo "\r\nif statement";
+                // echo $row['name'] == $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['name'];
             if($row['name'] == $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['name']){
                 echo '<tr class="bg-danger">';
                   echo "<td>" . $row['team'] . "</td>";
