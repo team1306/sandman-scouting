@@ -60,7 +60,7 @@
                 echo '<tr class="bg-danger">';
                   echo "<td>" . $row['team'] . "</td>";
                   if ($_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['slackSignIn']) {
-                    echo "<td>" . $row['name'] . '<img src='$_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['image_24']' . "</td>";
+                    echo "<td>" . $row['name'] . '<img src='$_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['image_24']>' . "</td>";
                 }else{
                     echo "<td>" . $row['name'] . "</td>";
                 }
