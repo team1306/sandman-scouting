@@ -1,11 +1,13 @@
 <?php
     include 'global.php';
     include 'php/debug.php';
-    $userid = $_SESSION['userArray']['uid'];
 ?>
 </head>
 <body onload="load()">
-	<?php include 'nav.php'; ?>
+	<?php
+        include 'nav.php';
+        $userid = $_SESSION['userArray']['uid'];
+    ?>
 	<br>
 	<?php
 	  if (!isset($_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['name'])) {
