@@ -26,7 +26,14 @@
         </div>
         <br>
         <p>
-            Your Used ID is: <?php echo $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['slackId'];?>
+            Your Used ID is:
+            <?php
+                $user2 = mysqli_query($dbDataConn, "SELECT * FROM `users` WHERE `slackId` = '" . $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['id'] . "'");
+                while ($row = mysqli_fetch_array($user2)) {      //Fetch results from query //User exists in db
+                    $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['slackId'] = $row['slackId'];
+                }
+                echo $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['slackId'];
+            ?>
         </p>
       <form action="settingSubmit" method="post">
         <?php
