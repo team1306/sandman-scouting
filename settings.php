@@ -2,7 +2,6 @@
     include 'global.php';
     include 'php/debug.php';
     include "php/dbDataConn.php";
-    include "php/userCheck.php";
 ?>
 </head>
 <body onload="load()">
@@ -27,7 +26,7 @@
         </div>
         <br>
         <p>
-            Your Used ID is: <?php echo echo $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['slackId']; ?>
+            Your Used ID is: <?php echo $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['slackId']?>
         </p>
       <form action="settingSubmit" method="post">
         <?php
