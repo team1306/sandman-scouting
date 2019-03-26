@@ -58,7 +58,7 @@
                   echo "<td>" . $row['name'] . "</td>";
                   echo "<td>" . $row['slackId'] . "</td>";
                   echo "<td>" . $row['matchesScouted'] . "</td>";
-                echo "</tr></b>";
+                echo "</tr>";
             }
             else if($row['name'] != $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['name']){
             echo "<tr>";
