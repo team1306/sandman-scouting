@@ -48,7 +48,8 @@
 
         $result = mysqli_query($dbDataConn, "SELECT * FROM " . $GLOBALS['DB']['TABLE']['USER'] . " ORDER BY matchesScouted DESC");
         while($row = mysqli_fetch_array($result)) {
-            $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['uid']=$row['id'];
+            // if you uncomment line 51 it breaks
+            // $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['uid']=$row['id'];
                 echo "\r\nname";
                 echo $row['name'];
                 echo "\r\nslack name";
