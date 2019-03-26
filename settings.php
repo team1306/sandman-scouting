@@ -5,10 +5,7 @@
 ?>
 </head>
 <body onload="load()">
-	<?php
-        include 'nav.php';
-        $userid = $_SESSION['userArray']['uid'];
-    ?>
+	<?php     include 'nav.php';    ?>
 	<br>
 	<?php
 	  if (!isset($_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['name'])) {
@@ -29,7 +26,7 @@
         </div>
         <br>
         <p>
-            Your Used ID is: <?php echo $userid;?>
+            Your Used ID is: <?php echo $_SESSION['userArray']['uid'];?>
         </p>
       <form action="settingSubmit" method="post">
         <?php
