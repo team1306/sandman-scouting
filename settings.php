@@ -1,6 +1,7 @@
 <?php
     include 'global.php';
     include 'php/debug.php';
+    include "php/dbDataConn.php";
 ?>
 </head>
 <body onload="load()">
@@ -28,7 +29,7 @@
         </div>
         <br>
         <p>
-            Your Used ID is: <?php echo $userid; ?>
+            Your Used ID is: <?php echo $userid;?>
         </p>
       <form action="settingSubmit" method="post">
         <?php
