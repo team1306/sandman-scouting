@@ -49,13 +49,22 @@
 
         $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['uid']=$row['id'];
         while($row = mysqli_fetch_array($result)) {
-            if()
+            if($row['name'] == $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['name']){
+                echo "<b><tr>";
+                  echo "<td>" . $row['team'] . "</td>";
+                  echo "<td>" . $row['name'] . "</td>";
+                  echo "<td>" . $row['slackId'] . "</td>";
+                  echo "<td>" . $row['matchesScouted'] . "</td>";
+                echo "</tr></b>";
+            }
+            else{
             echo "<tr>";
               echo "<td>" . $row['team'] . "</td>";
               echo "<td>" . $row['name'] . "</td>";
               echo "<td>" . $row['slackId'] . "</td>";
               echo "<td>" . $row['matchesScouted'] . "</td>";
             echo "</tr>";
+            }
         }
         echo "</tbody></table></div>";
 
