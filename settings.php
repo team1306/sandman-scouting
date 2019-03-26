@@ -25,8 +25,8 @@
           </div>
         </div>
         <br>
-        <p>
-            Your Used ID is:
+        <p>Your Used ID is:</p>
+        <p style="font-family: serif">
             <?php
                 $user2 = mysqli_query($dbDataConn, "SELECT * FROM `users` WHERE `slackId` = '" . $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['id'] . "'");
                 while ($row = mysqli_fetch_array($user2)) {      //Fetch results from query //User exists in db
