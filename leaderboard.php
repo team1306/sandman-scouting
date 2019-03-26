@@ -49,11 +49,11 @@
         $result = mysqli_query($dbDataConn, "SELECT * FROM " . $GLOBALS['DB']['TABLE']['USER'] . " ORDER BY matchesScouted DESC");
         while($row = mysqli_fetch_array($result)) {
             $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['uid']=$row['id'];
-                echo "\r\nname"
+                echo "\r\nname";
                 echo $row['name'];
-                echo "\r\nslack name"
+                echo "\r\nslack name";
                 echo $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['name'];
-                echo "\r\nif statement"
+                echo "\r\nif statement";
                 echo $row['name'] == $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['name'];
             if($row['name'] == $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['name']){
                 echo '<tr class="bg-danger">';
