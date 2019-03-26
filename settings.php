@@ -26,7 +26,7 @@
         </div>
         <br>
         <p>
-            Your Used ID is: <?php echo "test"?>
+            Your Used ID is: <?php echo $GLOBALS['DB']['TABLE']['USER']['slackId'];?>
         </p>
       <form action="settingSubmit" method="post">
         <?php
