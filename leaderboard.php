@@ -33,7 +33,6 @@
         include 'php/dbDataConn.php';
         include 'php/getScoutInfo.php';
 
-        $result = mysqli_query($dbDataConn, "SELECT * FROM " . $GLOBALS['DB']['TABLE']['USER'] . " ORDER BY id DESC");
 
         echo "
             <div class='container' style='width:90%'><table align='center' class='table table-striped'>
@@ -46,6 +45,8 @@
                 </tr>
             </thead>
                 <tbody>";
+
+        $result = mysqli_query($dbDataConn, "SELECT * FROM " . $GLOBALS['DB']['TABLE']['USER'] . " ORDER BY matchesScouted DESC");
 
         while($row = mysqli_fetch_array($result)) {
             $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['uid']=$row['id'];
