@@ -55,7 +55,7 @@
                 echo $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['name'];
                 echo "\r\nif statement";
                 echo $row['name'] == $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['name'];
-
+?>
             <script>
                 	if (<?php echo ($row['name'] == $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['name']); ?> == 1) {
                         <?php
@@ -77,6 +77,7 @@
                         ?>
                 	}
             </script>
+            <?php
         }
         echo "</tbody></table></div>";
 
