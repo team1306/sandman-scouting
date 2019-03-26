@@ -55,29 +55,22 @@
                 echo $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['name'];
                 echo "\r\nif statement";
                 echo $row['name'] == $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['name'];
-?>
-            <script>
-                	if (<?php echo $row['name'] == $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['name']; ?> == 1) {
-                        <?php
-                        echo '<tr class="bg-danger">';
-                          echo "<td>" . $row['team'] . "</td>";
-                          echo "<td>" . $row['name'] . "</td>";
-                          echo "<td>" . $row['slackId'] . "</td>";
-                          echo "<td>" . $row['matchesScouted'] . "</td>";
-                        echo "</tr>";
-                        ?>
-                	} else {
-                        <?php
-                        echo '<tr>';
-                          echo "<td>" . $row['team'] . "</td>";
-                          echo "<td>" . $row['name'] . "</td>";
-                          echo "<td>" . $row['slackId'] . "</td>";
-                          echo "<td>" . $row['matchesScouted'] . "</td>";
-                        echo "</tr>";
-                        ?>
-                	}
-            </script>
-            <?php
+            if($row['name'] == $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['name']){
+                echo '<tr class="bg-danger">';
+                  echo "<td>" . $row['team'] . "</td>";
+                  echo "<td>" . $row['name'] . "</td>";
+                  echo "<td>" . $row['slackId'] . "</td>";
+                  echo "<td>" . $row['matchesScouted'] . "</td>";
+                echo "</tr>";
+            }
+            else{
+            echo "<tr>";
+              echo "<td>" . $row['team'] . "</td>";
+              echo "<td>" . $row['name'] . "</td>";
+              echo "<td>" . $row['slackId'] . "</td>";
+              echo "<td>" . $row['matchesScouted'] . "</td>";
+            echo "</tr>";
+            }
         }
         echo "</tbody></table></div>";
 
