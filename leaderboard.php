@@ -60,7 +60,7 @@
                   echo "<td>" . $row['matchesScouted'] . "</td>";
                 echo "</tr></b>";
             }
-            else{
+            else if($row['name'] != $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['name']){
             echo "<tr>";
               echo "<td>" . $row['team'] . "</td>";
               echo "<td>" . $row['name'] . "</td>";
