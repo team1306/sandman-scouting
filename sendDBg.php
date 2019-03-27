@@ -105,7 +105,7 @@ DEFAULT,
 echo "user id: ";
 echo $userid;
 echo "<br>";
-$updateSQL = "UPDATE `users` SET `matchesScouted` = `matchesScouted` + 1 WHERE `id`=" . $userid;
+$updateSQL = "UPDATE `users` SET `matchesScouted` = `matchesScouted` + 1 WHERE `userid`=" . $userid;
 
 if($dbDataConn->query($updateSQL) === TRUE) {
     echo "Query ran successfully";
