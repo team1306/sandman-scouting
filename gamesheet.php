@@ -285,7 +285,7 @@ $(document).ready(function () {
                                                                 </strong></strong></h4><strong><strong>
                                                                 <div class="input-group input-group-lg">
                                                                     <span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" style="background-color: black; color: white; border-color: black;" onclick="setTextbox(-1, true, 'habLeveltb')">-</span>
-                                                                    <input type="number" class="form-control textBox" style="background-color: black; color: white;" name="habLevel" id="habLeveltb">
+                                                                    <input type="number" class="form-control textBox" style="background-color: black; color: white; padding-left: 8px;padding-right: 8px" name="habLevel" id="habLeveltb">
                                                                     <span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" style="background-color: black; color: white; border-color: black;" onclick="setTextbox(1, true, 'habLeveltb')">+</span>
                                                                 </div>
                                                             </strong></strong>
