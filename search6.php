@@ -47,36 +47,33 @@
     //**********************************************************************************
     //                          Summary
     //**********************************************************************************
-    for ($i = 1; $i <= $GLOBALS['MODALS']['TEAMS_PER_MATCH']; $i++) {
-        if($teamnum[i] != NULL){
-    // if ($teamnum[1] != NULL || $teamnum[2] != NULL || $teamnum[3] != NULL || $teamnum[4] != NULL || $teamnum[5] != NULL || $teamnum[6] != NULL) {
+    if ($teamnum[1] != NULL || $teamnum[2] != NULL || $teamnum[3] != NULL || $teamnum[4] != NULL || $teamnum[5] != NULL || $teamnum[6] != NULL) {
         echo "<h2 style='text-align:center'>Summary</h2>";
         echo "
         <div class='container'>
-        if(i == 3){echo "<br>";}
             <div class='col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4'>
-                " . returnTeamSummary(i) . "
+                " . returnTeamSummary(1) . "
             </div>
-        //     <div class='col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4'>
-        //         " . returnTeamSummary(2) . "
-        //     </div>
-        //     <div class='col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4'>
-        //         " . returnTeamSummary(3) . "
-        //     </div>
-        // </div>
-        // ";
-        // echo "<br>";
-        // echo "
-        // <div class='container'>
-        //     <div class='col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4'>
-        //         " . returnTeamSummary(4) . "
-        //     </div>
-        //     <div class='col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4'>
-        //         " . returnTeamSummary(5) . "
-        //     </div>
-        //     <div class='col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4'>
-        //         " . returnTeamSummary(6) . "
-        //     </div>
+            <div class='col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4'>
+                " . returnTeamSummary(2) . "
+            </div>
+            <div class='col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4'>
+                " . returnTeamSummary(3) . "
+            </div>
+        </div>
+        ";
+        echo "<br>";
+        echo "
+        <div class='container'>
+            <div class='col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4'>
+                " . returnTeamSummary(4) . "
+            </div>
+            <div class='col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4'>
+                " . returnTeamSummary(5) . "
+            </div>
+            <div class='col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4'>
+                " . returnTeamSummary(6) . "
+            </div>
         </div>
         ";
     }
