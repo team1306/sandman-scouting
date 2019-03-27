@@ -102,14 +102,12 @@ DEFAULT,
 '$teleCapDisabled')";
 
 //increment matchesScouted when the user submits a sheet
-UPDATE `users` SET `matchesScouted` = `matchesScouted` + 1 WHERE `id`= $userid;
-$dbDataConn->query($userid);
-// $dbDataConn->query($insertSQL)
+$updateSQL = "UPDATE `users` SET `matchesScouted` = `matchesScouted` + 1 WHERE `id`=" .  $userid;
 
 if($dbDataConn->query($updateSQL) === TRUE) {
-    $last_id = mysqli_insert_id($dbDataConn);
+   echo "Query ran successfully";
 } else {
-    echo "Error: " . $userid . "<br>" . $dbDataConn->error . "";
+   echo "Query failed!";
 }
 
 // $insertSQL = "INSERT INTO " . $GLOBALS['DB']['TABLE']['MATCH_SCOUTING'] . "(`id`, `scoutTeam`, `userID`, `userTeamNum`, `teamNum`, `matchNum`, `isRed`,
