@@ -102,6 +102,13 @@ DEFAULT,
 '$teleCapDisabled')";
 
 //increment matchesScouted when the user submits a sheet
+echo "id =";
+echo `id`;
+echo "<br>";
+
+echo "$useid =";
+echo $useid;
+echo "<br>";
 UPDATE `users` SET `matchesScouted` = `matchesScouted` + 1 WHERE `id`= $userid;
 
 // $insertSQL = "INSERT INTO " . $GLOBALS['DB']['TABLE']['MATCH_SCOUTING'] . "(`id`, `scoutTeam`, `userID`, `userTeamNum`, `teamNum`, `matchNum`, `isRed`,
