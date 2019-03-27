@@ -89,44 +89,26 @@
             </thead>
             <tbody>
                 <tr>
-                    <th>Avg KPA</th>
-                    <td>" . $summary[$teamindex]['auto']['kpa']['avg'] . "</td>
+                    <th>Avg Cargo</th>
+                    <td>" . $summary[$teamindex]['autoHatches'] . "</td>
                 </tr>
                 <tr>
-                    <th>Max KPA</th>
-                    <td>" . $summary[$teamindex]['auto']['kpa']['max'] . "</td>
+                    <th>Avg Hatches</th>
+                    <td>" . $summary[$teamindex]['autoCargo'] . "</td>
                 </tr>
-                <tr>
-                    <th>Avg Gears</th>
-                    <td>" . $summary[$teamindex]['auto']['gears']['avg'] . "</td>
-                </tr>
-                <tr>
-                    <th>Acc Gears</th>
-                    <td>" . $summary[$teamindex]['auto']['gears']['acc']*100 . "%</td>
             </tbody>
             <thead>
                 <th colspan='2' style='text-align:center'>Teleop</th>
             </thead>
             <tbody>
                 <tr>
-                    <th>Avg KPA</th>
-                    <td>" . $summary[$teamindex]['tele']['kpa']['avg'] . "</td>
+                    <th>Avg Cargo</th>
+                    <td>" . $summary[$teamindex]['teleHatches'] . "</td>
                 </tr>
                 <tr>
-                    <th>Max KPA</th>
-                    <td>" . $summary[$teamindex]['tele']['kpa']['max'] . "</td>
+                    <th>Avg Hatches</th>
+                    <td>" . $summary[$teamindex]['teleCargo'] . "</td>
                 </tr>
-                <tr>
-                    <th>Avg Gears</th>
-                    <td>" . $summary[$teamindex]['tele']['gears']['avg'] . "</td>
-                </tr>
-                <tr>
-                    <th>Max Gears</th>
-                    <td>" . $summary[$teamindex]['tele']['gears']['max'] . "</td>
-                </tr>
-                <tr>
-                    <th>Climb</th>
-                    <td>" . $summary[$teamindex]['tele']['climb']*100 . "%</td>
             </tbody>
         </table>";
     }
@@ -266,39 +248,44 @@
             echo "</tr></tfoot>";
 
             echo "</table></div>";
-
+// $summary[$teamindex]['Thing1'] = 5
         //Save data to summary array
-        $summary[$teamindex]['auto']['kpa']['max'] = $autoKPAMax;
-        if ($matchTotal != 0) {
-            $summary[$teamindex]['auto']['gears']['avg'] = round($autoGearTotal/$matchTotal, 2);
-            $summary[$teamindex]['auto']['kpa']['avg'] = round($autoKPATotal/$matchTotal,2);
-        }
-        else {
-            $summary[$teamindex]['auto']['gears']['avg'] = 0;
-            $summary[$teamindex]['auto']['kpa']['avg'] = 0;
-        }
-        $summary[$teamindex]['auto']['gears']['success'] = $autoGearSuccess;
-        $summary[$teamindex]['auto']['gears']['attempts'] = $autoGearAttempts;
-        if ($autoGearAttempts != 0) {
-            $summary[$teamindex]['auto']['gears']['acc'] = round($autoGearSuccess/$autoGearAttempts, 2);
-        }
-        else {
-            $summary[$teamindex]['auto']['gears']['acc']  = 0;
-        }
+        $summary[$teamindex]['autoHatches'] = $hatchesPlacedAutoCalculated;
+        $summary[$teamindex]['autoCargo'] = $cargoPlacedAutoCalculated;
 
-        $summary[$teamindex]['tele']['kpa']['max'] = $teleKPAMax;
-        if ($matchTotal != 0) {
-            $summary[$teamindex]['tele']['gears']['avg'] = round($teleGearTotalSuccess/$matchTotal, 2);
-            $summary[$teamindex]['tele']['kpa']['avg'] = round($teleKPATotal/$matchTotal,2);
-        }
-        else {
-            $summary[$teamindex]['tele']['gears']['avg'] = 0;
-            $summary[$teamindex]['tele']['kpa']['avg'] = 0;
-        }
-        // $summary[$teamindex]['tele']['gears']['success'] = $teleGearTotalSuccess;
-        // $summary[$teamindex]['tele']['gears']['fail'] = $teleGearTotalFail;
-        $summary[$teamindex]['tele']['gears']['max'] = $teleGearMax;
-        $summary[$teamindex]['tele']['climb'] = $teleClimbCalculated;
+        $summary[$teamindex]['teleHatches'] = $hatchesPlacedCalculated;
+        $summary[$teamindex]['teleCargo'] = $ $cargoPlacedCalculated;
+        // $summary[$teamindex]['auto']['kpa']['max'] = $autoKPAMax;
+        // if ($matchTotal != 0) {
+        //     $summary[$teamindex]['auto']['gears']['avg'] = round($autoGearTotal/$matchTotal, 2);
+        //     $summary[$teamindex]['auto']['kpa']['avg'] = round($autoKPATotal/$matchTotal,2);
+        // }
+        // else {
+        //     $summary[$teamindex]['auto']['gears']['avg'] = 0;
+        //     $summary[$teamindex]['auto']['kpa']['avg'] = 0;
+        // }
+        // $summary[$teamindex]['auto']['gears']['success'] = $autoGearSuccess;
+        // $summary[$teamindex]['auto']['gears']['attempts'] = $autoGearAttempts;
+        // if ($autoGearAttempts != 0) {
+        //     $summary[$teamindex]['auto']['gears']['acc'] = round($autoGearSuccess/$autoGearAttempts, 2);
+        // }
+        // else {
+        //     $summary[$teamindex]['auto']['gears']['acc']  = 0;
+        // }
+        //
+        // $summary[$teamindex]['tele']['kpa']['max'] = $teleKPAMax;
+        // if ($matchTotal != 0) {
+        //     $summary[$teamindex]['tele']['gears']['avg'] = round($teleGearTotalSuccess/$matchTotal, 2);
+        //     $summary[$teamindex]['tele']['kpa']['avg'] = round($teleKPATotal/$matchTotal,2);
+        // }
+        // else {
+        //     $summary[$teamindex]['tele']['gears']['avg'] = 0;
+        //     $summary[$teamindex]['tele']['kpa']['avg'] = 0;
+        // }
+        // // $summary[$teamindex]['tele']['gears']['success'] = $teleGearTotalSuccess;
+        // // $summary[$teamindex]['tele']['gears']['fail'] = $teleGearTotalFail;
+        // $summary[$teamindex]['tele']['gears']['max'] = $teleGearMax;
+        // $summary[$teamindex]['tele']['climb'] = $teleClimbCalculated;
 
 
         //Reset all values
