@@ -254,7 +254,7 @@
         $summary[$teamindex]['autoCargo'] = $cargoPlacedAutoCalculated;
 
         $summary[$teamindex]['teleHatches'] = $hatchesPlacedCalculated;
-        $summary[$teamindex]['teleCargo'] = $ $cargoPlacedCalculated;
+        $summary[$teamindex]['teleCargo'] = $cargoPlacedCalculated;
         // $summary[$teamindex]['auto']['kpa']['max'] = $autoKPAMax;
         // if ($matchTotal != 0) {
         //     $summary[$teamindex]['auto']['gears']['avg'] = round($autoGearTotal/$matchTotal, 2);
