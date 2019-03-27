@@ -101,6 +101,9 @@ DEFAULT,
 '$cleanNotes',
 '$teleCapDisabled')";
 
+//increment matchesScouted when the user submits a sheet
+UPDATE `users` SET `matchesScouted` = `matchesScouted` + 1 WHERE `id`= $userid;
+
 // $insertSQL = "INSERT INTO " . $GLOBALS['DB']['TABLE']['MATCH_SCOUTING'] . "(`id`, `scoutTeam`, `userID`, `userTeamNum`, `teamNum`, `matchNum`, `isRed`,
 // `autoCap.gear`, `autoCap.gearSuccess`, `autoCap.gearPeg`, `autoCap.passBaseline`, `autoCap.KPA`, `autoCap.highGoalAccuracy`, `autoCap.highGoalSpeed`,
 //
@@ -200,8 +203,6 @@ if ($GLOBALS['SLACK_BOT']['ENABLE']) {
     }
 }
 
-//increment matchesScouted when the user submits a sheet
-UPDATE `users` SET `matchesScouted` = `matchesScouted` + 1 WHERE `id`= $userid;
 
 // $selectMatchSQL = mysqli_query($conn, "SELECT * FROM `matchdata` ORDER BY id DESC limit 1");
 
