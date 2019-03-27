@@ -110,9 +110,8 @@ echo "userid: ";
 echo $userid;
 echo "<br>";
 
-$userid = "SELECT `id` from `users` WHERE `id`=" $userid;
-$updateSQL = "UPDATE `users` SET `matchesScouted` = `matchesScouted` + 1 WHERE `id`=SELECT `id` from `users` WHERE `id`=" $userid;
-// $updateSQL = "UPDATE `users` SET `matchesScouted` = `matchesScouted` + 1 WHERE `id`= 1";
+$updateSQL = "UPDATE `users` SET `matchesScouted` = `matchesScouted` + 1 WHERE `id`=" . $userid;
+$updateSQL = "UPDATE `users` SET `matchesScouted` = `matchesScouted` + 1 WHERE `id`= 1";
 
 if($dbDataConn->query($updateSQL) === TRUE) {
     echo "Query ran successfully";
