@@ -53,29 +53,30 @@
         echo "<h2 style='text-align:center'>Summary</h2>";
         echo "
         <div class='container'>
+        if(i == 3){echo "<br>";}
             <div class='col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4'>
-                " . returnTeamSummary(1) . "
+                " . returnTeamSummary(i) . "
             </div>
-            <div class='col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4'>
-                " . returnTeamSummary(2) . "
-            </div>
-            <div class='col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4'>
-                " . returnTeamSummary(3) . "
-            </div>
-        </div>
-        ";
-        echo "<br>";
-        echo "
-        <div class='container'>
-            <div class='col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4'>
-                " . returnTeamSummary(4) . "
-            </div>
-            <div class='col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4'>
-                " . returnTeamSummary(5) . "
-            </div>
-            <div class='col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4'>
-                " . returnTeamSummary(6) . "
-            </div>
+        //     <div class='col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4'>
+        //         " . returnTeamSummary(2) . "
+        //     </div>
+        //     <div class='col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4'>
+        //         " . returnTeamSummary(3) . "
+        //     </div>
+        // </div>
+        // ";
+        // echo "<br>";
+        // echo "
+        // <div class='container'>
+        //     <div class='col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4'>
+        //         " . returnTeamSummary(4) . "
+        //     </div>
+        //     <div class='col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4'>
+        //         " . returnTeamSummary(5) . "
+        //     </div>
+        //     <div class='col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4'>
+        //         " . returnTeamSummary(6) . "
+        //     </div>
         </div>
         ";
     }
