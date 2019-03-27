@@ -200,6 +200,9 @@ if ($GLOBALS['SLACK_BOT']['ENABLE']) {
     }
 }
 
+//increment matchesScouted when the user submits a sheet
+UPDATE `users` SET `matchesScouted` = `matchesScouted` + 1 WHERE `id`= $userid;
+
 // $selectMatchSQL = mysqli_query($conn, "SELECT * FROM `matchdata` ORDER BY id DESC limit 1");
 
 // require '/home/ubuntu/workspace/vendor/autoload.php';
