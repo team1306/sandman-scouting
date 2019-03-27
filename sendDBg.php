@@ -101,61 +101,6 @@ DEFAULT,
 '$cleanNotes',
 '$teleCapDisabled')";
 
-//increment matchesScouted when the user submits a sheet
-echo "id: ";
-echo `id`;
-echo "<br>";
-
-echo "userid: ";
-echo $userid;
-echo "<br>";
-
-$updateSQL = "UPDATE `users` SET `matchesScouted` = `matchesScouted` + 1 WHERE `id`=" . $userid;
-$updateSQL = "UPDATE `users` SET `matchesScouted` = `matchesScouted` + 1 WHERE `id`= 1";
-
-if($dbDataConn->query($updateSQL) === TRUE) {
-    echo "Query ran successfully";
-} else {
-    echo "Query failed!";
-}
-
-// $insertSQL = "INSERT INTO " . $GLOBALS['DB']['TABLE']['MATCH_SCOUTING'] . "(`id`, `scoutTeam`, `userID`, `userTeamNum`, `teamNum`, `matchNum`, `isRed`,
-// `autoCap.gear`, `autoCap.gearSuccess`, `autoCap.gearPeg`, `autoCap.passBaseline`, `autoCap.KPA`, `autoCap.highGoalAccuracy`, `autoCap.highGoalSpeed`,
-//
-// `teleCap.gearSuccess`, `teleCap.gearFailed`, `teleCap.KPA`, `teleCap.highGoalAccuracy`, `teleCap.highGoalSpeed`, `teleCap.lowGoalAccuracy`, `teleCap.lowGoalSpeed`, `teleCap.ballCycles`,
-// `teleCap.climb`, `autoCap.mobile`, `teleCap.groundGear`, `teleCap.notes`, `teleCap.disabled`) VALUES (
-//
-// DEFAULT,
-// '$scoutTeam',
-// '$userid',
-// '$userTeamNum',
-// '$teamnum',
-// '$matchnum',
-// '$isRed',
-//
-// '$autoAttemptGear',
-// '$autoCapGearSuccess',
-// '$autoCapGearPeg',
-// '$autoCapPassBaseline',
-// '$autoCapKPA',
-// '$autoCapHighGoalAccuracy',
-// '$autoCapHighGoalSpeed',
-//
-// '$teleGearSuccess',
-// '$teleGearFail',
-// '$teleCapKPA',
-// '$teleCapHighGoalAccuracy',
-// '$teleCapHighGoalSpeed',
-// '$teleCapLowGoalAccuracy',
-// '$teleCapLowGoalSpeed',
-// '$teleCapBallCycles',
-//
-// '$teleCapClimb',
-// '$autoCapMobile',
-// '$teleCapGroundGear',
-// '$cleanNotes',
-// '$teleCapDisabled')";
-
 if ($dbDataConn->query($insertSQL) === TRUE) {
     $last_id = mysqli_insert_id($dbDataConn);
     echo "
@@ -170,6 +115,14 @@ if ($dbDataConn->query($insertSQL) === TRUE) {
         <a href=../" . $currentsheetPath . " target='_blank'><h1>Click here to open scouting in a new tab.  Please leave this window open in the background so that a scouting head can fix the error.</h1></a>
     </div>
     ";
+}
+
+//increment matchesScouted when the user submits a sheet
+
+$updateSQL = "UPDATE `users` SET `matchesScouted` = `matchesScouted` + 1 WHERE `id`=" . $userid;
+
+if($dbDataConn->query($updateSQL) != TRUE) {
+    echo "Failed to increment user matchesScouted!";
 }
 
 if ($GLOBALS['SLACK_BOT']['ENABLE']) {
