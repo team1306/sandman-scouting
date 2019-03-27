@@ -28,6 +28,7 @@
           // Add the admin tab if this user is an admin
           if (checkUserAdmin(false) == 0) {
             echo "<li><a href={$GLOBALS['PATH']['ADMIN']}>{$GLOBALS['MODALS']['ADMIN']}</a></li>";
+            echo "<li><a href={$GLOBALS['PATH']['LEADERBOARD']}>{$GLOBALS['MODALS']['LEADERBOARD']}</a></li>";
           }
          ?>
       </ul>
