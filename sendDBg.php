@@ -105,14 +105,14 @@ if ($dbDataConn->query($insertSQL) === TRUE) {
     $last_id = mysqli_insert_id($dbDataConn);
     echo "
     <div class='container'>
-        <a href='../$matchScoutingPath'><button type='button' class='btn btn-success btn-xl' style='width:100%; height:200px;'><h1 style='font-size: 500%;'>Click Here</h1></button></a>
+        <a href='" . $GLOBALS['PATH']['MATCH_SHEET'] . "'><button type='button' class='btn btn-success btn-xl' style='width:100%; height:200px;'><h1 style='font-size: 500%;'>Click Here</h1></button></a>
     </div>
     ";
     echo "<h1> New record created successfully. Last inserted ID is: <strong>" . $last_id . "</strong></h1>";
 } else {
     echo "Error: " . $insertSQL . "<br>" . $dbDataConn->error . "
     <div class='container'>
-        <a href=../" . $currentsheetPath . " target='_blank'><h1>Click here to open scouting in a new tab.  Please leave this window open in the background so that a scouting head can fix the error.</h1></a>
+        <a href=" . $GLOBALS['PATH']['MATCH_SHEET'] . " target='_blank'><h1>Click here to open scouting in a new tab.  Please leave this window open in the background so that a scouting head can fix the error.</h1></a>
     </div>
     ";
 }
