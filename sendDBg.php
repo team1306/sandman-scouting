@@ -7,9 +7,9 @@
 <body>
 <?php
 //      User info
-$userid = $_SESSION['userArray']['uid'];
-$scoutTeam = $_SESSION['userArray']['scoutTeam'];
-$userTeamNum = $_SESSION['teamArray']['num'];
+$userid = $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['uid'];
+$scoutTeam = $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['userArray']['scoutTeam'];
+$userTeamNum = $_SESSION[$GLOBALS['APP_INFO']['SHORT_NAME']]['teamArray']['num'];
 
 //      Team info
 $teamnum = $_POST['teamnum'];
