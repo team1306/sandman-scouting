@@ -102,10 +102,14 @@ DEFAULT,
 '$teleCapDisabled')";
 
 //increment matchesScouted when the user submits a sheet
-echo "user id table: ";
-echo `userid`;
+echo "id: ";
+echo `id`;
 echo "<br>";
-$updateSQL = "UPDATE `users` SET `matchesScouted` = `matchesScouted` + 1 WHERE `userid`=" . $userid;
+
+echo "userid: ";
+echo $userid;
+echo "<br>";
+$updateSQL = "UPDATE `users` SET `matchesScouted` = `matchesScouted` + 1 WHERE `id`=" . $userid;
 
 if($dbDataConn->query($updateSQL) === TRUE) {
     echo "Query ran successfully";
