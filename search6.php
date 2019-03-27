@@ -48,7 +48,7 @@
     //                          Summary
     //**********************************************************************************
 
-    if ($teamnum[1] != NULL && $teamnum[2] != NULL && $teamnum[3] != NULL && $teamnum[4] != NULL && $teamnum[5] != NULL && $teamnum[6] != NULL) {
+    if ($teamnum[1] != NULL || $teamnum[2] != NULL || $teamnum[3] != NULL || $teamnum[4] != NULL || $teamnum[5] != NULL || $teamnum[6] != NULL) {
         echo "<h2 style='text-align:center'>Summary</h2>";
         echo "
         <div class='container'>
