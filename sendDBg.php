@@ -1,4 +1,4 @@
-'<?php
+<?php
   include "global.php";
   include "php/dbDataConn.php";
 ?>
@@ -75,7 +75,7 @@ $cleanNotes = mysqli_real_escape_string($dbDataConn, $teleNotes);
 
 $insertSQL = "INSERT INTO " . $GLOBALS['DB']['TABLE']['MATCH_SCOUTING'] . "(`id`, `scoutTeam`, `userID`, `userTeamNum`, `teamNum`, `matchNum`, `isRed`,
 `autoPassHabline`, `habStart`, `hatchesPlacedAuto`, `cargoPlacedAuto`, `hatchesPlaced`, `cargoPlaced`, `groundPickupHatch`, `groundPickupCargo`,
-`upperRocket`, `teleDisabled`, `habLevel`, `teleCap.notes`, `autoCap.mobile`) VALUES (
+`upperRocket`, `habLevel`, `teleDisabled`, `teleCap.notes`) VALUES (
 
 DEFAULT,
 '$scoutTeam',
@@ -85,7 +85,7 @@ DEFAULT,
 '$matchnum',
 '$isRed',
 
-'$autoPassHabline',
+'$autoHabline',
 '$habStartLevel',
 '$autoHatches',
 '$autoCargo',
@@ -97,9 +97,9 @@ DEFAULT,
 '$teleUpperRocket',
 '$teleHabClimb',
 
-'$autoCapMobile',
-'$cleanNotes',
-'$teleCapDisabled')";
+'$teleCapDisabled',
+
+'$cleanNotes')";
 
 if ($dbDataConn->query($insertSQL) === TRUE) {
     $last_id = mysqli_insert_id($dbDataConn);
