@@ -1,5 +1,5 @@
 <?php
-if(!isset($_SESSION)) { 
+if(!isset($_SESSION)) {
   session_start();
 }
 include "php/debug.php";
@@ -14,7 +14,7 @@ include "php/dbDataConn.php";
 class TBAdata {
     private static $updateTime;
     private static $teams;
-    private static $matches;
+    // private static $matches;
     private static $eventCode;
     private static $compLevel;
     function updateData() {
@@ -30,46 +30,49 @@ class TBAdata {
 
         $TBAdataArray = json_decode($json, true);
 
-        $this->updateTime = $http_response_header[1];
+        TBAdata::$updateTime = $http_response_header[1];
 
         if ($GLOBALS['TBA']['debug']['all']) {
             echo "Update time from header: " . $http_response_header[1] . "<br>";
-            echo "Update time saved: " . $this->updateTime . "<br><br>";
+            echo "Update time saved: " . self::$updateTime . "<br><br>";
         }
 
         foreach ($TBAdataArray as $key => $value) {
             if ($GLOBALS['TBA']['debug']['match']) {
                 echo "{$key} => {$value} <br>";
-                echo "----------------------------------------<br>[";
+                echo "------------------<br>[";
                 echo "Comp Lvl: " . $value['comp_level'] . " | Match Num: " . $value['match_number'] . " | Set Num:" . $value['set_number'] . "]";
                 echo var_dump($value['alliances']['blue']['team_keys']);
                 echo var_dump($value['alliances']['red']['team_keys']);
-                echo "----------------------------------------<br>";
+                echo "<br>----------------------------------------<br><br>";
             }
             // Team data mapping
-            $this->teams[$value['comp_level']][$value['set_number']][$value['match_number']]['red'] = str_replace('frc','',$value['alliances']['red']['team_keys']);
-            $this->teams[$value['comp_level']][$value['set_number']][$value['match_number']]['blue'] = str_replace('frc','',$value['alliances']['blue']['team_keys']);
+            self::$teams[$value['comp_level']][$value['set_number']][$value['match_number']]['red'] = str_replace('frc','',$value['alliances']['red']['team_keys']);
+            self::$teams[$value['comp_level']][$value['set_number']][$value['match_number']]['blue'] = str_replace('frc','',$value['alliances']['blue']['team_keys']);
         }
+
         $this->cacheData();
 
         if ($GLOBALS['TBA']['debug']['all']) {
+            echo "<br><br>";
+            echo "Raw data: <br>";
             echo var_dump($TBAdataArray);
+            echo "<br><br>";
         }
 
     }
     function cacheData() {
-        $jsonData = json_encode($this->teams);
+        if ($GLOBALS['TBA']['debug']['match']) {
+          echo "Saving team cache at: " . $GLOBALS['TBA']['PATH']['CACHE']['TEAMS'];
+        }
+        $jsonData = json_encode(self::$teams);
         file_put_contents($GLOBALS['TBA']['PATH']['CACHE']['TEAMS'], $jsonData);
-        file_put_contents($GLOBALS['TBA']['PATH']['CACHE']['TEAMS']['php'], $jsonData);
 
-        $jsonDataMatch = json_encode($this->matches);
-        file_put_contents($GLOBALS['TBA']['PATH']['CACHE']['MATCHES'], $jsonDataMatch);
-        file_put_contents($GLOBALS['TBA']['PATH']['CACHE']['MATCHES']['php'], $jsonDataMatch);
+        // $jsonDataMatch = json_encode(TBAdata::matches);
+        // file_put_contents($GLOBALS['TBA']['PATH']['CACHE']['MATCHES'], $jsonDataMatch);
 
-
-        $jsonUpdate = json_encode($this->updateTime);
+        $jsonUpdate = json_encode(self::$updateTime);
         file_put_contents($GLOBALS['TBA']['PATH']['CACHE']['UPDATE'], $jsonUpdate);
-        file_put_contents($GLOBALS['TBA']['PATH']['CACHE']['UPDATE']['php'], $jsonUpdate);
 
     }
     function getTeam($comp_level, $set_number, $match_number, $alliance, $team) {

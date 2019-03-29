@@ -3,3 +3,4 @@ php/const.php
 cache.json
 cacheUpdate.json
 cacheMatch.json
+cacheUpdateLog.log

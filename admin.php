@@ -28,7 +28,6 @@
 	      include 'php/debug.php';
 				include 'php/userCheck.php';
         include 'TBAdata.php';
-        include 'error.php';
 				checkUserAdmin(true); ?>
 	<br>
 	<div class="container">
