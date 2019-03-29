@@ -130,180 +130,187 @@ $(document).ready(function () {
 						<strong>Sandstorm</strong></h3>
 						<div class="border">
 							<div class="row">
-								<div>
-									<div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
-										<h4 class="checkboxLabel">Cross HAB Line</h4>
-										<div class="col-md-2 col-sm-2 col-xs-2 col-lg-2">
-											<div class="roundedTwo">
-												<input type="checkbox" value="1" id="autoPassHabline" name="autoPassHabline">
-												<label for="autoPassHabline" class="checkboxjs"></label>
-											</div>
-										</div></div><div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
-											<h4 class="checkboxLabel">Started off level 2</h4>
-										</div><div class="col-md-2 col-sm-2 col-xs-2 col-lg-2">
-											<div class="roundedTwo">
-												<input type="checkbox" value="1" id="habStart" name="habStart">
-												<label for="habStart" class="checkboxjs"></label>
-											</div>
-										</div><strong><strong>
-											<strong><strong>
-											</strong></strong></strong></strong>
-										</div>
-
-
+								<div class="col-xs-3">
+									<div class="roundedTwo">
+										<input type="checkbox" value="1" id="autoPassHabline" name="autoPassHabline">
+										<label for="autoPassHabline" class="checkboxjs"></label>
 									</div>
+								</div>
+								<div class="col-xs-9">
+									<h4 class="checkboxLabel">Cross HAB Line</h4>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-3">
+									<div class="roundedTwo">
+										<input type="checkbox" value="1" id="habStart" name="habStart">
+										<label for="habStart" class="checkboxjs"></label>
+									</div>
+								</div>
+								<div class="col-xs-9">
+									<h4 class="checkboxLabel">Started off level 2</h4>
+								</div>
+							</div>
 
-									<hr>
+							<hr>
 
+							<div class="row">
+								<div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
+									<h4 class="center">
+										<strong>Hatches Placed<strong>
+										</h4>
+										<div class="input-group input-group-lg">
+											<span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" onclick="setTextbox(-1, true, 'hatchesPlacedAutotb')" style="background-color: black; color: white; border-color: black;">-</span>
+											<input id="hatchesPlacedAutotb" type="number" class="form-control textBox" name="hatchesPlacedAuto" style="background-color: black; color: white;">
+											<span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" onclick="setTextbox(1, true, 'hatchesPlacedAutotb')" style="background-color: black; color: white; border-color: black;">+</span>
+										</div>
+									</div>
+									<div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
+										<h4 class="center">
+											<strong>Cargo Placed<strong>
+											</h4>
+											<div class="input-group input-group-lg">
+												<span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" onclick="setTextbox(-1, true, 'cargoPlacedAutotb')" style="background-color: black; color: white; border-color: black;">-</span>
+												<input id="cargoPlacedAutotb" type="number" class="form-control textBox" name="cargoPlacedAuto" style="background-color: black; color: white;">
+												<span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" onclick="setTextbox(1, true, 'cargoPlacedAutotb')" style="background-color: black; color: white; border-color: black;">+</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<h3 class="center">
+									<strong>Teleop</strong>
+								</h3>
+								<div class="border">
 									<div class="row">
 										<div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
 											<h4 class="center">
 												<strong>Hatches Placed<strong>
-												</strong></strong></h4><strong><strong>
+												</h4>
+												<div class="input-group input-group-lg">
+													<span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" style="background-color: black; color: white; border-color: black;" onclick="setTextbox(-1, true, 'hatchesPlacedtb')">-</span>
+													<input id="hatchesPlacedtb" type="number" class="form-control textBox" name="hatchesPlaced" style="background-color: black; color: white;">
+													<span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" style="background-color: black; color: white; border-color: black;" onclick="setTextbox(1, true, 'hatchesPlacedtb')">+</span>
+												</div>
+											</div>
+											<div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
+												<h4 class="center">
+													<strong>Cargo Placed<strong>
+													</h4>
 													<div class="input-group input-group-lg">
-														<span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" onclick="setTextbox(-1, true, 'hatchesPlacedAutotb')" style="background-color: black; color: white; border-color: black;">-</span>
-														<input id="hatchesPlacedAutotb" type="number" class="form-control textBox" name="hatchesPlacedAuto" style="background-color: black; color: white;">
-														<span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" onclick="setTextbox(1, true, 'hatchesPlacedAutotb')" style="background-color: black; color: white; border-color: black;">+</span>
+														<span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" style="background-color: black; color: white; border-color: black;" onclick="setTextbox(-1, true, 'cargoPlacedtb')">-</span>
+														<input id="cargoPlacedtb" type="number" class="form-control textBox" name="cargoPlaced" style="background-color: black; color: white;">
+														<span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" style="background-color: black; color: white; border-color: black;" onclick="setTextbox(1, true, 'cargoPlacedtb')">+</span>
 													</div>
-												</strong></strong>
-											</div><strong><strong>
-												<div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
-													<h4 class="center">
-														<strong>Cargo Placed<strong>
-														</strong></strong></h4><strong><strong>
-															<div class="input-group input-group-lg">
-																<span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" onclick="setTextbox(-1, true, 'cargoPlacedAutotb')" style="background-color: black; color: white; border-color: black;">-</span>
-																<input id="cargoPlacedAutotb" type="number" class="form-control textBox" name="cargoPlacedAuto" style="background-color: black; color: white;">
-																<span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" onclick="setTextbox(1, true, 'cargoPlacedAutotb')" style="background-color: black; color: white; border-color: black;">+</span>
-															</div>
-														</strong></strong>
-													</div><strong><strong>
-													</strong></strong>
-												</strong></strong>
+												</div>
+											</div>
+											<hr>
+											<div class="row">
+												<div class="col-xs-3">
+													<div class="roundedTwo">
+														<input type="checkbox" value="1" id="groundPickupHatch" name="groundPickupHatch">
+														<label class="checkboxjs" for="groundPickupHatch"></label>
+													</div>
+												</div>
+												<div class="col-xs-9">
+													<h4 class="checkboxLabel">Ground Pickup Hatch</h4>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-xs-3">
+													<div class="roundedTwo">
+														<input type="checkbox" value="1" id="groundPickupCargo" name="groundPickupCargo">
+														<label class="checkboxjs" for="groundPickupCargo"></label>
+													</div>
+												</div>
+												<div class="col-xs-9">
+													<h4 class="checkboxLabel">Ground Pickup Cargo</h4>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-xs-3">
+													<div class="roundedTwo">
+														<input type="checkbox" value="1" id="upperRocket" name="upperRocket">
+														<label class="checkboxjs" for="upperRocket"></label>
+													</div>
+												</div>
+												<div class="col-xs-9">
+													<h4 class="checkboxLabel">Place on Upper Rocket</h4>
+												</div>
 											</div>
 										</div>
 									</div>
 									<div class="col-md-4">
 										<h3 class="center">
-											<strong>Teleop</strong>
+											<strong>End Game</strong>
 										</h3>
 										<div class="border">
 											<div class="row">
+												<div class="col-xs-6">
+													<div class="row">
+														<div class="col-xs-3">
+															<div class="roundedTwo">
+																<input type="checkbox" value="1" id="teleDisabled" name="teleDisabled">
+																<label class="checkboxjs" for="teleDisabled"></label>
+															</div>
+														</div>
+														<div class="col-xs-9">
+															<h4 class="checkboxLabel">Disabled</h4>
+														</div>
+													</div>
+												</div>
 												<div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
 													<h4 class="center">
-														<strong>Hatches Placed<strong>
+														<strong>HAB Level Climbed<strong>
 														</h4>
 														<div class="input-group input-group-lg">
-															<span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" style="background-color: black; color: white; border-color: black;" onclick="setTextbox(-1, true, 'hatchesPlacedtb')">-</span>
-															<input id="hatchesPlacedtb" type="number" class="form-control textBox" name="hatchesPlaced" style="background-color: black; color: white;">
-															<span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" style="background-color: black; color: white; border-color: black;" onclick="setTextbox(1, true, 'hatchesPlacedtb')">+</span>
+															<span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" style="background-color: black; color: white; border-color: black;" onclick="setTextbox(-1, true, 'habLeveltb')">-</span>
+															<input type="number" class="form-control textBox" style="background-color: black; color: white;" name="habLevel" id="habLeveltb">
+															<span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" style="background-color: black; color: white; border-color: black;" onclick="setTextbox(1, true, 'habLeveltb')">+</span>
 														</div>
 													</div>
-													<div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
-														<h4 class="center">
-															<strong>Cargo Placed<strong>
-															</h4>
-															<div class="input-group input-group-lg">
-																<span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" style="background-color: black; color: white; border-color: black;" onclick="setTextbox(-1, true, 'cargoPlacedtb')">-</span>
-																<input id="cargoPlacedtb" type="number" class="form-control textBox" name="cargoPlaced" style="background-color: black; color: white;">
-																<span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" style="background-color: black; color: white; border-color: black;" onclick="setTextbox(1, true, 'cargoPlacedtb')">+</span>
-															</div>
-														</div>
-													</div>
-													<hr>
-													<div class="row">
-														<div>
-															<div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
-																<h4 class="checkboxLabel">Ground Pickup Hatch</h4>
-																<div class="col-md-2 col-sm-2 col-xs-2 col-lg-2">
-																	<div class="roundedTwo">
-																		<input type="checkbox" value="1" id="groundPickupHatch" name="groundPickupHatch">
-																		<label class="checkboxjs" for="groundPickupHatch"></label>
-																	</div>
-																</div></div><div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
-																	<h4 class="checkboxLabel">Ground Pickup Cargo</h4>
-																</div><div class="col-md-2 col-sm-2 col-xs-2 col-lg-2">
-																	<div class="roundedTwo">
-																		<input type="checkbox" value="1" id="groundPickupCargo" name="groundPickupCargo">
-																		<label class="checkboxjs" for="groundPickupCargo"></label>
-																	</div>
-																</div>
-															</div>
-														</div>
-														<div class="row">
-															<div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
-																<h4 class="checkboxLabel">Place on Upper Rocket</h4>
-																<div class="col-md-2 col-sm-2 col-xs-2 col-lg-2">
-																	<div class="roundedTwo">
-																		<input type="checkbox" value="1" id="upperRocket" name="upperRocket">
-																		<label class="checkboxjs" for="upperRocket"></label>
-																	</div>
-																</div></div>
-															</div>
-														</div>
-													</div>
-													<div class="col-md-4">
-														<h3 class="center">
-															<strong>End Game</strong>
-														</h3>
-														<div class="border">
-															<div class="row">
-																<div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
-																	<h4 class="checkboxLabel">Disabled</h4>
-																	<div class="col-md-2 col-sm-2 col-xs-2 col-lg-2">
-																		<div class="roundedTwo">
-																			<input type="checkbox" value="1" id="teleDisabled" name="teleDisabled">
-																			<label class="checkboxjs" for="teleDisabled"></label>
-																		</div>
-																	</div></div><div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
-																		<h4 class="center">
-																			<strong>HAB Level Climbed<strong>
-																			</h4>
-																			<div class="input-group input-group-lg">
-																				<span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" style="background-color: black; color: white; border-color: black;" onclick="setTextbox(-1, true, 'habLeveltb')">-</span>
-																				<input type="number" class="form-control textBox" style="background-color: black; color: white;" name="habLevel" id="habLeveltb">
-																				<span class="input-group-addon noselect buttonInputNormal blackBackground addsubButton" style="background-color: black; color: white; border-color: black;" onclick="setTextbox(1, true, 'habLeveltb')">+</span>
-																			</div>
-																		</div>
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
-														<div class="row notesContainer">
-															<div class="col-xs-12">
-																<h3 class="center">
-																	<strong>Notes</strong>
-																</h3>
-																<textarea name="teleNotes" id="notesTele" class="form-control" style="display: block" rows="10"></textarea>
-															</div>
-														</div>
-														<input class="btn btn-danger btn-lg btn-block submitButton" type="submit" value="Submit" style="background-color: black; color: white;">
-														<br>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="row notesContainer">
+									<div class="col-xs-12">
+										<h3 class="center">
+											<strong>Notes</strong>
+										</h3>
+										<textarea name="teleNotes" id="notesTele" class="form-control" style="display: block" rows="10"></textarea>
+									</div>
+								</div>
+								<div class="container">
+									<input class="btn btn-danger btn-lg btn-block submitButton" type="submit" value="Submit" style="background-color: black; color: white;">
+								</div>
+								<br>
 
-														<!-- Gear Modal -->
-														<!-- <div class="modal fade" id="autoGearModal">
-															<div class="modal-dialog blackText">
-																<div class="modal-content">
-																	<div class="modal-header">
-																		<button type="button" class="close" data-dismiss="modal">
-																			×
-																		</button>
+								<!-- Gear Modal -->
+								<!-- <div class="modal fade" id="autoGearModal">
+								<div class="modal-dialog blackText">
+								<div class="modal-content">
+								<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal">
+								×
+							</button>
 
-																	</div>
+						</div>
 
-																	<div>
+						<div>
 
-																		<button type="button" class="btn btn-danger" data-dismiss="modal" style="background-color: black; color: white;">
-																			Close
-																		</button>
-																	</div>
-																</div>
-															</div>
-														</div> -->
+						<button type="button" class="btn btn-danger" data-dismiss="modal" style="background-color: black; color: white;">
+						Close
+					</button>
+				</div>
+			</div>
+		</div>
+	</div> -->
 
-												</form>
-											</body>
-											<?php ob_flush(); ?>
+</form>
+</body>
+<?php ob_flush(); ?>
 
-											</html>
+</html>
