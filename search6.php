@@ -216,7 +216,7 @@
 
             $groundPickupHatchCalculated = $groundPickupHatchTotal/$matchTotal*100;
             $groundPickupCargoCalculated = $groundPickupCargoTotal/$matchTotal*100;
-
+            $upperRocketCalculated = $upperRocketTotal/$matchTotal*100;
             // $autoKPACalculated = round($autoKPATotal/$matchTotal,2);
             // $autoHighGoalAccuracyCalculated = round($autoHighGoalAccuracyTotal/$matchTotal,2);
             // $autoHighGoalSpeedCalculated = round($autoHighGoalSpeedTotal/$matchTotal,2);
@@ -240,7 +240,7 @@
             echo "<td><strong>$cargoPlacedCalculated</strong></td>";
             echo "<td><strong>$groundPickupHatchCalculated%</strong></td>";
             echo "<td><strong>$groundPickupCargoCalculated%</strong></td>";
-            echo "<td><strong>$upperRocketTotal</strong></td>";
+            echo "<td><strong>$upperRocketCalculated%</strong></td>";
             echo "<td><strong>$habLevelCalculated</strong></td>";
             echo "<td><strong>$habDisabledTotal/$matchTotal</strong></td>";
             echo "<td> </td>";
