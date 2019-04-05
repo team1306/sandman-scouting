@@ -26,11 +26,11 @@
 
     if ($limit == NULL) {
       for ($i = 1; $i <= $GLOBALS['MODALS']['TEAMS_PER_MATCH']; $i++) {
-        $result[$i] = mysqli_query($dbDataConn,"SELECT * FROM `matchdata` WHERE `teamNum` = $teamnum[$i]");
+        $result[$i] = mysqli_query($dbDataConn,"SELECT * FROM `matchdata` WHERE `teamNum` = $teamnum[$i] ORDER BY `matchNum`");
       }
     } else {
       for ($i = 1; $i <= $GLOBALS['MODALS']['TEAMS_PER_MATCH']; $i++) {
-        $result[$i] = mysqli_query($dbDataConn,"SELECT * FROM `matchdata` WHERE `teamNum` = $teamnum[$i] ORDER BY id DESC LIMIT $limit");
+        $result[$i] = mysqli_query($dbDataConn,"SELECT * FROM `matchdata` WHERE `teamNum` = $teamnum[$i] ORDER BY `matchNum` DESC LIMIT $limit");
       }
     }
 
